@@ -8,7 +8,6 @@ namespace AndreysGym.Entidades
 {
     public class Treino
     {
-
         public String nome { get; set; }
 
     }

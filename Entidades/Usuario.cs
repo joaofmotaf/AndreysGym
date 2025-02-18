@@ -26,5 +26,6 @@ namespace AndreysGym.Entidades
             Frequencias = new List<Frequencia>();
             Avaliacoes = new List<Avaliacao>();
         }
+
     }
 }
