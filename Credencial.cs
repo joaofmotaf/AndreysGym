@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AndreysGym
 {
-    public class Credencial
+    internal class Credencial
     {
     }
 }
