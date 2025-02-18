@@ -15,6 +15,7 @@ namespace AndreysGym.Entidades
         public Credencial Credencial { get; set; }
         public List<Frequencia> Frequencias { get; set; }
         public List<Avaliacao> Avaliacoes { get; set; }
+        public List<Pagamento> Pagamentos { get; set; }
         public int CalcularIdade()
         {
             int idade = DateTime.Today.Year - DataNascimento.Year;
