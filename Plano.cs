@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AndreysGym
 {
-    public class Credencial
+    public class Plano
     {
+        public Decimal Preco { get; set; }
+        public Byte QuantidadeDias { get; set; }
     }
 }

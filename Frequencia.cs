@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AndreysGym
 {
-    public class Credencial
+    public class Frequencia
     {
+        public DateTime Entrada { get; set; }
+        public DateTime Saida { get; set; }
     }
 }
