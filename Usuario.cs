@@ -12,9 +12,10 @@ namespace AndreysGym
         public String Nome { get; set; }
         public DateTime DataNascimento { get; set; }
         public UInt64 Cpf { get; set; }
-        public Byte CalcularIdade()
+        public Int32 CalcularIdade()
         {
-            return 0;
+            Int32 idade = DateTime.Today.Year - DataNascimento.Year;
+            return (DataNascimento.Date > DateTime.Today.AddYears(-idade) ? --idade : idade);
         }
     }
 }
