@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndreysGym
+namespace AndreysGym.Entidades
 {
     public class Plano
     {
-        public Decimal Preco { get; set; }
-        public Byte QuantidadeDias { get; set; }
+        public decimal Preco { get; set; }
+        public byte QuantidadeDias { get; set; }
     }
 }

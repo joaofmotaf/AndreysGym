@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndreysGym
+namespace AndreysGym.Entidades
 {
     public class Usuario
     {
-        public String Nome { get; set; }
+        public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }
-        public UInt64 Cpf { get; set; }
+        public ulong Cpf { get; set; }
         public Credencial Credencial { get; set; }
         public List<Frequencia> Frequencias { get; set; }
         public List<Avaliacao> Avaliacoes { get; set; }
-        public Int32 CalcularIdade()
+        public int CalcularIdade()
         {
-            Int32 idade = DateTime.Today.Year - DataNascimento.Year;
-            return (DataNascimento.Date > DateTime.Today.AddYears(-idade) ? --idade : idade);
+            int idade = DateTime.Today.Year - DataNascimento.Year;
+            return DataNascimento.Date > DateTime.Today.AddYears(-idade) ? --idade : idade;
         }
         public Usuario()
         {
