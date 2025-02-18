@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,41 +9,69 @@ namespace AndreysGym.Entidades
 {
     public class Avaliacao
     {
+        public UInt64 Id { get; set; }
+        [Required]
         public Usuario PersonalResponsavel { get; set; }
+        [Required]
         public DateTime DataRealizacao { get; set; }
-        public int IdadeCliente { get; set; }
-        public string Objetivo { get; set; }
-        public string Medicamentos { get; set; }
-        public string Sedentarismo { get; set; }
-        public string ProblemasSaude { get; set; }
-        public string HistoricoDoencaFamiliar { get; set; }
-        public float MassaMagra { get; set; }
-        public float MassaGorda { get; set; }
-        public float Peso { get; set; }
-        public float Altura { get; set; }
-        public ushort PerimetroToraxRelaxado { get; set; }
-        public ushort PerimetroCintura { get; set; }
-        public ushort PerimetroAbdome { get; set; }
-        public ushort PerimetroQuadril { get; set; }
-        public ushort PerimetroBracoEsquerdoRelaxado { get; set; }
-        public ushort PerimetroBracoEsquerdoContraido { get; set; }
-        public ushort PerimetroBracoDireitoRelaxado { get; set; }
-        public ushort PerimetroBracoDireitoContraido { get; set; }
-        public ushort PerimetroAntebracoEsquerdo { get; set; }
-        public ushort PerimetroAntebracoDireito { get; set; }
-        public ushort PerimetroCoxaEsquerda { get; set; }
-        public ushort PerimetroCoxaDireita { get; set; }
-        public ushort PerimetroPanturrilhaEsquerda { get; set; }
-        public ushort PerimetroPanturrilhaDireita { get; set; }
-        public float CalcularPorcentagemMassaMagra()
+        [Required]
+        public Int32 IdadeCliente { get; set; }
+        [Required, MaxLength(64)]
+        public String Objetivo { get; set; }
+        [MaxLength(255)]
+        public String Medicamentos { get; set; }
+        [Required, MaxLength(255)]
+        public String Sedentarismo { get; set; }
+        [MaxLength(255)]
+        public String ProblemasSaude { get; set; }
+        [MaxLength(255)]
+        public String HistoricoDoencaFamiliar { get; set; }
+        [Required]
+        public Single MassaMagra { get; set; }
+        [Required]
+        public Single MassaGorda { get; set; }
+        [Required]
+        public Single Peso { get; set; }
+        [Required]
+        public Single Altura { get; set; }
+        [Required]
+        public UInt16 PerimetroToraxRelaxado { get; set; }
+        [Required]
+        public UInt16 PerimetroCintura { get; set; }
+        [Required]
+        public UInt16 PerimetroAbdome { get; set; }
+        [Required]
+        public UInt16 PerimetroQuadril { get; set; }
+        [Required]
+        public UInt16 PerimetroBracoEsquerdoRelaxado { get; set; }
+        [Required]
+        public UInt16 PerimetroBracoEsquerdoContraido { get; set; }
+        [Required]
+        public UInt16 PerimetroBracoDireitoRelaxado { get; set; }
+        [Required]
+        public UInt16 PerimetroBracoDireitoContraido { get; set; }
+        [Required]
+        public UInt16 PerimetroAntebracoEsquerdo { get; set; }
+        [Required]
+        public UInt16 PerimetroAntebracoDireito { get; set; }
+        [Required]
+        public UInt16 PerimetroCoxaEsquerda { get; set; }
+        [Required]
+        public UInt16 PerimetroCoxaDireita { get; set; }
+        [Required]
+        public UInt16 PerimetroPanturrilhaEsquerda { get; set; }
+        [Required]
+        public UInt16 PerimetroPanturrilhaDireita { get; set; }
+        public Single CalcularPorcentagemMassaMagra()
+
         {
             return MassaMagra / (MassaMagra + MassaGorda);
         }
-        public float CalcularPorcentagemMassaGorda()
+        public Single CalcularPorcentagemMassaGorda()
         {
             return MassaGorda / (MassaMagra + MassaGorda);
         }
-        public float CalcularImc()
+        public Single CalcularImc()
         {
             return Peso / (Altura * Altura);
         }

@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace AndreysGym.Entidades
 {
-    public class Programacao
+    public class GrupoMuscular
     {
         public UInt64 Id { get; set; }
         [Required]
-        public DateTime DataInicio { get; set; }
-        [Required]
-        public List<Treino> Treinos { get; set; }
+        public String Nome { get; set; }
     }
 }
