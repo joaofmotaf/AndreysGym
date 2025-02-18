@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace AndreysGym.Entidades
 {
-    public class Credencial
+    public class Treino
     {
 
-        public String Email { get; set; }
-        public String Senha { get; set; }
-        public Boolean Admin { get; set; }
+        public String nome { get; set; }
 
     }
 }
