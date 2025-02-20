@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlCadastro = new System.Windows.Forms.Panel();
+            this.chkAdmin = new System.Windows.Forms.CheckBox();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.datNascimento = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +44,6 @@
             this.lblConfirmarSenha = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.chkAdmin = new System.Windows.Forms.CheckBox();
             this.pnlCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,16 @@
             this.pnlCadastro.Name = "pnlCadastro";
             this.pnlCadastro.Size = new System.Drawing.Size(378, 230);
             this.pnlCadastro.TabIndex = 0;
+            // 
+            // chkAdmin
+            // 
+            this.chkAdmin.AutoSize = true;
+            this.chkAdmin.Location = new System.Drawing.Point(138, 177);
+            this.chkAdmin.Name = "chkAdmin";
+            this.chkAdmin.Size = new System.Drawing.Size(102, 19);
+            this.chkAdmin.TabIndex = 14;
+            this.chkAdmin.Text = "Administrador";
+            this.chkAdmin.UseVisualStyleBackColor = true;
             // 
             // lblAviso
             // 
@@ -127,10 +137,11 @@
             // mskCpf
             // 
             this.mskCpf.Location = new System.Drawing.Point(138, 61);
-            this.mskCpf.Mask = "000.000.000-00";
+            this.mskCpf.Mask = "000,000,000-00";
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(236, 23);
             this.mskCpf.TabIndex = 8;
+            this.mskCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskCpf.TextChanged += new System.EventHandler(this.mskCpf_TextChanged);
             // 
             // txtEmail
@@ -204,16 +215,6 @@
             this.lblEmail.Size = new System.Drawing.Size(39, 15);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email:";
-            // 
-            // chkAdmin
-            // 
-            this.chkAdmin.AutoSize = true;
-            this.chkAdmin.Location = new System.Drawing.Point(138, 177);
-            this.chkAdmin.Name = "chkAdmin";
-            this.chkAdmin.Size = new System.Drawing.Size(102, 19);
-            this.chkAdmin.TabIndex = 14;
-            this.chkAdmin.Text = "Administrador";
-            this.chkAdmin.UseVisualStyleBackColor = true;
             // 
             // FrmCadastro
             // 

@@ -14,10 +14,19 @@ namespace AndreysGym.Forms
 {
     public partial class FrmCadastro : Form
     {
-        public FrmCadastro()
+        private static FrmCadastro _instance;
+        private FrmCadastro()
         {
             InitializeComponent();
             datNascimento.MaxDate = DateTime.Now;
+        }
+        public static FrmCadastro GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new FrmCadastro();
+            }
+            return _instance;
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -31,7 +40,8 @@ namespace AndreysGym.Forms
                 txtEmail.Text != String.Empty &&
                 mskCpf.Text != String.Empty &&
                 txtSenha.Text != String.Empty &&
-                txtSenha.Text == txtConfirmarSenha.Text)
+                txtSenha.Text == txtConfirmarSenha.Text &&
+                mskCpf.Text.Length == 11)
             {
                 btnCadastrar.Enabled = true;
             }

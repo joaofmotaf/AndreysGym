@@ -24,7 +24,7 @@ namespace AndreysGym.Forms
             Usuario usuario = UsuarioRepository.Autenticar(txtEmail.Text, txtSenha.Text);
             if (usuario != null)
             {
-                FrmTelaPrincipal.GetInstance(usuario).Show();
+                FrmPrincipal.GetInstance(usuario).Show();
                 Hide();
             }
             else
