@@ -13,4 +13,10 @@
     <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Forms\FrmRegistroFrequencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
