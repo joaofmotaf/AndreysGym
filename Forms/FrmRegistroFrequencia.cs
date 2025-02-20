@@ -15,7 +15,14 @@ namespace AndreysGym
             Usuario usuario = UsuarioRepository.Autenticar(txtEmail.Text, txtSenha.Text);
             if (usuario != null)
             {
-                usuario.RegistrarFrequencia();
+                if (usuario.Frequencias.Last().Saida == null)
+                {
+                    usuario.Frequencias.Last().Saida = DateTime.Now;
+                }
+                else
+                {
+                    usuario.Frequencias.Add(new Frequencia { Entrada = DateTime.Now, Usuario = usuario }); ;
+                }
                 lblSucesso.Show();
             }
             else

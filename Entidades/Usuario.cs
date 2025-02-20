@@ -43,14 +43,7 @@ namespace AndreysGym.Entidades
         }
         public void RegistrarFrequencia()
         {
-            if (Frequencias.Last().Saida == null)
-            {
-                Frequencias.Last().Saida = DateTime.Now;
-            }
-            else
-            {
-                Frequencias.Add(new Frequencia { Entrada = DateTime.Now });
-            }
+            
         }
     }
 }
