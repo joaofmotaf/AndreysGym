@@ -1,13 +1,22 @@
 using AndreysGym.Entidades;
 using AndreysGym.Repositories;
 
-namespace AndreysGym
+namespace AndreysGym.Forms
 {
-    public partial class Login : Form
+    public partial class FrmLogin : Form
     {
-        public Login()
+        private static FrmLogin _instance;
+        private FrmLogin()
         {
             InitializeComponent();
+        }
+        public static FrmLogin GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new FrmLogin();
+            }
+            return _instance;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -15,7 +24,8 @@ namespace AndreysGym
             Usuario usuario = UsuarioRepository.Autenticar(txtEmail.Text, txtSenha.Text);
             if (usuario != null)
             {
-                MessageBox.Show("Login efetuado com sucesso");
+                FrmTelaPrincipal.GetInstance(usuario).Show();
+                Hide();
             }
             else
             {

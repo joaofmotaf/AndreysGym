@@ -1,6 +1,6 @@
-﻿namespace AndreysGym
+﻿namespace AndreysGym.Forms
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlLogin = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.lblInvalido = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
@@ -36,25 +36,25 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlLogin
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.lblInvalido);
-            this.panel1.Controls.Add(this.btnEntrar);
-            this.panel1.Controls.Add(this.txtSenha);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.lblSenha);
-            this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(327, 86);
-            this.panel1.TabIndex = 0;
+            this.pnlLogin.Controls.Add(this.button1);
+            this.pnlLogin.Controls.Add(this.lblInvalido);
+            this.pnlLogin.Controls.Add(this.btnEntrar);
+            this.pnlLogin.Controls.Add(this.txtSenha);
+            this.pnlLogin.Controls.Add(this.txtEmail);
+            this.pnlLogin.Controls.Add(this.lblSenha);
+            this.pnlLogin.Controls.Add(this.lblEmail);
+            this.pnlLogin.Location = new System.Drawing.Point(12, 12);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(327, 86);
+            this.pnlLogin.TabIndex = 0;
             // 
             // button1
             // 
@@ -122,23 +122,23 @@
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email:";
             // 
-            // Login
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 110);
-            this.Controls.Add(this.panel1);
-            this.Name = "Login";
-            this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Controls.Add(this.pnlLogin);
+            this.Name = "FrmLogin";
+            this.Text = "Login";
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlLogin;
         private Button btnEntrar;
         private TextBox txtSenha;
         private TextBox txtEmail;

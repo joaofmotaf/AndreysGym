@@ -15,12 +15,13 @@ namespace AndreysGym.Entidades
         [Required]
         public UInt16 QuantidadeRepeticoes { get; set; }
         [Required]
+        public String Nome { get; set; }
+        [Required]
         public List<GrupoMuscular> GruposMusculares { get; set; }
         public Exercicio()
         {
             GruposMusculares = new List<GrupoMuscular>();
         }
-
         public Treino Treino { get; set; }
     }
 }

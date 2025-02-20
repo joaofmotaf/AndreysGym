@@ -41,9 +41,5 @@ namespace AndreysGym.Entidades
             Pagamentos = new List<Pagamento>();
             Programacoes = new List<Programacao>();
         }
-        public void RegistrarFrequencia()
-        {
-            
-        }
     }
 }
