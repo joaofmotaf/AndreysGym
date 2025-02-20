@@ -9,6 +9,7 @@ namespace AndreysGym.Entidades
 {
     public class Plano
     {
+        public UInt64 Id { get; set; }
         [Required]
         public Decimal Preco { get; set; }
         [Required]

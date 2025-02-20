@@ -12,5 +12,7 @@ namespace AndreysGym.Entidades
         public UInt64 Id { get; set; }
         [Required]
         public String Nome { get; set; }
+        public Exercicio Exercicio { get; set; }
     }
+
 }

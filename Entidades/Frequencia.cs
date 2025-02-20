@@ -9,6 +9,7 @@ namespace AndreysGym.Entidades
 {
     public class Frequencia
     {
+        public UInt64 Id { get; set; }
         [Required]
         public DateTime Entrada { get; set; }
         [Required]
