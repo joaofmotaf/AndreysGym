@@ -1,6 +1,6 @@
 ﻿namespace AndreysGym.Forms
 {
-    partial class TelaPrincipal
+    partial class FrmTelaPrincipal
     {
         /// <summary>
         /// Required designer variable.
