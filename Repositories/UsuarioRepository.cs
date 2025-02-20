@@ -100,6 +100,30 @@ namespace AndreysGym.Repositories
             }
         }
 
+        public static Usuario Autenticar(String email, String senha)
+        {
+            Credencial credencial = new Credencial
+            {
+                Email = email,
+                Senha = senha
+            };
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Usuarios
+                        .Include("Credencial")
+                        .Where(u => u.Credencial.Email == credencial.Email
+                            && u.Credencial.Senha == credencial.Senha)
+                        .FirstOrDefault<Usuario>();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static void Remove(Usuario usuario)
         {
             try
