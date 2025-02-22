@@ -60,7 +60,7 @@ namespace AndreysGym.Forms
                 btnAvaliacoes.Enabled = true;
                 btnFrequencias.Enabled = true;
                 btnEditar.Enabled = true;
-                btnExcluir.Enabled = true;
+                btnExcluir.Enabled = true;sss
             }
         }
 
