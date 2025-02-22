@@ -63,7 +63,7 @@ namespace AndreysGym.Forms
 
             treProgramacoes.Nodes.Insert(0, nodeProgramacao);
 
-            FrmRegistroProgramacao.GetInstance(programacao).Show();
+            FrmRegistroProgramacao.GetInstance(programacao, _usuario).Show();
         }
 
         private void trvProgramacoes_AfterSelect(object sender, TreeViewEventArgs e)

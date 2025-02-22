@@ -1,4 +1,5 @@
 ﻿using AndreysGym.Entidades;
+using AndreysGym.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,10 @@ namespace AndreysGym.Forms
             btnAdicionarExercicio.Enabled = false;
             btnExcluirExercicio.Enabled = false;
         }
-        public static FrmRegistroProgramacao GetInstance(Programacao programacao)
+        public static FrmRegistroProgramacao GetInstance(Programacao programacao, Usuario usuario)
         {
             _programacao = programacao;
+            _programacao.Usuario = usuario;
             if (_instance == null || _instance.IsDisposed)
             {
                 _instance = new FrmRegistroProgramacao();
@@ -92,8 +94,11 @@ namespace AndreysGym.Forms
 
         private void btnExcluirTreino_Click(object sender, EventArgs e)
         {
-            var indiceTreinoSelecionado = _programacao.Treinos.IndexOf((Treino)treTreinos.SelectedNode.Tag);
-            _programacao.Treinos.Remove((Treino)treTreinos.SelectedNode.Tag);
+            Treino treino = (Treino)treTreinos.SelectedNode.Tag;
+            treino.Exercicios.Clear();
+            treino.Programacao = null;
+            var indiceTreinoSelecionado = _programacao.Treinos.IndexOf(treino);
+            _programacao.Treinos.Remove(treino);
             for (int i = indiceTreinoSelecionado; i < _programacao.Treinos.Count; i++)
             {
                 _programacao.Treinos[i].Nome -= (Char)1;
@@ -120,6 +125,26 @@ namespace AndreysGym.Forms
             itemExercicio.Tag = exercicio;
 
             lstExercicios.Items.Add(itemExercicio);
+        }
+
+        private void btnExcluirExercicio_Click(object sender, EventArgs e)
+        {
+            Exercicio exercicio = (Exercicio)lstExercicios.SelectedItems[0].Tag;
+            exercicio.Treino = null;
+            ((Treino)treTreinos.SelectedNode.Tag).Exercicios.Remove(exercicio);
+
+            lstExercicios.Items.Remove(lstExercicios.SelectedItems[0]);
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            ProgramacaoRepository.Save(_programacao);
+            Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlRegistroProgramacao = new Panel();
+            lblTreino = new Label();
             btnCancelar = new Button();
             btnSalvar = new Button();
             btnExcluirExercicio = new Button();
@@ -46,7 +47,7 @@
             qtdSeries = new ColumnHeader();
             qtdRepeticoes = new ColumnHeader();
             treTreinos = new TreeView();
-            lblTreino = new Label();
+            label1 = new Label();
             pnlRegistroProgramacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numRepeticoes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numSeries).BeginInit();
@@ -55,6 +56,7 @@
             // pnlRegistroProgramacao
             // 
             pnlRegistroProgramacao.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlRegistroProgramacao.Controls.Add(label1);
             pnlRegistroProgramacao.Controls.Add(lblTreino);
             pnlRegistroProgramacao.Controls.Add(btnCancelar);
             pnlRegistroProgramacao.Controls.Add(btnSalvar);
@@ -75,6 +77,15 @@
             pnlRegistroProgramacao.Size = new Size(716, 426);
             pnlRegistroProgramacao.TabIndex = 0;
             // 
+            // lblTreino
+            // 
+            lblTreino.AutoSize = true;
+            lblTreino.Location = new Point(215, 8);
+            lblTreino.Name = "lblTreino";
+            lblTreino.Size = new Size(154, 15);
+            lblTreino.TabIndex = 14;
+            lblTreino.Text = "Nenhum treino selecionado";
+            // 
             // btnCancelar
             // 
             btnCancelar.Location = new Point(638, 400);
@@ -83,6 +94,7 @@
             btnCancelar.TabIndex = 13;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnSalvar
             // 
@@ -92,6 +104,7 @@
             btnSalvar.TabIndex = 12;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnExcluirExercicio
             // 
@@ -101,6 +114,7 @@
             btnExcluirExercicio.TabIndex = 11;
             btnExcluirExercicio.Text = "Excluir";
             btnExcluirExercicio.UseVisualStyleBackColor = true;
+            btnExcluirExercicio.Click += btnExcluirExercicio_Click;
             // 
             // btnAdicionarExercicio
             // 
@@ -217,14 +231,14 @@
             treTreinos.TabIndex = 0;
             treTreinos.AfterSelect += treTreinos_AfterSelect;
             // 
-            // lblTreino
+            // label1
             // 
-            lblTreino.AutoSize = true;
-            lblTreino.Location = new Point(215, 8);
-            lblTreino.Name = "lblTreino";
-            lblTreino.Size = new Size(154, 15);
-            lblTreino.TabIndex = 14;
-            lblTreino.Text = "Nenhum treino selecionado";
+            label1.AutoSize = true;
+            label1.Location = new Point(390, 352);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 15;
+            label1.Text = "label1";
             // 
             // FrmRegistroProgramacao
             // 
@@ -262,5 +276,6 @@
         private Button btnSalvar;
         private Button btnExcluirExercicio;
         private Label lblTreino;
+        private Label label1;
     }
 }

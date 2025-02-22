@@ -16,6 +16,7 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
+                    dbContext.Entry(programacao.Usuario).State = EntityState.Unchanged;
                     if (programacao.Id == 0)
                     {
                         dbContext.Programacoes.Add(programacao);
