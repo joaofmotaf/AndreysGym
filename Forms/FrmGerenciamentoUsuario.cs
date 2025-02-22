@@ -15,8 +15,9 @@ namespace AndreysGym.Forms
 {
     public partial class FrmGerenciamentoUsuario : Form
     {
-        private static FrmGerenciamentoUsuario _instance { get; set; }
-        private BindingList<Usuario> _usuarios { get; set; }
+        private static FrmGerenciamentoUsuario _instance;
+        private BindingList<Usuario> _usuarios;
+        private Usuario _usuarioSelecionado;
         private FrmGerenciamentoUsuario()
         {
             InitializeComponent();
@@ -40,6 +41,49 @@ namespace AndreysGym.Forms
             foreach (var usuario in usuariosEncontrados)
             {
                 _usuarios.Add(usuario);
+            }
+        }
+
+        private void btnProgramacoes_Click(object sender, EventArgs e)
+        {
+            // Abrir janela de visualização de programações, com o botão de adicionar programações ativado
+        }
+
+        private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.SelectedRows.Count > 0)
+            {
+                _usuarioSelecionado = (Usuario)dgvUsuarios.SelectedRows[0].DataBoundItem;
+                btnPagamentos.Enabled = true;
+                btnProgramacoes.Enabled = true;
+                btnAvaliacoes.Enabled = true;
+                btnFrequencias.Enabled = true;
+                btnEditar.Enabled = true;
+                btnExcluir.Enabled = true;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (_usuarioSelecionado != null)
+            {
+                var resultado = MessageBox.Show("Tem certeza que deseja excluir este usuário?", "Excluir Usuário", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    _usuarios.Remove(_usuarioSelecionado);
+                    UsuarioRepository.Remove(_usuarioSelecionado);
+                    btnPagamentos.Enabled = false;
+                    btnProgramacoes.Enabled = false;
+                    btnAvaliacoes.Enabled = false;
+                    btnFrequencias.Enabled = false;
+                    btnEditar.Enabled = false;
+                    btnExcluir.Enabled = false;
+                }
             }
         }
     }

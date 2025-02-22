@@ -30,61 +30,71 @@
         {
             components = new System.ComponentModel.Container();
             usuarioBindingSource = new BindingSource(components);
-            tableLayoutPanel1 = new TableLayoutPanel();
-            dataGridView1 = new DataGridView();
+            tlpUsuarios = new TableLayoutPanel();
+            dgvUsuarios = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataNascimentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cpfDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Credencial = new DataGridViewTextBoxColumn();
             txtPesquisa = new TextBox();
             btnPesquisar = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            button1 = new Button();
+            tlpPrincipal = new TableLayoutPanel();
+            btnProgramacoes = new Button();
+            btnFrequencias = new Button();
+            btnPagamentos = new Button();
+            btnAvaliacoes = new Button();
+            btnEditar = new Button();
+            btnExcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tableLayoutPanel2.SuspendLayout();
+            tlpUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
+            tlpPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // usuarioBindingSource
             // 
             usuarioBindingSource.DataSource = typeof(Entidades.Usuario);
             // 
-            // tableLayoutPanel1
+            // tlpUsuarios
             // 
-            tableLayoutPanel1.AutoSize = true;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Controls.Add(dataGridView1, 1, 1);
-            tableLayoutPanel1.Controls.Add(txtPesquisa, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnPesquisar, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(15, 15);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(360, 252);
-            tableLayoutPanel1.TabIndex = 0;
+            tlpUsuarios.AutoSize = true;
+            tlpUsuarios.ColumnCount = 2;
+            tlpPrincipal.SetColumnSpan(tlpUsuarios, 6);
+            tlpUsuarios.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
+            tlpUsuarios.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tlpUsuarios.Controls.Add(dgvUsuarios, 1, 1);
+            tlpUsuarios.Controls.Add(txtPesquisa, 0, 0);
+            tlpUsuarios.Controls.Add(btnPesquisar, 1, 0);
+            tlpUsuarios.Dock = DockStyle.Fill;
+            tlpUsuarios.Location = new Point(15, 15);
+            tlpUsuarios.Name = "tlpUsuarios";
+            tlpUsuarios.RowCount = 2;
+            tlpUsuarios.RowStyles.Add(new RowStyle());
+            tlpUsuarios.RowStyles.Add(new RowStyle());
+            tlpUsuarios.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlpUsuarios.Size = new Size(357, 252);
+            tlpUsuarios.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, dataNascimentoDataGridViewTextBoxColumn, cpfDataGridViewTextBoxColumn });
-            tableLayoutPanel1.SetColumnSpan(dataGridView1, 2);
-            dataGridView1.DataSource = usuarioBindingSource;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 32);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(354, 217);
-            dataGridView1.TabIndex = 2;
+            dgvUsuarios.AllowUserToAddRows = false;
+            dgvUsuarios.AllowUserToDeleteRows = false;
+            dgvUsuarios.AutoGenerateColumns = false;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, dataNascimentoDataGridViewTextBoxColumn, cpfDataGridViewTextBoxColumn, Credencial });
+            tlpUsuarios.SetColumnSpan(dgvUsuarios, 2);
+            dgvUsuarios.DataSource = usuarioBindingSource;
+            dgvUsuarios.Dock = DockStyle.Fill;
+            dgvUsuarios.Location = new Point(3, 32);
+            dgvUsuarios.MultiSelect = false;
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.ReadOnly = true;
+            dgvUsuarios.RowTemplate.Height = 25;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsuarios.Size = new Size(351, 217);
+            dgvUsuarios.TabIndex = 2;
+            dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -94,6 +104,7 @@
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -109,7 +120,7 @@
             dataNascimentoDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataNascimentoDataGridViewTextBoxColumn.DataPropertyName = "DataNascimento";
             dataNascimentoDataGridViewTextBoxColumn.FillWeight = 15F;
-            dataNascimentoDataGridViewTextBoxColumn.HeaderText = "DataNascimento";
+            dataNascimentoDataGridViewTextBoxColumn.HeaderText = "Data de Nascimento";
             dataNascimentoDataGridViewTextBoxColumn.Name = "dataNascimentoDataGridViewTextBoxColumn";
             dataNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -121,6 +132,15 @@
             cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
             cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
             cpfDataGridViewTextBoxColumn.ReadOnly = true;
+            cpfDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Credencial
+            // 
+            Credencial.DataPropertyName = "Credencial";
+            Credencial.HeaderText = "Credencial";
+            Credencial.Name = "Credencial";
+            Credencial.ReadOnly = true;
+            Credencial.Visible = false;
             // 
             // txtPesquisa
             // 
@@ -128,73 +148,149 @@
             txtPesquisa.Location = new Point(3, 3);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Insira o nome do usuário...";
-            txtPesquisa.Size = new Size(282, 23);
+            txtPesquisa.Size = new Size(279, 23);
             txtPesquisa.TabIndex = 0;
             // 
             // btnPesquisar
             // 
             btnPesquisar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnPesquisar.Location = new Point(291, 3);
+            btnPesquisar.Location = new Point(288, 3);
             btnPesquisar.Name = "btnPesquisar";
             btnPesquisar.Size = new Size(66, 23);
             btnPesquisar.TabIndex = 3;
-            btnPesquisar.Text = "button2";
+            btnPesquisar.Text = "Pesquisar";
             btnPesquisar.UseVisualStyleBackColor = true;
             btnPesquisar.Click += btnPesquisar_Click;
             // 
-            // tableLayoutPanel2
+            // tlpPrincipal
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel1, 0, 0);
-            tableLayoutPanel2.Controls.Add(button1, 0, 1);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.Padding = new Padding(12);
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(387, 311);
-            tableLayoutPanel2.TabIndex = 1;
+            tlpPrincipal.ColumnCount = 6;
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpPrincipal.Controls.Add(tlpUsuarios, 0, 0);
+            tlpPrincipal.Controls.Add(btnProgramacoes, 0, 1);
+            tlpPrincipal.Controls.Add(btnFrequencias, 1, 1);
+            tlpPrincipal.Controls.Add(btnPagamentos, 2, 1);
+            tlpPrincipal.Controls.Add(btnAvaliacoes, 3, 1);
+            tlpPrincipal.Controls.Add(btnEditar, 4, 1);
+            tlpPrincipal.Controls.Add(btnExcluir, 5, 1);
+            tlpPrincipal.Dock = DockStyle.Fill;
+            tlpPrincipal.Location = new Point(0, 0);
+            tlpPrincipal.Name = "tlpPrincipal";
+            tlpPrincipal.Padding = new Padding(12);
+            tlpPrincipal.RowCount = 2;
+            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpPrincipal.RowStyles.Add(new RowStyle());
+            tlpPrincipal.Size = new Size(387, 311);
+            tlpPrincipal.TabIndex = 1;
             // 
-            // button1
+            // btnProgramacoes
             // 
-            button1.Location = new Point(15, 273);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnProgramacoes.Dock = DockStyle.Fill;
+            btnProgramacoes.Enabled = false;
+            btnProgramacoes.Location = new Point(15, 273);
+            btnProgramacoes.Name = "btnProgramacoes";
+            btnProgramacoes.Size = new Size(54, 23);
+            btnProgramacoes.TabIndex = 0;
+            btnProgramacoes.Text = "Programações";
+            btnProgramacoes.UseVisualStyleBackColor = true;
+            btnProgramacoes.Click += btnProgramacoes_Click;
+            // 
+            // btnFrequencias
+            // 
+            btnFrequencias.Dock = DockStyle.Fill;
+            btnFrequencias.Enabled = false;
+            btnFrequencias.Location = new Point(75, 273);
+            btnFrequencias.Name = "btnFrequencias";
+            btnFrequencias.Size = new Size(54, 23);
+            btnFrequencias.TabIndex = 1;
+            btnFrequencias.Text = "Frequências";
+            btnFrequencias.UseVisualStyleBackColor = true;
+            // 
+            // btnPagamentos
+            // 
+            btnPagamentos.Dock = DockStyle.Fill;
+            btnPagamentos.Enabled = false;
+            btnPagamentos.Location = new Point(135, 273);
+            btnPagamentos.Name = "btnPagamentos";
+            btnPagamentos.Size = new Size(54, 23);
+            btnPagamentos.TabIndex = 2;
+            btnPagamentos.Text = "Pagamentos";
+            btnPagamentos.UseVisualStyleBackColor = true;
+            // 
+            // btnAvaliacoes
+            // 
+            btnAvaliacoes.Dock = DockStyle.Fill;
+            btnAvaliacoes.Enabled = false;
+            btnAvaliacoes.Location = new Point(195, 273);
+            btnAvaliacoes.Name = "btnAvaliacoes";
+            btnAvaliacoes.Size = new Size(54, 23);
+            btnAvaliacoes.TabIndex = 3;
+            btnAvaliacoes.Text = "Avaliações";
+            btnAvaliacoes.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Dock = DockStyle.Fill;
+            btnEditar.Enabled = false;
+            btnEditar.Location = new Point(255, 273);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(54, 23);
+            btnEditar.TabIndex = 4;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Dock = DockStyle.Fill;
+            btnExcluir.Enabled = false;
+            btnExcluir.Location = new Point(315, 273);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(57, 23);
+            btnExcluir.TabIndex = 5;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // FrmGerenciamentoUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(387, 311);
-            Controls.Add(tableLayoutPanel2);
+            Controls.Add(tlpPrincipal);
             Name = "FrmGerenciamentoUsuario";
             Text = "FrmGerenciamentoUsuario";
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
+            tlpUsuarios.ResumeLayout(false);
+            tlpUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
+            tlpPrincipal.ResumeLayout(false);
+            tlpPrincipal.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
         private BindingSource usuarioBindingSource;
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tlpUsuarios;
         private TextBox txtPesquisa;
-        private TableLayoutPanel tableLayoutPanel2;
-        private Button button1;
-        private DataGridView dataGridView1;
+        private TableLayoutPanel tlpPrincipal;
+        private DataGridView dgvUsuarios;
         private Button btnPesquisar;
+        private Button btnProgramacoes;
+        private Button btnFrequencias;
+        private Button btnPagamentos;
+        private Button btnAvaliacoes;
+        private Button btnEditar;
+        private Button btnExcluir;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataNascimentoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cpfDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Credencial;
     }
 }
