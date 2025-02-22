@@ -65,7 +65,13 @@ namespace AndreysGym.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (_usuarioSelecionado != null)
+            {
+                Usuario usuarioComCredencial = UsuarioRepository.FindByIdWCredencial(_usuarioSelecionado.Id);
+                FrmPerfil.GetInstance(usuarioComCredencial, true);
+                FrmPerfil.GetInstance().Show();
 
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

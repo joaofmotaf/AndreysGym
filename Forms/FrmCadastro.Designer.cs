@@ -153,7 +153,7 @@
             txtConfirmarSenha.PasswordChar = '*';
             txtConfirmarSenha.Size = new Size(262, 23);
             txtConfirmarSenha.TabIndex = 11;
-            txtConfirmarSenha.KeyDown += txtConfirmarSenha_KeyDown;
+            txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
             // 
             // datNascimento
             // 
@@ -165,7 +165,7 @@
             datNascimento.Name = "datNascimento";
             datNascimento.Size = new Size(262, 23);
             datNascimento.TabIndex = 9;
-            datNascimento.Value = new DateTime(2025, 2, 20, 0, 0, 0, 0);
+            datNascimento.Value = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // txtSenha
             // 
@@ -176,7 +176,7 @@
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(262, 23);
             txtSenha.TabIndex = 10;
-            txtSenha.KeyDown += txtSenha_KeyDown;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // lblSenha
             // 
@@ -206,7 +206,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(262, 23);
             txtNome.TabIndex = 6;
-            txtNome.KeyDown += txtNome_KeyDown;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // mskCpf
             // 
@@ -218,7 +218,7 @@
             mskCpf.SkipLiterals = false;
             mskCpf.TabIndex = 8;
             mskCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            mskCpf.KeyDown += mskCpf_KeyDown;
+            mskCpf.TextChanged += mskCpf_TextChanged;
             // 
             // txtEmail
             // 
@@ -228,7 +228,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(262, 23);
             txtEmail.TabIndex = 7;
-            txtEmail.KeyDown += txtEmail_KeyDown;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // lblAviso
             // 

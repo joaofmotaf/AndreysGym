@@ -98,7 +98,6 @@ namespace AndreysGym.Forms
                 UsuarioRepository.Save(usuario);
                 lblAviso.Text = "Cadastro efetuado com sucesso";
                 lblAviso.ForeColor = Color.Green;
-                lblAviso.Show();
             }
             catch (Microsoft.EntityFrameworkCore.DbUpdateException exception)
             {
