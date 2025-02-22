@@ -29,13 +29,9 @@ namespace AndreysGym.Forms
             return _instance;
         }
 
-        private void txtNome_TextChanged(object sender, EventArgs e)
+        private void AtualizarJanela()
         {
-            AtualizarBotaoCadastro();
-        }
-
-        private void AtualizarBotaoCadastro()
-        {
+            lblAviso.Hide();
             if (txtNome.Text != String.Empty &&
                 txtEmail.Text != String.Empty &&
                 mskCpf.Text != String.Empty &&
@@ -51,24 +47,29 @@ namespace AndreysGym.Forms
             }
         }
 
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            AtualizarJanela();
+        }
+
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            AtualizarBotaoCadastro();
+            AtualizarJanela();
         }
 
         private void mskCpf_TextChanged(object sender, EventArgs e)
         {
-            AtualizarBotaoCadastro();
+            AtualizarJanela();
         }
 
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
-            AtualizarBotaoCadastro();
+            AtualizarJanela();
         }
 
         private void txtConfirmarSenha_TextChanged(object sender, EventArgs e)
         {
-            AtualizarBotaoCadastro();
+            AtualizarJanela();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -85,14 +86,51 @@ namespace AndreysGym.Forms
                     Admin = chkAdmin.Checked
                 }
             };
+            txtNome.Clear();
+            datNascimento.Value = DateTime.Today;
+            mskCpf.Clear();
+            txtEmail.Clear();
+            txtSenha.Clear();
+            txtConfirmarSenha.Clear();
+            chkAdmin.Checked = false;
             try
             {
                 UsuarioRepository.Save(usuario);
+                lblAviso.Text = "Cadastro efetuado com sucesso";
+                lblAviso.ForeColor = Color.Green;
+                lblAviso.Show();
             }
             catch (Microsoft.EntityFrameworkCore.DbUpdateException exception)
             {
-                MessageBox.Show(exception.Message);
+                lblAviso.Text = "Email e/ou CPF já cadastrado";
+                lblAviso.ForeColor = Color.Red;
             }
+            lblAviso.Show();
+        }
+
+        private void txtNome_KeyDown(object sender, KeyEventArgs e)
+        {
+            AtualizarJanela();
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            AtualizarJanela();
+        }
+
+        private void mskCpf_KeyDown(object sender, KeyEventArgs e)
+        {
+            AtualizarJanela();
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            AtualizarJanela();
+        }
+
+        private void txtConfirmarSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            AtualizarJanela();
         }
     }
 }

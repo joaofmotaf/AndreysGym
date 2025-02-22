@@ -16,6 +16,7 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
+                    dbContext.Entry(frequencia.Usuario).State = EntityState.Unchanged;
                     if (frequencia.Id == 0)
                     {
                         dbContext.Frequencias.Add(frequencia);
