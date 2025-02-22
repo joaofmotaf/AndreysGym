@@ -12,8 +12,9 @@ namespace AndreysGym.Entidades
         public UInt64 Id { get; set; }
         [Required]
         public DateTime Entrada { get; set; }
-        public DateTime Saida { get; set; }
+        public DateTime? Saida { get; set; }
         [Required]
         public Usuario Usuario { get; set; }
+        public UInt64 UsuarioId { get; set; }
     }
 }

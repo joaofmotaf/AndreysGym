@@ -17,5 +17,9 @@ namespace AndreysGym.Entidades
         public DateTime DataInicio { get; set; }
         [Required]
         public List<Treino> Treinos { get; set; }
+        public Programacao()
+        {
+            Treinos = new List<Treino>();
+        }
     }
 }

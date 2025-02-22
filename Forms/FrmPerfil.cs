@@ -12,38 +12,61 @@ using AndreysGym.Repositories;
 
 namespace AndreysGym.Forms
 {
-    public partial class FrmCadastro : Form
+    public partial class FrmPerfil : Form
     {
-        private static FrmCadastro _instance;
-        private FrmCadastro()
+        private static FrmPerfil _instance;
+        private static Boolean _acessoAdmin;
+        private static Usuario _usuario;
+        private FrmPerfil()
         {
             InitializeComponent();
-            datNascimento.MaxDate = DateTime.Now;
+            txtNome.Text = _usuario.Nome;
+            txtEmail.Text = _usuario.Credencial.Email;
+            chkAdmin.Checked = _usuario.Credencial.Admin;
+            txtNascimento.Text = _usuario.DataNascimento.ToString("d");
+            mskCpf.Text = _usuario.Cpf.ToString("000.000.000-00");
+
+            btnSalvar.Visible = _acessoAdmin;
+            txtNome.ReadOnly = !_acessoAdmin;
+            txtEmail.ReadOnly = !_acessoAdmin;
+            chkAdmin.Enabled = _acessoAdmin;
+            lblSenha.Visible = _acessoAdmin;
+            txtSenha.Visible = _acessoAdmin;
+            lblConfirmarSenha.Visible = _acessoAdmin;
+            txtConfirmarSenha.Visible = _acessoAdmin;
         }
-        public static FrmCadastro GetInstance()
+        public static FrmPerfil GetInstance(Usuario usuario, Boolean acessoAdmin)
+        {
+            _acessoAdmin = acessoAdmin;
+            _usuario = usuario;
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new FrmPerfil();
+            }
+            return _instance;
+        }
+        public static FrmPerfil GetInstance()
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new FrmCadastro();
+                _instance = new FrmPerfil();
             }
             return _instance;
         }
 
         private void AtualizarJanela()
         {
-            lblAviso.Hide();
             if (txtNome.Text != String.Empty &&
                 txtEmail.Text != String.Empty &&
                 mskCpf.Text != String.Empty &&
-                txtSenha.Text != String.Empty &&
                 txtSenha.Text == txtConfirmarSenha.Text &&
                 mskCpf.Text.Length == 11)
             {
-                btnCadastrar.Enabled = true;
+                btnSalvar.Enabled = _acessoAdmin;
             }
             else
             {
-                btnCadastrar.Enabled = false;
+                btnSalvar.Enabled = false;
             }
         }
 
@@ -72,41 +95,6 @@ namespace AndreysGym.Forms
             AtualizarJanela();
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            Usuario usuario = new Usuario
-            {
-                Nome = txtNome.Text,
-                DataNascimento = datNascimento.Value,
-                Cpf = Convert.ToUInt64(mskCpf.Text),
-                Credencial = new Credencial
-                {
-                    Email = txtEmail.Text,
-                    Senha = txtSenha.Text,
-                    Admin = chkAdmin.Checked
-                }
-            };
-            txtNome.Clear();
-            datNascimento.Value = DateTime.Today;
-            mskCpf.Clear();
-            txtEmail.Clear();
-            txtSenha.Clear();
-            txtConfirmarSenha.Clear();
-            chkAdmin.Checked = false;
-            try
-            {
-                UsuarioRepository.Save(usuario);
-                lblAviso.Text = "Cadastro efetuado com sucesso";
-                lblAviso.ForeColor = Color.Green;
-            }
-            catch (Microsoft.EntityFrameworkCore.DbUpdateException exception)
-            {
-                lblAviso.Text = "Email e/ou CPF já cadastrado";
-                lblAviso.ForeColor = Color.Red;
-            }
-            lblAviso.Show();
-        }
-
         private void txtNome_KeyDown(object sender, KeyEventArgs e)
         {
             AtualizarJanela();
@@ -130,6 +118,16 @@ namespace AndreysGym.Forms
         private void txtConfirmarSenha_KeyDown(object sender, KeyEventArgs e)
         {
             AtualizarJanela();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            _usuario.Nome = txtNome.Text;
+            _usuario.Credencial.Email = txtEmail.Text;
+            _usuario.Credencial.Senha = txtSenha.Text;
+            _usuario.Credencial.Admin = chkAdmin.Checked;
+            UsuarioRepository.Save(_usuario);
+            Close();
         }
     }
 }

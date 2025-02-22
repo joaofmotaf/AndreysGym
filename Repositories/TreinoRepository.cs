@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace AndreysGym.Repositories
 {
-    public class FrequenciaRepository
+    public class TreinoRepository
     {
-        public static void Save(Frequencia frequencia)
+        public static void Save(Treino treino)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    dbContext.Entry(frequencia.Usuario).State = EntityState.Unchanged;
-                    if (frequencia.Id == 0)
+                    dbContext.Entry(treino.Programacao).State = EntityState.Unchanged;
+                    if (treino.Id == 0)
                     {
-                        dbContext.Frequencias.Add(frequencia);
+                        dbContext.Treinos.Add(treino);
                     }
                     else
                     {
-                        dbContext.Entry(frequencia).State
+                        dbContext.Entry(treino).State
                             = EntityState.Modified;
                     }
 
@@ -36,13 +36,13 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static List<Frequencia> FindAll()
+        public static List<Treino> FindAll()
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Frequencias.ToList();
+                    return dbContext.Treinos.ToList();
                 }
             }
             catch (Exception)
@@ -51,13 +51,13 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static Frequencia FindById(Int64 id)
+        public static Treino FindById(UInt64 id)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Frequencias.Find(id);
+                    return dbContext.Treinos.Find(id);
                 }
             }
             catch (Exception)
@@ -66,16 +66,16 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static List<Frequencia> FindByUsuario(Usuario usuario)
+        public static List<Treino> FindByProgramacao(Programacao programacao)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Frequencias
-                        .Include("Usuario")
-                        .Where(p => p.Usuario.Id == usuario.Id)
-                        .ToList<Frequencia>();
+                    return dbContext.Treinos
+                        .Include("Programacao")
+                        .Where(t => t.Programacao.Id == programacao.Id)
+                        .ToList<Treino>();
                 }
             }
             catch (Exception)
@@ -84,14 +84,33 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static void Remove(Frequencia frequencia)
+        public static Treino FindWExercicios(Treino treino)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    dbContext.Frequencias.Attach(frequencia);
-                    dbContext.Frequencias.Remove(frequencia);
+                    return dbContext.Treinos
+                        .Include("Exercicios")
+                        .Where(t => t.Id == treino.Id)
+                        .FirstOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static void Remove(Treino treino)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    dbContext.Treinos.Attach(treino);
+                    dbContext.Treinos.Remove(treino);
                     dbContext.SaveChanges();
                 }
             }

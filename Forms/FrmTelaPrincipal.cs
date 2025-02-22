@@ -37,7 +37,27 @@ namespace AndreysGym.Forms
         private void mnuPrincipalAdmnistradorCadastrar_Click(object sender, EventArgs e)
         {
             FrmCadastro.GetInstance().MdiParent = this;
+            FrmCadastro.GetInstance().WindowState = FormWindowState.Maximized;
             FrmCadastro.GetInstance().Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void registrarFrequênciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRegistroFrequencia.GetInstance().MdiParent = this;
+            FrmRegistroFrequencia.GetInstance().WindowState = FormWindowState.Maximized;
+            FrmRegistroFrequencia.GetInstance().Show();
+        }
+
+        private void mnuPrincipalAdminstradorUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmGerenciamentoUsuario.GetInstance().MdiParent = this;
+            FrmGerenciamentoUsuario.GetInstance().WindowState = FormWindowState.Maximized;
+            FrmGerenciamentoUsuario.GetInstance().Show();
         }
     }
 }

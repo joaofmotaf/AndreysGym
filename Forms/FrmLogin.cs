@@ -41,14 +41,22 @@ namespace AndreysGym.Forms
             lblInvalido.Hide();
         }
 
-        private void txtSenha_TextChanged(object sender, EventArgs e)
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
         {
             lblInvalido.Hide();
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar.PerformClick();
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
         {
-            Repository repository = new Repository();
+            lblInvalido.Hide();
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

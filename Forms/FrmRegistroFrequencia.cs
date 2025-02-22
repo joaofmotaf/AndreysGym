@@ -1,13 +1,22 @@
 using AndreysGym.Entidades;
 using AndreysGym.Repositories;
 
-namespace AndreysGym
+namespace AndreysGym.Forms
 {
-    public partial class RegistroFrequencia : Form
+    public partial class FrmRegistroFrequencia : Form
     {
-        public RegistroFrequencia()
+        private static FrmRegistroFrequencia _instance;
+        private FrmRegistroFrequencia()
         {
             InitializeComponent();
+        }
+        public static FrmRegistroFrequencia GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new FrmRegistroFrequencia();
+            }
+            return _instance;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -15,15 +24,23 @@ namespace AndreysGym
             Usuario usuario = UsuarioRepository.Autenticar(txtEmail.Text, txtSenha.Text);
             if (usuario != null)
             {
-                if (usuario.Frequencias.Last().Saida == null)
+                Frequencia ultimaFrequencia = FrequenciaRepository.FindByUsuario(usuario).LastOrDefault();
+                if (ultimaFrequencia == null || ultimaFrequencia.Saida != null)
                 {
-                    usuario.Frequencias.Last().Saida = DateTime.Now;
+                    Frequencia frequencia = new Frequencia
+                    {
+                        Entrada = DateTime.Now,
+                        Usuario = usuario
+                    };
+                    usuario.Frequencias.Add(frequencia);
+                    FrequenciaRepository.Save(frequencia);
                 }
                 else
                 {
-                    usuario.Frequencias.Add(new Frequencia { Entrada = DateTime.Now, Usuario = usuario }); ;
+                    ultimaFrequencia.Saida = DateTime.Now;
+                    FrequenciaRepository.Save(ultimaFrequencia);
                 }
-                lblSucesso.Show();
+                MostrarMensagem();
             }
             else
             {
@@ -31,21 +48,29 @@ namespace AndreysGym
             txtEmail.Focus();
             txtEmail.Clear();
             txtSenha.Clear();
+
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private async void MostrarMensagem()
         {
-            lblSucesso.Hide();
-        }
-
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
+            lblSucesso.Show();
+            await Task.Delay(1500);
             lblSucesso.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Repository repository = new Repository();
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            lblSucesso.Hide();
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            lblSucesso.Hide();
         }
     }
 }

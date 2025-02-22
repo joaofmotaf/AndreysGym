@@ -16,6 +16,7 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
+                    dbContext.Entry(programacao.Usuario).State = EntityState.Unchanged;
                     if (programacao.Id == 0)
                     {
                         dbContext.Programacoes.Add(programacao);
@@ -50,7 +51,7 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static Programacao FindById(Int64 id)
+        public static Programacao FindById(UInt64 id)
         {
             try
             {
@@ -79,6 +80,25 @@ namespace AndreysGym.Repositories
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+
+        public static Programacao FindWTreinos(Programacao programacao)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Programacoes
+                        .Include("Treinos")
+                        .Where(p => p.Id == programacao.Id)
+                        .FirstOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

@@ -22,6 +22,8 @@ namespace AndreysGym.Entidades
         {
             GruposMusculares = new List<GrupoMuscular>();
         }
+        [Required]
         public Treino Treino { get; set; }
+        public UInt64 TreinoId { get; set; }
     }
 }

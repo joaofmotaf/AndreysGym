@@ -1,6 +1,6 @@
 ﻿namespace AndreysGym.Forms
 {
-    partial class FrmCadastro
+    partial class FrmPerfil
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,19 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             lblNome = new Label();
-            btnCadastrar = new Button();
+            btnSalvar = new Button();
             chkAdmin = new CheckBox();
             lblEmail = new Label();
             lblCpf = new Label();
             lblDataNascimento = new Label();
             txtConfirmarSenha = new TextBox();
-            datNascimento = new DateTimePicker();
             txtSenha = new TextBox();
             lblSenha = new Label();
             lblConfirmarSenha = new Label();
             txtNome = new TextBox();
             mskCpf = new MaskedTextBox();
             txtEmail = new TextBox();
-            lblAviso = new Label();
+            txtNascimento = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,20 +53,19 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 125F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(lblNome, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnCadastrar, 1, 7);
+            tableLayoutPanel1.Controls.Add(btnSalvar, 1, 7);
             tableLayoutPanel1.Controls.Add(chkAdmin, 1, 6);
             tableLayoutPanel1.Controls.Add(lblEmail, 0, 1);
             tableLayoutPanel1.Controls.Add(lblCpf, 0, 2);
             tableLayoutPanel1.Controls.Add(lblDataNascimento, 0, 3);
             tableLayoutPanel1.Controls.Add(txtConfirmarSenha, 1, 5);
-            tableLayoutPanel1.Controls.Add(datNascimento, 1, 3);
             tableLayoutPanel1.Controls.Add(txtSenha, 1, 4);
             tableLayoutPanel1.Controls.Add(lblSenha, 0, 4);
             tableLayoutPanel1.Controls.Add(lblConfirmarSenha, 0, 5);
             tableLayoutPanel1.Controls.Add(txtNome, 1, 0);
             tableLayoutPanel1.Controls.Add(mskCpf, 1, 2);
             tableLayoutPanel1.Controls.Add(txtEmail, 1, 1);
-            tableLayoutPanel1.Controls.Add(lblAviso, 0, 7);
+            tableLayoutPanel1.Controls.Add(txtNascimento, 1, 3);
             tableLayoutPanel1.Location = new Point(12, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 8;
@@ -79,7 +77,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(393, 269);
+            tableLayoutPanel1.Size = new Size(393, 230);
             tableLayoutPanel1.TabIndex = 15;
             // 
             // lblNome
@@ -92,17 +90,16 @@
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome:";
             // 
-            // btnCadastrar
+            // btnSalvar
             // 
-            btnCadastrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCadastrar.Enabled = false;
-            btnCadastrar.Location = new Point(320, 202);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(70, 23);
-            btnCadastrar.TabIndex = 13;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
-            btnCadastrar.Click += btnCadastrar_Click;
+            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSalvar.Location = new Point(320, 202);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(70, 23);
+            btnSalvar.TabIndex = 13;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // chkAdmin
             // 
@@ -155,18 +152,6 @@
             txtConfirmarSenha.TabIndex = 11;
             txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
             // 
-            // datNascimento
-            // 
-            datNascimento.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            datNascimento.CustomFormat = "dd/MM/yyyy";
-            datNascimento.Format = DateTimePickerFormat.Short;
-            datNascimento.Location = new Point(128, 90);
-            datNascimento.MaxDate = new DateTime(2025, 2, 20, 0, 0, 0, 0);
-            datNascimento.Name = "datNascimento";
-            datNascimento.Size = new Size(262, 23);
-            datNascimento.TabIndex = 9;
-            datNascimento.Value = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            // 
             // txtSenha
             // 
             txtSenha.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -182,11 +167,11 @@
             // 
             lblSenha.Anchor = AnchorStyles.Right;
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(80, 123);
+            lblSenha.Location = new Point(43, 123);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(42, 15);
+            lblSenha.Size = new Size(79, 15);
             lblSenha.TabIndex = 4;
-            lblSenha.Text = "Senha:";
+            lblSenha.Text = "Alterar senha:";
             // 
             // lblConfirmarSenha
             // 
@@ -214,11 +199,12 @@
             mskCpf.Location = new Point(128, 61);
             mskCpf.Mask = "000,000,000-00";
             mskCpf.Name = "mskCpf";
+            mskCpf.ReadOnly = true;
             mskCpf.Size = new Size(262, 23);
             mskCpf.SkipLiterals = false;
             mskCpf.TabIndex = 8;
             mskCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            mskCpf.TextChanged += mskCpf_TextChanged;
+            mskCpf.KeyDown += mskCpf_KeyDown;
             // 
             // txtEmail
             // 
@@ -230,26 +216,23 @@
             txtEmail.TabIndex = 7;
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
-            // lblAviso
+            // txtNascimento
             // 
-            lblAviso.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblAviso.AutoSize = true;
-            lblAviso.ForeColor = Color.Green;
-            lblAviso.Location = new Point(15, 199);
-            lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(107, 30);
-            lblAviso.TabIndex = 14;
-            lblAviso.Text = "Cadastro efetuado com sucesso";
-            lblAviso.Visible = false;
+            txtNascimento.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtNascimento.Location = new Point(128, 90);
+            txtNascimento.Name = "txtNascimento";
+            txtNascimento.ReadOnly = true;
+            txtNascimento.Size = new Size(262, 23);
+            txtNascimento.TabIndex = 14;
             // 
-            // FrmCadastro
+            // FrmPerfil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 293);
+            ClientSize = new Size(417, 254);
             Controls.Add(tableLayoutPanel1);
-            Name = "FrmCadastro";
-            Text = "Cadastrar Usuário";
+            Name = "FrmPerfil";
+            Text = "Perfil do Usuário";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -259,19 +242,18 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Label lblNome;
-        private Button btnCadastrar;
+        private Button btnSalvar;
         private CheckBox chkAdmin;
         private Label lblEmail;
         private Label lblCpf;
         private Label lblDataNascimento;
         private TextBox txtConfirmarSenha;
-        private DateTimePicker datNascimento;
         private TextBox txtSenha;
         private Label lblSenha;
         private Label lblConfirmarSenha;
         private TextBox txtNome;
         private MaskedTextBox mskCpf;
         private TextBox txtEmail;
-        private Label lblAviso;
+        private TextBox txtNascimento;
     }
 }
