@@ -70,15 +70,15 @@
             // 
             mnuTelaPrincipalArquivoSair.Image = Properties.Resources.free_exit_icon_2860_thumb;
             mnuTelaPrincipalArquivoSair.Name = "mnuTelaPrincipalArquivoSair";
-            mnuTelaPrincipalArquivoSair.Size = new Size(404, 26);
+            mnuTelaPrincipalArquivoSair.Size = new Size(224, 26);
             mnuTelaPrincipalArquivoSair.Text = "Sai&r";
             mnuTelaPrincipalArquivoSair.Click += mnuTelaPrincipalArquivoSair_Click;
             // 
             // mnuTelaPrincipalArquivoSairDoPrograma
             // 
             mnuTelaPrincipalArquivoSairDoPrograma.Name = "mnuTelaPrincipalArquivoSairDoPrograma";
-            mnuTelaPrincipalArquivoSairDoPrograma.Size = new Size(404, 26);
-            mnuTelaPrincipalArquivoSairDoPrograma.Text = "Fechar o Aplicativo (só pd aparecer pra admin)";
+            mnuTelaPrincipalArquivoSairDoPrograma.Size = new Size(224, 26);
+            mnuTelaPrincipalArquivoSairDoPrograma.Text = "Fechar o Aplicativo";
             mnuTelaPrincipalArquivoSairDoPrograma.Click += mnuTelaPrincipalArquivoSairDoPrograma_Click;
             // 
             // mnuPrincipalAdmnistrador
