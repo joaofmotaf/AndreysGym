@@ -17,17 +17,19 @@ namespace AndreysGym.Forms
     {
         private static FrmGerenciamentoUsuario _instance;
         private BindingList<Usuario> _usuarios;
-        private Usuario _usuarioSelecionado;
+        private static Usuario _usuarioSelecionado;
+        private static Usuario _usuarioAtivo;
         private FrmGerenciamentoUsuario()
         {
             InitializeComponent();
             _usuarios = new BindingList<Usuario>(UsuarioRepository.FindAll());
             usuarioBindingSource.DataSource = _usuarios;
         }
-        public static FrmGerenciamentoUsuario GetInstance()
+        public static FrmGerenciamentoUsuario GetInstance(Usuario usuarioAtivo)
         {
             if (_instance == null || _instance.IsDisposed)
             {
+                _usuarioAtivo = usuarioAtivo;
                 _instance = new FrmGerenciamentoUsuario();
             }
             return _instance;
@@ -47,7 +49,8 @@ namespace AndreysGym.Forms
         private void btnProgramacoes_Click(object sender, EventArgs e)
         {
             // Abrir janela de visualização de programações, com o botão de adicionar programações ativado
-            FrmProgramacao.GetInstance(_usuarioSelecionado).Show();
+            MessageBox.Show($"{_usuarioSelecionado.Nome}, {_usuarioAtivo.Nome}");
+            FrmProgramacao.GetInstance(_usuarioSelecionado, _usuarioAtivo).Show();
         }
 
         private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)

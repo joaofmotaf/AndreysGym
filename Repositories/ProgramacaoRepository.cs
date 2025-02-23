@@ -74,31 +74,14 @@ namespace AndreysGym.Repositories
                 {
                     return dbContext.Programacoes
                         .Include("Usuario")
+                        .Include(p => p.Treinos)
+                        .ThenInclude(t => t.Exercicios)
                         .Where(p => p.Usuario.Id == usuario.Id)
                         .ToList<Programacao>();
                 }
             }
             catch (Exception)
             {
-                throw;
-            }
-        }
-
-        public static Programacao FindWTreinos(Programacao programacao)
-        {
-            try
-            {
-                using (Repository dbContext = new Repository())
-                {
-                    return dbContext.Programacoes
-                        .Include("Treinos")
-                        .Where(p => p.Id == programacao.Id)
-                        .FirstOrDefault();
-                }
-            }
-            catch (Exception)
-            {
-
                 throw;
             }
         }

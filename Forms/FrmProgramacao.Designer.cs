@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             pnlProgramacao = new Panel();
-            btnEditarProgramacao = new Button();
+            btnConcluirTreino = new Button();
             lstExercicios = new ListView();
+            nomeExercicio = new ColumnHeader();
+            series = new ColumnHeader();
+            repeticoes = new ColumnHeader();
             btnAdicionarProgramacao = new Button();
             treProgramacoes = new TreeView();
             pnlProgramacao.SuspendLayout();
@@ -38,7 +41,7 @@
             // 
             // pnlProgramacao
             // 
-            pnlProgramacao.Controls.Add(btnEditarProgramacao);
+            pnlProgramacao.Controls.Add(btnConcluirTreino);
             pnlProgramacao.Controls.Add(lstExercicios);
             pnlProgramacao.Controls.Add(btnAdicionarProgramacao);
             pnlProgramacao.Controls.Add(treProgramacoes);
@@ -47,22 +50,43 @@
             pnlProgramacao.Size = new Size(776, 426);
             pnlProgramacao.TabIndex = 0;
             // 
-            // btnEditarProgramacao
+            // btnConcluirTreino
             // 
-            btnEditarProgramacao.Location = new Point(149, 400);
-            btnEditarProgramacao.Name = "btnEditarProgramacao";
-            btnEditarProgramacao.Size = new Size(140, 23);
-            btnEditarProgramacao.TabIndex = 3;
-            btnEditarProgramacao.Text = "Editar Programação";
-            btnEditarProgramacao.UseVisualStyleBackColor = true;
+            btnConcluirTreino.Enabled = false;
+            btnConcluirTreino.Location = new Point(670, 371);
+            btnConcluirTreino.Name = "btnConcluirTreino";
+            btnConcluirTreino.Size = new Size(103, 23);
+            btnConcluirTreino.TabIndex = 3;
+            btnConcluirTreino.Text = "Concluir Treino";
+            btnConcluirTreino.UseVisualStyleBackColor = true;
+            btnConcluirTreino.Click += btnConcluirTreino_Click;
             // 
             // lstExercicios
             // 
+            lstExercicios.Columns.AddRange(new ColumnHeader[] { nomeExercicio, series, repeticoes });
+            lstExercicios.FullRowSelect = true;
+            lstExercicios.GridLines = true;
             lstExercicios.Location = new Point(193, 3);
             lstExercicios.Name = "lstExercicios";
-            lstExercicios.Size = new Size(580, 391);
+            lstExercicios.Size = new Size(580, 351);
             lstExercicios.TabIndex = 2;
             lstExercicios.UseCompatibleStateImageBehavior = false;
+            lstExercicios.View = View.Details;
+            // 
+            // nomeExercicio
+            // 
+            nomeExercicio.Text = "Nome do Exercício";
+            nomeExercicio.Width = 250;
+            // 
+            // series
+            // 
+            series.Text = "Séries";
+            series.Width = 70;
+            // 
+            // repeticoes
+            // 
+            repeticoes.Text = "Repetições";
+            repeticoes.Width = 90;
             // 
             // btnAdicionarProgramacao
             // 
@@ -99,7 +123,10 @@
         private Panel pnlProgramacao;
         private TreeView treProgramacoes;
         private Button btnAdicionarProgramacao;
-        private Button btnEditarProgramacao;
         private ListView lstExercicios;
+        private ColumnHeader nomeExercicio;
+        private ColumnHeader series;
+        private ColumnHeader repeticoes;
+        private Button btnConcluirTreino;
     }
 }
