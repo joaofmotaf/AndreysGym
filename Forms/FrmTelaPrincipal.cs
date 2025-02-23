@@ -103,9 +103,16 @@ namespace AndreysGym.Forms
 
         private void mnuPrincipalClientePerfil_Click(object sender, EventArgs e)
         {
-            FrmPerfil perfil = FrmPerfil.GetInstance(_usuario, false);
+            FrmPerfil perfil = FrmPerfil.GetInstance(_usuario, _usuario.Credencial.Admin);
             perfil.MdiParent = this;
             perfil.Show();
+        }
+
+        private void mnuPrincipalClienteTreinos_Click(object sender, EventArgs e)
+        {
+            FrmProgramacao programacao = FrmProgramacao.GetInstance(_usuario, _usuario.Credencial.Admin);
+            programacao.MdiParent = this;
+            programacao.Show();
         }
     }
 }

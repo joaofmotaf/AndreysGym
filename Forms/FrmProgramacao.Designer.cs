@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             pnlProgramacao = new Panel();
-            btnEditarProgramacao = new Button();
             lstExercicios = new ListView();
             btnAdicionarProgramacao = new Button();
             treProgramacoes = new TreeView();
+            nomeExercicio = new ColumnHeader();
+            series = new ColumnHeader();
+            repeticoes = new ColumnHeader();
             pnlProgramacao.SuspendLayout();
             SuspendLayout();
             // 
             // pnlProgramacao
             // 
-            pnlProgramacao.Controls.Add(btnEditarProgramacao);
             pnlProgramacao.Controls.Add(lstExercicios);
             pnlProgramacao.Controls.Add(btnAdicionarProgramacao);
             pnlProgramacao.Controls.Add(treProgramacoes);
@@ -47,22 +48,17 @@
             pnlProgramacao.Size = new Size(776, 426);
             pnlProgramacao.TabIndex = 0;
             // 
-            // btnEditarProgramacao
-            // 
-            btnEditarProgramacao.Location = new Point(149, 400);
-            btnEditarProgramacao.Name = "btnEditarProgramacao";
-            btnEditarProgramacao.Size = new Size(140, 23);
-            btnEditarProgramacao.TabIndex = 3;
-            btnEditarProgramacao.Text = "Editar Programação";
-            btnEditarProgramacao.UseVisualStyleBackColor = true;
-            // 
             // lstExercicios
             // 
+            lstExercicios.Columns.AddRange(new ColumnHeader[] { nomeExercicio, series, repeticoes });
+            lstExercicios.FullRowSelect = true;
+            lstExercicios.GridLines = true;
             lstExercicios.Location = new Point(193, 3);
             lstExercicios.Name = "lstExercicios";
             lstExercicios.Size = new Size(580, 391);
             lstExercicios.TabIndex = 2;
             lstExercicios.UseCompatibleStateImageBehavior = false;
+            lstExercicios.View = View.Details;
             // 
             // btnAdicionarProgramacao
             // 
@@ -82,6 +78,21 @@
             treProgramacoes.TabIndex = 0;
             treProgramacoes.AfterSelect += trvProgramacoes_AfterSelect;
             // 
+            // nomeExercicio
+            // 
+            nomeExercicio.Text = "Nome do Exercício";
+            nomeExercicio.Width = 250;
+            // 
+            // series
+            // 
+            series.Text = "Séries";
+            series.Width = 70;
+            // 
+            // repeticoes
+            // 
+            repeticoes.Text = "Repetições";
+            repeticoes.Width = 90;
+            // 
             // FrmProgramacao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -99,7 +110,9 @@
         private Panel pnlProgramacao;
         private TreeView treProgramacoes;
         private Button btnAdicionarProgramacao;
-        private Button btnEditarProgramacao;
         private ListView lstExercicios;
+        private ColumnHeader nomeExercicio;
+        private ColumnHeader series;
+        private ColumnHeader repeticoes;
     }
 }

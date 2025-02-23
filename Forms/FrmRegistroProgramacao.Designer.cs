@@ -47,7 +47,6 @@
             qtdSeries = new ColumnHeader();
             qtdRepeticoes = new ColumnHeader();
             treTreinos = new TreeView();
-            label1 = new Label();
             pnlRegistroProgramacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numRepeticoes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numSeries).BeginInit();
@@ -56,7 +55,6 @@
             // pnlRegistroProgramacao
             // 
             pnlRegistroProgramacao.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlRegistroProgramacao.Controls.Add(label1);
             pnlRegistroProgramacao.Controls.Add(lblTreino);
             pnlRegistroProgramacao.Controls.Add(btnCancelar);
             pnlRegistroProgramacao.Controls.Add(btnSalvar);
@@ -231,15 +229,6 @@
             treTreinos.TabIndex = 0;
             treTreinos.AfterSelect += treTreinos_AfterSelect;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(390, 352);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 15;
-            label1.Text = "label1";
-            // 
             // FrmRegistroProgramacao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -276,6 +265,5 @@
         private Button btnSalvar;
         private Button btnExcluirExercicio;
         private Label lblTreino;
-        private Label label1;
     }
 }

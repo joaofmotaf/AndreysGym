@@ -47,7 +47,7 @@ namespace AndreysGym.Forms
         private void btnProgramacoes_Click(object sender, EventArgs e)
         {
             // Abrir janela de visualização de programações, com o botão de adicionar programações ativado
-            FrmProgramacao.GetInstance(_usuarioSelecionado).Show();
+            FrmProgramacao.GetInstance(_usuarioSelecionado, true).Show();
         }
 
         private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)

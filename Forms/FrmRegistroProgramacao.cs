@@ -20,15 +20,17 @@ namespace AndreysGym.Forms
         private FrmRegistroProgramacao()
         {
             InitializeComponent();
+            _programacao = new Programacao()
+            {
+                DataInicio = DateTime.Today
+            };
             AtualizarTreinos();
             btnExcluirTreino.Enabled = false;
             btnAdicionarExercicio.Enabled = false;
             btnExcluirExercicio.Enabled = false;
         }
-        public static FrmRegistroProgramacao GetInstance(Programacao programacao, Usuario usuario)
+        public static FrmRegistroProgramacao GetInstance()
         {
-            _programacao = programacao;
-            _programacao.Usuario = usuario;
             if (_instance == null || _instance.IsDisposed)
             {
                 _instance = new FrmRegistroProgramacao();
@@ -138,7 +140,7 @@ namespace AndreysGym.Forms
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            ProgramacaoRepository.Save(_programacao);
+            FrmProgramacao.GetInstance().SalvarProgramacao(_programacao);
             Close();
         }
 
