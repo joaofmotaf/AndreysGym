@@ -23,11 +23,15 @@ namespace AndreysGym.Forms
             InitializeComponent();
         }
 
-        public static FrmCadastroAvaliacao GetInstancia()
+        
+        public static FrmCadastroAvaliacao GetInstance(Usuario usuarioAvaliado, Usuario personalResponsavel)
         {
             if (_instance == null || _instance.IsDisposed)
             {
                 _instance = new FrmCadastroAvaliacao();
+
+                _usuarioAvaliado = usuarioAvaliado;
+                _personalResponsavel = personalResponsavel;
             }
             return _instance;
         }
