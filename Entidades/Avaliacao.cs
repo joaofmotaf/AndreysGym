@@ -9,8 +9,8 @@ namespace AndreysGym.Entidades
 {
     public class Avaliacao
     {
-        public Usuario Usuario { get; set; }
         [Required]
+        public Usuario Usuario { get; set; }
 
         public UInt64 UsuarioId { get; set; }
 
