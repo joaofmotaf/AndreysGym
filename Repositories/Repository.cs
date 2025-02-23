@@ -38,7 +38,7 @@ namespace AndreysGym.Repositories
                 .HasOne(a => a.PersonalResponsavel)
                 .WithMany()
                 .HasForeignKey(a => a.PersonalResponsavelId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
