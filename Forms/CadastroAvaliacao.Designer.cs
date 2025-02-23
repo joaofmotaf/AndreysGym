@@ -35,12 +35,10 @@
             nudMassaGorda = new NumericUpDown();
             nudMassaMagra = new NumericUpDown();
             nudIdade = new NumericUpDown();
-            dtpDataAvaliacao = new DateTimePicker();
             txtHistorico = new TextBox();
             txtProblemasSaude = new TextBox();
             txtMedicamentos = new TextBox();
             txtObjetivo = new TextBox();
-            txtPersonal = new TextBox();
             chkSedentismo = new CheckBox();
             lblAltura = new Label();
             lblPeso = new Label();
@@ -52,7 +50,9 @@
             lblObjetivo = new Label();
             lblIdade = new Label();
             lblDataAvaliacao = new Label();
+            dtpDataAvaliacao = new DateTimePicker();
             lblPersonal = new Label();
+            txtPersonal = new TextBox();
             pnlCadAvaliacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAltura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPeso).BeginInit();
@@ -95,7 +95,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(304, 474);
+            btnSalvar.Location = new Point(304, 472);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(158, 42);
             btnSalvar.TabIndex = 24;
@@ -141,19 +141,12 @@
             // 
             // nudIdade
             // 
+            nudIdade.Enabled = false;
             nudIdade.Location = new Point(185, 93);
             nudIdade.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudIdade.Name = "nudIdade";
             nudIdade.Size = new Size(112, 27);
             nudIdade.TabIndex = 19;
-            // 
-            // dtpDataAvaliacao
-            // 
-            dtpDataAvaliacao.Format = DateTimePickerFormat.Short;
-            dtpDataAvaliacao.Location = new Point(185, 58);
-            dtpDataAvaliacao.Name = "dtpDataAvaliacao";
-            dtpDataAvaliacao.Size = new Size(112, 27);
-            dtpDataAvaliacao.TabIndex = 18;
             // 
             // txtHistorico
             // 
@@ -182,13 +175,6 @@
             txtObjetivo.Name = "txtObjetivo";
             txtObjetivo.Size = new Size(277, 27);
             txtObjetivo.TabIndex = 14;
-            // 
-            // txtPersonal
-            // 
-            txtPersonal.Location = new Point(185, 22);
-            txtPersonal.Name = "txtPersonal";
-            txtPersonal.Size = new Size(277, 27);
-            txtPersonal.TabIndex = 13;
             // 
             // chkSedentismo
             // 
@@ -298,6 +284,15 @@
             lblDataAvaliacao.Text = "Data da Avaliação:";
             lblDataAvaliacao.Click += label2_Click;
             // 
+            // dtpDataAvaliacao
+            // 
+            dtpDataAvaliacao.Enabled = false;
+            dtpDataAvaliacao.Format = DateTimePickerFormat.Short;
+            dtpDataAvaliacao.Location = new Point(185, 58);
+            dtpDataAvaliacao.Name = "dtpDataAvaliacao";
+            dtpDataAvaliacao.Size = new Size(112, 27);
+            dtpDataAvaliacao.TabIndex = 18;
+            // 
             // lblPersonal
             // 
             lblPersonal.AutoSize = true;
@@ -307,6 +302,14 @@
             lblPersonal.TabIndex = 0;
             lblPersonal.Text = "Nome do Personal:";
             lblPersonal.Click += label1_Click;
+            // 
+            // txtPersonal
+            // 
+            txtPersonal.Enabled = false;
+            txtPersonal.Location = new Point(185, 22);
+            txtPersonal.Name = "txtPersonal";
+            txtPersonal.Size = new Size(277, 27);
+            txtPersonal.TabIndex = 13;
             // 
             // CadastroAvaliacao
             // 
@@ -339,8 +342,6 @@
         private Label lblMedicamentos;
         private Label lblObjetivo;
         private Label lblIdade;
-        private Label lblDataAvaliacao;
-        private Label lblPersonal;
         private Label lblPeso;
         private Button btnSalvar;
         private Label lblAltura;
@@ -349,12 +350,14 @@
         private TextBox txtProblemasSaude;
         private TextBox txtMedicamentos;
         private TextBox txtObjetivo;
-        private TextBox txtPersonal;
         private NumericUpDown nudAltura;
         private NumericUpDown nudPeso;
         private NumericUpDown nudMassaGorda;
         private NumericUpDown nudMassaMagra;
         private NumericUpDown nudIdade;
         private DateTimePicker dtpDataAvaliacao;
+        private TextBox txtPersonal;
+        private Label lblDataAvaliacao;
+        private Label lblPersonal;
     }
 }
