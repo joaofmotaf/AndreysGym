@@ -39,11 +39,11 @@ namespace AndreysGym.Forms
 
             foreach (Programacao programacao in _programacoes)
             {
-                TreeNode nodeProgramacao = new TreeNode($"Programação de {programacao.DataInicio.ToString("d")}");
+                TreeNode nodeProgramacao = new TreeNode($"Programação de {programacao.DataInicio:d}");
                 nodeProgramacao.Tag = programacao;
                 foreach (Treino treino in programacao.Treinos)
                 {
-                    TreeNode nodeTreino = new TreeNode($"Treino {treino.Nome.ToString()}");
+                    TreeNode nodeTreino = new TreeNode($"Treino {treino.Nome}");
                     nodeTreino.Tag = treino;
                     nodeProgramacao.Nodes.Add(nodeTreino);
                 }
@@ -58,7 +58,7 @@ namespace AndreysGym.Forms
                 DataInicio = DateTime.Today
             };
             _programacoes.Add(programacao);
-            TreeNode nodeProgramacao = new TreeNode($"Programação de {programacao.DataInicio.ToString("d")}");
+            TreeNode nodeProgramacao = new TreeNode($"Programação de {programacao.DataInicio:d}");
             nodeProgramacao.Tag = programacao;
 
             treProgramacoes.Nodes.Insert(0, nodeProgramacao);
@@ -73,7 +73,7 @@ namespace AndreysGym.Forms
                 var p = ProgramacaoRepository.FindWTreinos(programacao);
                 foreach (Treino treino in p.Treinos)
                 {
-                    TreeNode nodeTreino = new TreeNode($"Treino {treino.Nome.ToString()}");
+                    TreeNode nodeTreino = new TreeNode($"Treino {treino.Nome}");
                     nodeTreino.Tag = treino;
                     treProgramacoes.SelectedNode.Nodes.Add(nodeTreino);
                 }

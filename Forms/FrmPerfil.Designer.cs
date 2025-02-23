@@ -104,6 +104,7 @@
             // chkAdmin
             // 
             chkAdmin.AutoSize = true;
+            chkAdmin.Enabled = false;
             chkAdmin.Location = new Point(128, 177);
             chkAdmin.Name = "chkAdmin";
             chkAdmin.Size = new Size(102, 19);

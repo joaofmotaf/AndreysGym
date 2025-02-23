@@ -2,6 +2,8 @@ using AndreysGym.Entidades;
 using AndreysGym.Repositories;
 
 namespace AndreysGym.Forms
+
+
 {
     public partial class FrmLogin : Form
     {
@@ -57,6 +59,11 @@ namespace AndreysGym.Forms
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Email = adm@mail.com\nSenha = admin");
         }
     }
 }
