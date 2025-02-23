@@ -35,12 +35,10 @@
             nudMassaGorda = new NumericUpDown();
             nudMassaMagra = new NumericUpDown();
             nudIdade = new NumericUpDown();
-            dtpDataAvaliacao = new DateTimePicker();
             txtHistorico = new TextBox();
             txtProblemasSaude = new TextBox();
             txtMedicamentos = new TextBox();
             txtObjetivo = new TextBox();
-            txtPersonal = new TextBox();
             chkSedentismo = new CheckBox();
             lblAltura = new Label();
             lblPeso = new Label();
@@ -51,8 +49,6 @@
             lblMedicamentos = new Label();
             lblObjetivo = new Label();
             lblIdade = new Label();
-            lblDataAvaliacao = new Label();
-            lblPersonal = new Label();
             pnlCadAvaliacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudAltura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPeso).BeginInit();
@@ -69,12 +65,10 @@
             pnlCadAvaliacao.Controls.Add(nudMassaGorda);
             pnlCadAvaliacao.Controls.Add(nudMassaMagra);
             pnlCadAvaliacao.Controls.Add(nudIdade);
-            pnlCadAvaliacao.Controls.Add(dtpDataAvaliacao);
             pnlCadAvaliacao.Controls.Add(txtHistorico);
             pnlCadAvaliacao.Controls.Add(txtProblemasSaude);
             pnlCadAvaliacao.Controls.Add(txtMedicamentos);
             pnlCadAvaliacao.Controls.Add(txtObjetivo);
-            pnlCadAvaliacao.Controls.Add(txtPersonal);
             pnlCadAvaliacao.Controls.Add(chkSedentismo);
             pnlCadAvaliacao.Controls.Add(lblAltura);
             pnlCadAvaliacao.Controls.Add(lblPeso);
@@ -85,17 +79,15 @@
             pnlCadAvaliacao.Controls.Add(lblMedicamentos);
             pnlCadAvaliacao.Controls.Add(lblObjetivo);
             pnlCadAvaliacao.Controls.Add(lblIdade);
-            pnlCadAvaliacao.Controls.Add(lblDataAvaliacao);
-            pnlCadAvaliacao.Controls.Add(lblPersonal);
             pnlCadAvaliacao.Location = new Point(6, 3);
             pnlCadAvaliacao.Name = "pnlCadAvaliacao";
-            pnlCadAvaliacao.Size = new Size(772, 593);
+            pnlCadAvaliacao.Size = new Size(772, 481);
             pnlCadAvaliacao.TabIndex = 0;
             pnlCadAvaliacao.Paint += pnlCadAvaliacao_Paint;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(304, 474);
+            btnSalvar.Location = new Point(309, 409);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(158, 42);
             btnSalvar.TabIndex = 24;
@@ -106,7 +98,7 @@
             // nudAltura
             // 
             nudAltura.DecimalPlaces = 2;
-            nudAltura.Location = new Point(185, 417);
+            nudAltura.Location = new Point(190, 354);
             nudAltura.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             nudAltura.Name = "nudAltura";
             nudAltura.Size = new Size(112, 27);
@@ -115,7 +107,7 @@
             // nudPeso
             // 
             nudPeso.DecimalPlaces = 2;
-            nudPeso.Location = new Point(185, 385);
+            nudPeso.Location = new Point(190, 322);
             nudPeso.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPeso.Name = "nudPeso";
             nudPeso.Size = new Size(112, 27);
@@ -124,7 +116,7 @@
             // nudMassaGorda
             // 
             nudMassaGorda.DecimalPlaces = 2;
-            nudMassaGorda.Location = new Point(185, 350);
+            nudMassaGorda.Location = new Point(190, 287);
             nudMassaGorda.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             nudMassaGorda.Name = "nudMassaGorda";
             nudMassaGorda.Size = new Size(112, 27);
@@ -133,7 +125,7 @@
             // nudMassaMagra
             // 
             nudMassaMagra.DecimalPlaces = 2;
-            nudMassaMagra.Location = new Point(185, 317);
+            nudMassaMagra.Location = new Point(190, 254);
             nudMassaMagra.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             nudMassaMagra.Name = "nudMassaMagra";
             nudMassaMagra.Size = new Size(112, 27);
@@ -141,59 +133,44 @@
             // 
             // nudIdade
             // 
-            nudIdade.Location = new Point(185, 93);
+            nudIdade.Location = new Point(190, 30);
             nudIdade.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudIdade.Name = "nudIdade";
             nudIdade.Size = new Size(112, 27);
             nudIdade.TabIndex = 19;
             // 
-            // dtpDataAvaliacao
-            // 
-            dtpDataAvaliacao.Format = DateTimePickerFormat.Short;
-            dtpDataAvaliacao.Location = new Point(185, 58);
-            dtpDataAvaliacao.Name = "dtpDataAvaliacao";
-            dtpDataAvaliacao.Size = new Size(112, 27);
-            dtpDataAvaliacao.TabIndex = 18;
-            // 
             // txtHistorico
             // 
-            txtHistorico.Location = new Point(185, 270);
+            txtHistorico.Location = new Point(190, 207);
             txtHistorico.Name = "txtHistorico";
             txtHistorico.Size = new Size(277, 27);
             txtHistorico.TabIndex = 17;
             // 
             // txtProblemasSaude
             // 
-            txtProblemasSaude.Location = new Point(185, 237);
+            txtProblemasSaude.Location = new Point(190, 174);
             txtProblemasSaude.Name = "txtProblemasSaude";
             txtProblemasSaude.Size = new Size(277, 27);
             txtProblemasSaude.TabIndex = 16;
             // 
             // txtMedicamentos
             // 
-            txtMedicamentos.Location = new Point(185, 159);
+            txtMedicamentos.Location = new Point(190, 96);
             txtMedicamentos.Name = "txtMedicamentos";
             txtMedicamentos.Size = new Size(277, 27);
             txtMedicamentos.TabIndex = 15;
             // 
             // txtObjetivo
             // 
-            txtObjetivo.Location = new Point(185, 126);
+            txtObjetivo.Location = new Point(190, 63);
             txtObjetivo.Name = "txtObjetivo";
             txtObjetivo.Size = new Size(277, 27);
             txtObjetivo.TabIndex = 14;
             // 
-            // txtPersonal
-            // 
-            txtPersonal.Location = new Point(185, 22);
-            txtPersonal.Name = "txtPersonal";
-            txtPersonal.Size = new Size(277, 27);
-            txtPersonal.TabIndex = 13;
-            // 
             // chkSedentismo
             // 
             chkSedentismo.AutoSize = true;
-            chkSedentismo.Location = new Point(29, 207);
+            chkSedentismo.Location = new Point(34, 144);
             chkSedentismo.Name = "chkSedentismo";
             chkSedentismo.Size = new Size(122, 24);
             chkSedentismo.TabIndex = 12;
@@ -204,7 +181,7 @@
             // lblAltura
             // 
             lblAltura.AutoSize = true;
-            lblAltura.Location = new Point(29, 424);
+            lblAltura.Location = new Point(34, 361);
             lblAltura.Name = "lblAltura";
             lblAltura.Size = new Size(86, 20);
             lblAltura.TabIndex = 10;
@@ -214,7 +191,7 @@
             // lblPeso
             // 
             lblPeso.AutoSize = true;
-            lblPeso.Location = new Point(29, 391);
+            lblPeso.Location = new Point(34, 328);
             lblPeso.Name = "lblPeso";
             lblPeso.Size = new Size(72, 20);
             lblPeso.TabIndex = 9;
@@ -224,7 +201,7 @@
             // lblMassaGorda
             // 
             lblMassaGorda.AutoSize = true;
-            lblMassaGorda.Location = new Point(29, 357);
+            lblMassaGorda.Location = new Point(34, 294);
             lblMassaGorda.Name = "lblMassaGorda";
             lblMassaGorda.Size = new Size(128, 20);
             lblMassaGorda.TabIndex = 8;
@@ -234,7 +211,7 @@
             // lblMassaMagra
             // 
             lblMassaMagra.AutoSize = true;
-            lblMassaMagra.Location = new Point(29, 324);
+            lblMassaMagra.Location = new Point(34, 261);
             lblMassaMagra.Name = "lblMassaMagra";
             lblMassaMagra.Size = new Size(130, 20);
             lblMassaMagra.TabIndex = 7;
@@ -244,7 +221,7 @@
             // lblHistorico
             // 
             lblHistorico.AutoSize = true;
-            lblHistorico.Location = new Point(29, 277);
+            lblHistorico.Location = new Point(34, 214);
             lblHistorico.Name = "lblHistorico";
             lblHistorico.Size = new Size(128, 20);
             lblHistorico.TabIndex = 6;
@@ -253,7 +230,7 @@
             // lblProblemasSaude
             // 
             lblProblemasSaude.AutoSize = true;
-            lblProblemasSaude.Location = new Point(29, 244);
+            lblProblemasSaude.Location = new Point(34, 181);
             lblProblemasSaude.Name = "lblProblemasSaude";
             lblProblemasSaude.Size = new Size(150, 20);
             lblProblemasSaude.TabIndex = 5;
@@ -263,7 +240,7 @@
             // lblMedicamentos
             // 
             lblMedicamentos.AutoSize = true;
-            lblMedicamentos.Location = new Point(29, 166);
+            lblMedicamentos.Location = new Point(34, 103);
             lblMedicamentos.Name = "lblMedicamentos";
             lblMedicamentos.Size = new Size(110, 20);
             lblMedicamentos.TabIndex = 4;
@@ -272,7 +249,7 @@
             // lblObjetivo
             // 
             lblObjetivo.AutoSize = true;
-            lblObjetivo.Location = new Point(29, 133);
+            lblObjetivo.Location = new Point(34, 70);
             lblObjetivo.Name = "lblObjetivo";
             lblObjetivo.Size = new Size(69, 20);
             lblObjetivo.TabIndex = 3;
@@ -281,38 +258,18 @@
             // lblIdade
             // 
             lblIdade.AutoSize = true;
-            lblIdade.Location = new Point(29, 100);
+            lblIdade.Location = new Point(34, 37);
             lblIdade.Name = "lblIdade";
             lblIdade.Size = new Size(50, 20);
             lblIdade.TabIndex = 2;
             lblIdade.Text = "Idade:";
             lblIdade.Click += label3_Click;
             // 
-            // lblDataAvaliacao
-            // 
-            lblDataAvaliacao.AutoSize = true;
-            lblDataAvaliacao.Location = new Point(29, 65);
-            lblDataAvaliacao.Name = "lblDataAvaliacao";
-            lblDataAvaliacao.Size = new Size(134, 20);
-            lblDataAvaliacao.TabIndex = 1;
-            lblDataAvaliacao.Text = "Data da Avaliação:";
-            lblDataAvaliacao.Click += label2_Click;
-            // 
-            // lblPersonal
-            // 
-            lblPersonal.AutoSize = true;
-            lblPersonal.Location = new Point(29, 29);
-            lblPersonal.Name = "lblPersonal";
-            lblPersonal.Size = new Size(134, 20);
-            lblPersonal.TabIndex = 0;
-            lblPersonal.Text = "Nome do Personal:";
-            lblPersonal.Click += label1_Click;
-            // 
             // CadastroAvaliacao
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 603);
+            ClientSize = new Size(782, 488);
             Controls.Add(pnlCadAvaliacao);
             Name = "CadastroAvaliacao";
             Text = "CadastroAvaliacao";
@@ -339,8 +296,6 @@
         private Label lblMedicamentos;
         private Label lblObjetivo;
         private Label lblIdade;
-        private Label lblDataAvaliacao;
-        private Label lblPersonal;
         private Label lblPeso;
         private Button btnSalvar;
         private Label lblAltura;
@@ -349,12 +304,10 @@
         private TextBox txtProblemasSaude;
         private TextBox txtMedicamentos;
         private TextBox txtObjetivo;
-        private TextBox txtPersonal;
         private NumericUpDown nudAltura;
         private NumericUpDown nudPeso;
         private NumericUpDown nudMassaGorda;
         private NumericUpDown nudMassaMagra;
         private NumericUpDown nudIdade;
-        private DateTimePicker dtpDataAvaliacao;
     }
 }
