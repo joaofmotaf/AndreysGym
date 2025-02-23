@@ -51,7 +51,7 @@
             // 
             tlpCadastro.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpCadastro.ColumnCount = 2;
-            tlpCadastro.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 125F));
+            tlpCadastro.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 143F));
             tlpCadastro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpCadastro.Controls.Add(lblNome, 0, 0);
             tlpCadastro.Controls.Add(btnCadastrar, 1, 7);
@@ -68,7 +68,8 @@
             tlpCadastro.Controls.Add(mskCpf, 1, 2);
             tlpCadastro.Controls.Add(txtEmail, 1, 1);
             tlpCadastro.Controls.Add(lblAviso, 0, 7);
-            tlpCadastro.Location = new Point(12, 12);
+            tlpCadastro.Location = new Point(14, 16);
+            tlpCadastro.Margin = new Padding(3, 4, 3, 4);
             tlpCadastro.Name = "tlpCadastro";
             tlpCadastro.RowCount = 8;
             tlpCadastro.RowStyles.Add(new RowStyle());
@@ -79,16 +80,16 @@
             tlpCadastro.RowStyles.Add(new RowStyle());
             tlpCadastro.RowStyles.Add(new RowStyle());
             tlpCadastro.RowStyles.Add(new RowStyle());
-            tlpCadastro.Size = new Size(393, 269);
+            tlpCadastro.Size = new Size(449, 359);
             tlpCadastro.TabIndex = 15;
             // 
             // lblNome
             // 
             lblNome.Anchor = AnchorStyles.Right;
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(79, 7);
+            lblNome.Location = new Point(87, 7);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
+            lblNome.Size = new Size(53, 20);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome:";
             // 
@@ -96,9 +97,10 @@
             // 
             btnCadastrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCadastrar.Enabled = false;
-            btnCadastrar.Location = new Point(320, 202);
+            btnCadastrar.Location = new Point(366, 251);
+            btnCadastrar.Margin = new Padding(3, 4, 3, 4);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(70, 23);
+            btnCadastrar.Size = new Size(80, 31);
             btnCadastrar.TabIndex = 13;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
@@ -107,9 +109,10 @@
             // chkAdmin
             // 
             chkAdmin.AutoSize = true;
-            chkAdmin.Location = new Point(128, 177);
+            chkAdmin.Location = new Point(146, 219);
+            chkAdmin.Margin = new Padding(3, 4, 3, 4);
             chkAdmin.Name = "chkAdmin";
-            chkAdmin.Size = new Size(102, 19);
+            chkAdmin.Size = new Size(126, 24);
             chkAdmin.TabIndex = 12;
             chkAdmin.Text = "Administrador";
             chkAdmin.UseVisualStyleBackColor = true;
@@ -118,9 +121,9 @@
             // 
             lblEmail.Anchor = AnchorStyles.Right;
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(83, 36);
+            lblEmail.Location = new Point(91, 42);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(39, 15);
+            lblEmail.Size = new Size(49, 20);
             lblEmail.TabIndex = 1;
             lblEmail.Text = "Email:";
             // 
@@ -128,9 +131,9 @@
             // 
             lblCpf.Anchor = AnchorStyles.Right;
             lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(91, 65);
+            lblCpf.Location = new Point(104, 77);
             lblCpf.Name = "lblCpf";
-            lblCpf.Size = new Size(31, 15);
+            lblCpf.Size = new Size(36, 20);
             lblCpf.TabIndex = 2;
             lblCpf.Text = "CPF:";
             // 
@@ -138,53 +141,56 @@
             // 
             lblDataNascimento.Anchor = AnchorStyles.Right;
             lblDataNascimento.AutoSize = true;
-            lblDataNascimento.Location = new Point(5, 94);
+            lblDataNascimento.Location = new Point(49, 105);
             lblDataNascimento.Name = "lblDataNascimento";
-            lblDataNascimento.Size = new Size(117, 15);
+            lblDataNascimento.Size = new Size(91, 40);
             lblDataNascimento.TabIndex = 3;
             lblDataNascimento.Text = "Data de Nascimento:";
             // 
             // txtConfirmarSenha
             // 
             txtConfirmarSenha.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtConfirmarSenha.Location = new Point(128, 148);
+            txtConfirmarSenha.Location = new Point(146, 184);
+            txtConfirmarSenha.Margin = new Padding(3, 4, 3, 4);
             txtConfirmarSenha.MaxLength = 64;
             txtConfirmarSenha.Name = "txtConfirmarSenha";
             txtConfirmarSenha.PasswordChar = '*';
-            txtConfirmarSenha.Size = new Size(262, 23);
+            txtConfirmarSenha.Size = new Size(300, 27);
             txtConfirmarSenha.TabIndex = 11;
-            txtConfirmarSenha.KeyDown += txtConfirmarSenha_KeyDown;
+            txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
             // 
             // datNascimento
             // 
             datNascimento.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             datNascimento.CustomFormat = "dd/MM/yyyy";
             datNascimento.Format = DateTimePickerFormat.Short;
-            datNascimento.Location = new Point(128, 90);
+            datNascimento.Location = new Point(146, 109);
+            datNascimento.Margin = new Padding(3, 4, 3, 4);
             datNascimento.MaxDate = new DateTime(2025, 2, 23, 0, 0, 0, 0);
             datNascimento.Name = "datNascimento";
-            datNascimento.Size = new Size(262, 23);
+            datNascimento.Size = new Size(300, 27);
             datNascimento.TabIndex = 9;
             datNascimento.Value = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // txtSenha
             // 
             txtSenha.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtSenha.Location = new Point(128, 119);
+            txtSenha.Location = new Point(146, 149);
+            txtSenha.Margin = new Padding(3, 4, 3, 4);
             txtSenha.MaxLength = 64;
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(262, 23);
+            txtSenha.Size = new Size(300, 27);
             txtSenha.TabIndex = 10;
-            txtSenha.KeyDown += txtSenha_KeyDown;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // lblSenha
             // 
             lblSenha.Anchor = AnchorStyles.Right;
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(80, 123);
+            lblSenha.Location = new Point(88, 152);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(42, 15);
+            lblSenha.Size = new Size(52, 20);
             lblSenha.TabIndex = 4;
             lblSenha.Text = "Senha:";
             // 
@@ -192,62 +198,66 @@
             // 
             lblConfirmarSenha.Anchor = AnchorStyles.Right;
             lblConfirmarSenha.AutoSize = true;
-            lblConfirmarSenha.Location = new Point(23, 152);
+            lblConfirmarSenha.Location = new Point(18, 187);
             lblConfirmarSenha.Name = "lblConfirmarSenha";
-            lblConfirmarSenha.Size = new Size(99, 15);
+            lblConfirmarSenha.Size = new Size(122, 20);
             lblConfirmarSenha.TabIndex = 5;
             lblConfirmarSenha.Text = "Confirmar Senha:";
             // 
             // txtNome
             // 
             txtNome.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtNome.Location = new Point(128, 3);
+            txtNome.Location = new Point(146, 4);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.MaxLength = 255;
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(262, 23);
+            txtNome.Size = new Size(300, 27);
             txtNome.TabIndex = 6;
-            txtNome.KeyDown += txtNome_KeyDown;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // mskCpf
             // 
             mskCpf.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mskCpf.Location = new Point(128, 61);
+            mskCpf.Location = new Point(146, 74);
+            mskCpf.Margin = new Padding(3, 4, 3, 4);
             mskCpf.Mask = "000,000,000-00";
             mskCpf.Name = "mskCpf";
-            mskCpf.Size = new Size(262, 23);
+            mskCpf.Size = new Size(300, 27);
             mskCpf.SkipLiterals = false;
             mskCpf.TabIndex = 8;
             mskCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            mskCpf.KeyDown += mskCpf_KeyDown;
+            mskCpf.TextChanged += mskCpf_TextChanged;
             // 
             // txtEmail
             // 
             txtEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtEmail.Location = new Point(128, 32);
+            txtEmail.Location = new Point(146, 39);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.MaxLength = 255;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(262, 23);
+            txtEmail.Size = new Size(300, 27);
             txtEmail.TabIndex = 7;
-            txtEmail.KeyDown += txtEmail_KeyDown;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // lblAviso
             // 
             lblAviso.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblAviso.AutoSize = true;
             lblAviso.ForeColor = Color.Green;
-            lblAviso.Location = new Point(15, 199);
+            lblAviso.Location = new Point(4, 247);
             lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(107, 30);
+            lblAviso.Size = new Size(136, 40);
             lblAviso.TabIndex = 14;
             lblAviso.Text = "Cadastro efetuado com sucesso";
             lblAviso.Visible = false;
             // 
             // FrmCadastro
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 293);
+            ClientSize = new Size(477, 391);
             Controls.Add(tlpCadastro);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmCadastro";
             Text = "Cadastrar Usuário";
             tlpCadastro.ResumeLayout(false);

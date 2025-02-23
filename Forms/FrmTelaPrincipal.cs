@@ -17,6 +17,29 @@ namespace AndreysGym.Forms
         private FrmPrincipal()
         {
             InitializeComponent();
+
+            if (_usuario.Credencial.Admin)
+            {
+                //Habilitado
+                mnuPrincipalCliente.Enabled = false;
+                mnuPrincipalAdmnistrador.Enabled = true;
+                mnuTelaPrincipalArquivoSairDoPrograma.Enabled = true;
+                //Vísivel
+                mnuPrincipalCliente.Visible = false;
+                mnuPrincipalAdmnistrador.Visible = true;
+                mnuTelaPrincipalArquivoSairDoPrograma.Visible = true;
+            }
+            else
+            {
+                //Habilitado
+                mnuPrincipalCliente.Enabled = true;
+                mnuPrincipalAdmnistrador.Enabled = false;
+                mnuTelaPrincipalArquivoSairDoPrograma.Enabled = false;
+                //Vísivel
+                mnuPrincipalCliente.Visible = true;
+                mnuPrincipalAdmnistrador.Visible = false;
+                mnuTelaPrincipalArquivoSairDoPrograma.Visible = false;
+            }
         }
         private static FrmPrincipal _instance;
         public static FrmPrincipal GetInstance(Usuario usuario)
