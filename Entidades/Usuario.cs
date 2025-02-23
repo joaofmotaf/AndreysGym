@@ -41,5 +41,7 @@ namespace AndreysGym.Entidades
             Pagamentos = new List<Pagamento>();
             Programacoes = new List<Programacao>();
         }
+        public Treino? TreinoAtual { get; set; }
+        public UInt64? TreinoAtualId { get; set; }
     }
 }

@@ -113,6 +113,7 @@ namespace AndreysGym.Repositories
                 {
                     return dbContext.Usuarios
                         .Include("Credencial")
+                        .Include("TreinoAtual")
                         .Where(u => u.Credencial.Email == credencial.Email
                             && u.Credencial.Senha == credencial.Senha)
                         .FirstOrDefault<Usuario>();
