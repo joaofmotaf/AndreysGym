@@ -11,6 +11,7 @@ namespace AndreysGym.Entidades
     {
         public Usuario Usuario { get; set; }
         [Required]
+
         public UInt64 UsuarioId { get; set; }
 
         public UInt64 Id { get; set; }
