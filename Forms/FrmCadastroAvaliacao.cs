@@ -94,7 +94,9 @@ namespace AndreysGym.Forms
                 MassaMagra = nudMassaMagra.Value,
                 MassaGorda = nudMassaGorda.Value,
                 Peso = nudPeso.Value,
-                Altura = nudAltura.Value
+                Altura = nudAltura.Value,
+                Usuario = _usuarioAvaliado,
+                PersonalResponsavel = _personalResponsavel
             };
         }
 
