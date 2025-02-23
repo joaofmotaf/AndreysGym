@@ -65,7 +65,19 @@ namespace AndreysGym.Forms
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            Avaliacao avaliacao = new Avaliacao
+            {
+                DataRealizacao = DateTime.Today,
+                Objetivo = txtObjetivo.Text,
+                Medicamentos = txtMedicamentos.Text,
+                ProblemasSaude = txtProblemasSaude.Text,
+                HistoricoDoencaFamiliar = txtHistorico.Text,
+                Sedentarismo = chkSedentarismo.Checked,
+                MassaMagra = nudMassaMagra.Value,
+                MassaGorda = nudMassaGorda.Value,
+                Peso = nudPeso.Value,
+                Altura = nudAltura.Value
+            };
         }
 
         private void pnlCadAvaliacao_Paint(object sender, PaintEventArgs e)

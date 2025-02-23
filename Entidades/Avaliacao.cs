@@ -26,19 +26,19 @@ namespace AndreysGym.Entidades
         [MaxLength(255)]
         public String Medicamentos { get; set; }
         [Required, MaxLength(255)]
-        public String Sedentarismo { get; set; }
+        public Boolean Sedentarismo { get; set; }
         [MaxLength(255)]
         public String ProblemasSaude { get; set; }
         [MaxLength(255)]
         public String HistoricoDoencaFamiliar { get; set; }
         [Required]
-        public Single MassaMagra { get; set; }
+        public Decimal MassaMagra { get; set; }
         [Required]
-        public Single MassaGorda { get; set; }
+        public Decimal MassaGorda { get; set; }
         [Required]
-        public Single Peso { get; set; }
+        public Decimal Peso { get; set; }
         [Required]
-        public Single Altura { get; set; }
+        public Decimal Altura { get; set; }
         [Required]
         public UInt16 PerimetroToraxRelaxado { get; set; }
         [Required]
@@ -67,16 +67,16 @@ namespace AndreysGym.Entidades
         public UInt16 PerimetroPanturrilhaEsquerda { get; set; }
         [Required]
         public UInt16 PerimetroPanturrilhaDireita { get; set; }
-        public Single CalcularPorcentagemMassaMagra()
+        public Decimal CalcularPorcentagemMassaMagra()
 
         {
             return MassaMagra / (MassaMagra + MassaGorda);
         }
-        public Single CalcularPorcentagemMassaGorda()
+        public Decimal CalcularPorcentagemMassaGorda()
         {
             return MassaGorda / (MassaMagra + MassaGorda);
         }
-        public Single CalcularImc()
+        public Decimal CalcularImc()
         {
             return Peso / (Altura * Altura);
         }
