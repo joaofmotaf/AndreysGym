@@ -9,13 +9,14 @@ namespace AndreysGym.Entidades
 {
     public class Avaliacao
     {
-        public Usuario Usuario { get; set; }
         [Required]
+        public Usuario Usuario { get; set; }
         public UInt64 UsuarioId { get; set; }
 
         public UInt64 Id { get; set; }
         [Required]
         public Usuario PersonalResponsavel { get; set; }
+        public UInt64 PersonalResponsavelId { get; set; }
         [Required]
         public DateTime DataRealizacao { get; set; }
         [Required]

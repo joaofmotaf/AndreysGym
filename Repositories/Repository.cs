@@ -24,5 +24,21 @@ namespace AndreysGym.Repositories
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseMySQL(_connectionParams);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Avaliacao>()
+        .HasOne(a => a.Usuario)
+        .WithMany() // Sem navegação reversa (se não houver necessidade)
+        .HasForeignKey(a => a.UsuarioId)
+        .OnDelete(DeleteBehavior.Cascade); // Para evitar cascata indesejada
+
+            modelBuilder.Entity<Avaliacao>()
+                .HasOne(a => a.PersonalResponsavel)
+                .WithMany()
+                .HasForeignKey(a => a.PersonalResponsavelId)
+                .OnDelete(DeleteBehavior.SetNull);
+        }
     }
 }
