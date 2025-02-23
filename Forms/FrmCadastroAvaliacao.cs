@@ -13,6 +13,9 @@ namespace AndreysGym.Forms
 {
     public partial class FrmCadastroAvaliacao : Form
     {
+        private static Usuario _usuarioAvaliado;
+        private static Usuario _personalResponsavel;
+
         private static FrmCadastroAvaliacao _instance;
 
         private FrmCadastroAvaliacao()
