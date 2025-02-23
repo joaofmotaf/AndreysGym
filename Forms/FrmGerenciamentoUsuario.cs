@@ -96,5 +96,15 @@ namespace AndreysGym.Forms
                 }
             }
         }
+
+        private void btnFrequencias_Click(object sender, EventArgs e)
+        {
+            if(_usuarioSelecionado != null)
+            {
+                var frequencia = FrmFrequencia.GetInstance(_usuarioSelecionado);
+                frequencia.MdiParent = FrmPrincipal.GetInstance();
+                frequencia.Show();
+            }
+        }
     }
 }

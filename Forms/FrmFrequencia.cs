@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AndreysGym.Entidades;
+using AndreysGym.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,22 +12,62 @@ using System.Windows.Forms;
 
 namespace AndreysGym.Forms
 {
-    public partial class FrmFrequencia: Form
+    public partial class FrmFrequencia : Form
     {
+        private List<Frequencia> _frequencias;
+        private static Usuario _usuario;
+        private static FrmFrequencia _instance;
         private FrmFrequencia()
-        {
+        {            
             InitializeComponent();
+            _frequencias = FrequenciaRepository.FindByUsuario(_usuario);
+            foreach (var frequencia in _frequencias)
+            {
+                mntFrequencia.AddBoldedDate(frequencia.Entrada);
+            }
         }
 
-        private static FrmFrequencia instancia;
 
+        public static FrmFrequencia GetInstance(Usuario usuario)
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _usuario = usuario;
+                _instance = new FrmFrequencia();
+            }
+            return _instance;
+        }
         public static FrmFrequencia GetInstance()
         {
-            if (instancia == null || instancia.IsDisposed)
+            if (_instance == null || _instance.IsDisposed)
             {
-                instancia = new FrmFrequencia();
+                _instance = new FrmFrequencia();
             }
-            return instancia;
+            return _instance;
+        }
+
+        private void mntFrequencia_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime dataSelecionada = e.Start.Date;
+
+            var frequenciasDoDia = _frequencias.Where(f => f.Entrada.Date == dataSelecionada).ToList();
+
+            if (frequenciasDoDia.Any())
+            {
+                string detalhes = "Registros do dia " + dataSelecionada.ToShortDateString() + ":\n";
+                foreach (var freq in frequenciasDoDia)
+                {
+                    string entrada = freq.Entrada.ToString("HH:mm:ss");
+                    string saida = freq.Saida.HasValue ? freq.Saida.Value.ToString("HH:mm:ss") : "Ainda no local";
+                    detalhes += $"Entrada: {entrada} - Saída: {saida}\n";
+                }
+
+                lblDetalhes.Text = detalhes;
+            }
+            else
+            {
+                lblDetalhes.Text = "Nenhum registro encontrado para esta data.";
+            }
         }
     }
 }

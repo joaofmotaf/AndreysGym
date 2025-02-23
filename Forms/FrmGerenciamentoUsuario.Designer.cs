@@ -210,6 +210,7 @@
             btnFrequencias.TabIndex = 1;
             btnFrequencias.Text = "Frequências";
             btnFrequencias.UseVisualStyleBackColor = true;
+            btnFrequencias.Click += btnFrequencias_Click;
             // 
             // btnPagamentos
             // 
