@@ -205,6 +205,7 @@
             lstExercicios.TabIndex = 1;
             lstExercicios.UseCompatibleStateImageBehavior = false;
             lstExercicios.View = View.Details;
+            lstExercicios.SelectedIndexChanged += lstExercicios_SelectedIndexChanged;
             // 
             // Nome
             // 

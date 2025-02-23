@@ -77,6 +77,7 @@ namespace AndreysGym.Repositories
                         .Include(p => p.Treinos)
                         .ThenInclude(t => t.Exercicios)
                         .Where(p => p.Usuario.Id == usuario.Id)
+                        .OrderBy(p => p.DataInicio)
                         .ToList<Programacao>();
                 }
             }
