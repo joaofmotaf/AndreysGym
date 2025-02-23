@@ -120,7 +120,7 @@ namespace AndreysGym.Forms
 
         private void mnuPrincipalClienteFrequencia_Click(object sender, EventArgs e)
         {
-            FrmFrequencia frequencia = FrmFrequencia.GetInstance();
+            FrmFrequencia frequencia = FrmFrequencia.GetInstance(_usuario);
             frequencia.MdiParent = this;
             frequencia.Show();
         }

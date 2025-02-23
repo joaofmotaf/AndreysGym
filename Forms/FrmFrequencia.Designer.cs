@@ -30,12 +30,14 @@
         {
             pnlFrequencia = new Panel();
             mntFrequencia = new MonthCalendar();
+            lblDetalhes = new Label();
             pnlFrequencia.SuspendLayout();
             SuspendLayout();
             // 
             // pnlFrequencia
             // 
             pnlFrequencia.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlFrequencia.Controls.Add(lblDetalhes);
             pnlFrequencia.Controls.Add(mntFrequencia);
             pnlFrequencia.Location = new Point(10, 9);
             pnlFrequencia.Margin = new Padding(3, 2, 3, 2);
@@ -49,6 +51,16 @@
             mntFrequencia.Margin = new Padding(8, 7, 8, 7);
             mntFrequencia.Name = "mntFrequencia";
             mntFrequencia.TabIndex = 0;
+            mntFrequencia.DateSelected += mntFrequencia_DateSelected;
+            // 
+            // lblDetalhes
+            // 
+            lblDetalhes.AutoSize = true;
+            lblDetalhes.Location = new Point(264, 95);
+            lblDetalhes.Name = "lblDetalhes";
+            lblDetalhes.Size = new Size(38, 15);
+            lblDetalhes.TabIndex = 1;
+            lblDetalhes.Text = "label1";
             // 
             // FrmFrequencia
             // 
@@ -61,6 +73,7 @@
             Name = "FrmFrequencia";
             Text = "FrmFrequencia";
             pnlFrequencia.ResumeLayout(false);
+            pnlFrequencia.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -68,5 +81,6 @@
 
         private Panel pnlFrequencia;
         private MonthCalendar mntFrequencia;
+        private Label lblDetalhes;
     }
 }
