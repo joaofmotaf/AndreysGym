@@ -30,7 +30,8 @@
         {
             mnuTelaPrincipal = new MenuStrip();
             mnuPrincipalArquivoSair = new ToolStripMenuItem();
-            sairToolStripMenuItem = new ToolStripMenuItem();
+            mnuTelaPrincipalArquivoSair = new ToolStripMenuItem();
+            mnuTelaPrincipalArquivoSairDoPrograma = new ToolStripMenuItem();
             mnuPrincipalAdmnistrador = new ToolStripMenuItem();
             mnuPrincipalAdmnistradorCadastrar = new ToolStripMenuItem();
             mnuPrincipalAdminstradorUsuarios = new ToolStripMenuItem();
@@ -42,60 +43,69 @@
             mnuPrincipalClienteAvaliacoes = new ToolStripMenuItem();
             mnuPrincipalClientePagamentos = new ToolStripMenuItem();
             mnuPrincipalAjuda = new ToolStripMenuItem();
-            termosDeUsoToolStripMenuItem = new ToolStripMenuItem();
-            sobreToolStripMenuItem = new ToolStripMenuItem();
+            mnuPrincipalAjudaTermosDeUso = new ToolStripMenuItem();
+            mnuPrincipalAjudaSobre = new ToolStripMenuItem();
             mnuTelaPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // mnuTelaPrincipal
             // 
+            mnuTelaPrincipal.ImageScalingSize = new Size(20, 20);
             mnuTelaPrincipal.Items.AddRange(new ToolStripItem[] { mnuPrincipalArquivoSair, mnuPrincipalAdmnistrador, mnuPrincipalCliente, mnuPrincipalAjuda });
             mnuTelaPrincipal.Location = new Point(0, 0);
             mnuTelaPrincipal.Name = "mnuTelaPrincipal";
-            mnuTelaPrincipal.Size = new Size(800, 24);
+            mnuTelaPrincipal.Padding = new Padding(7, 3, 0, 3);
+            mnuTelaPrincipal.Size = new Size(914, 30);
             mnuTelaPrincipal.TabIndex = 1;
             mnuTelaPrincipal.Text = "menuStrip1";
             // 
             // mnuPrincipalArquivoSair
             // 
-            mnuPrincipalArquivoSair.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
+            mnuPrincipalArquivoSair.DropDownItems.AddRange(new ToolStripItem[] { mnuTelaPrincipalArquivoSair, mnuTelaPrincipalArquivoSairDoPrograma });
             mnuPrincipalArquivoSair.Name = "mnuPrincipalArquivoSair";
-            mnuPrincipalArquivoSair.Size = new Size(61, 20);
+            mnuPrincipalArquivoSair.Size = new Size(75, 24);
             mnuPrincipalArquivoSair.Text = "A&rquivo";
             // 
-            // sairToolStripMenuItem
+            // mnuTelaPrincipalArquivoSair
             // 
-            sairToolStripMenuItem.Image = Properties.Resources.free_exit_icon_2860_thumb;
-            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(93, 22);
-            sairToolStripMenuItem.Text = "Sai&r";
-            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
+            mnuTelaPrincipalArquivoSair.Image = Properties.Resources.free_exit_icon_2860_thumb;
+            mnuTelaPrincipalArquivoSair.Name = "mnuTelaPrincipalArquivoSair";
+            mnuTelaPrincipalArquivoSair.Size = new Size(404, 26);
+            mnuTelaPrincipalArquivoSair.Text = "Sai&r";
+            mnuTelaPrincipalArquivoSair.Click += mnuTelaPrincipalArquivoSair_Click;
+            // 
+            // mnuTelaPrincipalArquivoSairDoPrograma
+            // 
+            mnuTelaPrincipalArquivoSairDoPrograma.Name = "mnuTelaPrincipalArquivoSairDoPrograma";
+            mnuTelaPrincipalArquivoSairDoPrograma.Size = new Size(404, 26);
+            mnuTelaPrincipalArquivoSairDoPrograma.Text = "Fechar o Aplicativo (só pd aparecer pra admin)";
+            mnuTelaPrincipalArquivoSairDoPrograma.Click += mnuTelaPrincipalArquivoSairDoPrograma_Click;
             // 
             // mnuPrincipalAdmnistrador
             // 
             mnuPrincipalAdmnistrador.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalAdmnistradorCadastrar, mnuPrincipalAdminstradorUsuarios, registrarFrequênciaToolStripMenuItem });
             mnuPrincipalAdmnistrador.Name = "mnuPrincipalAdmnistrador";
-            mnuPrincipalAdmnistrador.Size = new Size(139, 20);
+            mnuPrincipalAdmnistrador.Size = new Size(175, 24);
             mnuPrincipalAdmnistrador.Text = "Área do &Administrador";
             // 
             // mnuPrincipalAdmnistradorCadastrar
             // 
             mnuPrincipalAdmnistradorCadastrar.Name = "mnuPrincipalAdmnistradorCadastrar";
-            mnuPrincipalAdmnistradorCadastrar.Size = new Size(219, 22);
+            mnuPrincipalAdmnistradorCadastrar.Size = new Size(274, 26);
             mnuPrincipalAdmnistradorCadastrar.Text = "Cadastrar usuário";
             mnuPrincipalAdmnistradorCadastrar.Click += mnuPrincipalAdmnistradorCadastrar_Click;
             // 
             // mnuPrincipalAdminstradorUsuarios
             // 
             mnuPrincipalAdminstradorUsuarios.Name = "mnuPrincipalAdminstradorUsuarios";
-            mnuPrincipalAdminstradorUsuarios.Size = new Size(219, 22);
+            mnuPrincipalAdminstradorUsuarios.Size = new Size(274, 26);
             mnuPrincipalAdminstradorUsuarios.Text = "Gerenciamento de Usuarios";
             mnuPrincipalAdminstradorUsuarios.Click += mnuPrincipalAdminstradorUsuarios_Click;
             // 
             // registrarFrequênciaToolStripMenuItem
             // 
             registrarFrequênciaToolStripMenuItem.Name = "registrarFrequênciaToolStripMenuItem";
-            registrarFrequênciaToolStripMenuItem.Size = new Size(219, 22);
+            registrarFrequênciaToolStripMenuItem.Size = new Size(274, 26);
             registrarFrequênciaToolStripMenuItem.Text = "Registrar Frequência";
             registrarFrequênciaToolStripMenuItem.Click += registrarFrequênciaToolStripMenuItem_Click;
             // 
@@ -103,65 +113,70 @@
             // 
             mnuPrincipalCliente.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalClientePerfil, mnuPrincipalClienteFrequencia, mnuPrincipalClienteTreinos, mnuPrincipalClienteAvaliacoes, mnuPrincipalClientePagamentos });
             mnuPrincipalCliente.Name = "mnuPrincipalCliente";
-            mnuPrincipalCliente.Size = new Size(100, 20);
+            mnuPrincipalCliente.Size = new Size(126, 24);
             mnuPrincipalCliente.Text = "Área do &Cliente";
             // 
             // mnuPrincipalClientePerfil
             // 
             mnuPrincipalClientePerfil.Name = "mnuPrincipalClientePerfil";
-            mnuPrincipalClientePerfil.Size = new Size(140, 22);
+            mnuPrincipalClientePerfil.Size = new Size(224, 26);
             mnuPrincipalClientePerfil.Text = "Perfil";
+            mnuPrincipalClientePerfil.Click += mnuPrincipalClientePerfil_Click;
             // 
             // mnuPrincipalClienteFrequencia
             // 
             mnuPrincipalClienteFrequencia.Name = "mnuPrincipalClienteFrequencia";
-            mnuPrincipalClienteFrequencia.Size = new Size(140, 22);
+            mnuPrincipalClienteFrequencia.Size = new Size(224, 26);
             mnuPrincipalClienteFrequencia.Text = "Frequência";
+            mnuPrincipalClienteFrequencia.Click += mnuPrincipalClienteFrequencia_Click;
             // 
             // mnuPrincipalClienteTreinos
             // 
             mnuPrincipalClienteTreinos.Name = "mnuPrincipalClienteTreinos";
-            mnuPrincipalClienteTreinos.Size = new Size(140, 22);
+            mnuPrincipalClienteTreinos.Size = new Size(224, 26);
             mnuPrincipalClienteTreinos.Text = "Treinos";
             // 
             // mnuPrincipalClienteAvaliacoes
             // 
             mnuPrincipalClienteAvaliacoes.Name = "mnuPrincipalClienteAvaliacoes";
-            mnuPrincipalClienteAvaliacoes.Size = new Size(140, 22);
+            mnuPrincipalClienteAvaliacoes.Size = new Size(224, 26);
             mnuPrincipalClienteAvaliacoes.Text = "Avaliações";
             // 
             // mnuPrincipalClientePagamentos
             // 
             mnuPrincipalClientePagamentos.Name = "mnuPrincipalClientePagamentos";
-            mnuPrincipalClientePagamentos.Size = new Size(140, 22);
+            mnuPrincipalClientePagamentos.Size = new Size(224, 26);
             mnuPrincipalClientePagamentos.Text = "Pagamentos";
             // 
             // mnuPrincipalAjuda
             // 
-            mnuPrincipalAjuda.DropDownItems.AddRange(new ToolStripItem[] { termosDeUsoToolStripMenuItem, sobreToolStripMenuItem });
+            mnuPrincipalAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalAjudaTermosDeUso, mnuPrincipalAjudaSobre });
             mnuPrincipalAjuda.Name = "mnuPrincipalAjuda";
-            mnuPrincipalAjuda.Size = new Size(50, 20);
+            mnuPrincipalAjuda.Size = new Size(62, 24);
             mnuPrincipalAjuda.Text = "A&juda";
             // 
-            // termosDeUsoToolStripMenuItem
+            // mnuPrincipalAjudaTermosDeUso
             // 
-            termosDeUsoToolStripMenuItem.Name = "termosDeUsoToolStripMenuItem";
-            termosDeUsoToolStripMenuItem.Size = new Size(151, 22);
-            termosDeUsoToolStripMenuItem.Text = "Termos de uso";
+            mnuPrincipalAjudaTermosDeUso.Name = "mnuPrincipalAjudaTermosDeUso";
+            mnuPrincipalAjudaTermosDeUso.Size = new Size(188, 26);
+            mnuPrincipalAjudaTermosDeUso.Text = "Termos de uso";
+            mnuPrincipalAjudaTermosDeUso.Click += mnuPrincipalAjudaTermosDeUso_Click;
             // 
-            // sobreToolStripMenuItem
+            // mnuPrincipalAjudaSobre
             // 
-            sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            sobreToolStripMenuItem.Size = new Size(151, 22);
-            sobreToolStripMenuItem.Text = "Sobre";
+            mnuPrincipalAjudaSobre.Name = "mnuPrincipalAjudaSobre";
+            mnuPrincipalAjudaSobre.Size = new Size(188, 26);
+            mnuPrincipalAjudaSobre.Text = "Sobre";
+            mnuPrincipalAjudaSobre.Click += mnuPrincipalAjudaSobre_Click;
             // 
             // FrmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(mnuTelaPrincipal);
             IsMdiContainer = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmPrincipal";
             Text = "Tela Principal";
             FormClosing += FrmTelaPrincipal_FormClosing;
@@ -175,7 +190,7 @@
 
         private MenuStrip mnuTelaPrincipal;
         private ToolStripMenuItem mnuPrincipalArquivoSair;
-        private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem mnuTelaPrincipalArquivoSair;
         private ToolStripMenuItem mnuPrincipalAdmnistrador;
         private ToolStripMenuItem mnuPrincipalAdmnistradorCadastrar;
         private ToolStripMenuItem mnuPrincipalAdminstradorUsuarios;
@@ -186,8 +201,9 @@
         private ToolStripMenuItem mnuPrincipalClienteAvaliacoes;
         private ToolStripMenuItem mnuPrincipalClientePagamentos;
         private ToolStripMenuItem mnuPrincipalAjuda;
-        private ToolStripMenuItem termosDeUsoToolStripMenuItem;
-        private ToolStripMenuItem sobreToolStripMenuItem;
+        private ToolStripMenuItem mnuPrincipalAjudaTermosDeUso;
+        private ToolStripMenuItem mnuPrincipalAjudaSobre;
         private ToolStripMenuItem registrarFrequênciaToolStripMenuItem;
+        private ToolStripMenuItem mnuTelaPrincipalArquivoSairDoPrograma;
     }
 }

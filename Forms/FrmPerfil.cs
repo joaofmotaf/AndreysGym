@@ -29,7 +29,6 @@ namespace AndreysGym.Forms
             btnSalvar.Visible = _acessoAdmin;
             txtNome.ReadOnly = !_acessoAdmin;
             txtEmail.ReadOnly = !_acessoAdmin;
-            chkAdmin.Enabled = _acessoAdmin;
             lblSenha.Visible = _acessoAdmin;
             txtSenha.Visible = _acessoAdmin;
             lblConfirmarSenha.Visible = _acessoAdmin;
@@ -125,7 +124,6 @@ namespace AndreysGym.Forms
             _usuario.Nome = txtNome.Text;
             _usuario.Credencial.Email = txtEmail.Text;
             _usuario.Credencial.Senha = txtSenha.Text;
-            _usuario.Credencial.Admin = chkAdmin.Checked;
             UsuarioRepository.Save(_usuario);
             Close();
         }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
+            tlpCadastro = new TableLayoutPanel();
             lblNome = new Label();
             btnCadastrar = new Button();
             chkAdmin = new CheckBox();
@@ -44,43 +44,43 @@
             mskCpf = new MaskedTextBox();
             txtEmail = new TextBox();
             lblAviso = new Label();
-            tableLayoutPanel1.SuspendLayout();
+            tlpCadastro.SuspendLayout();
             SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tlpCadastro
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 125F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(lblNome, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnCadastrar, 1, 7);
-            tableLayoutPanel1.Controls.Add(chkAdmin, 1, 6);
-            tableLayoutPanel1.Controls.Add(lblEmail, 0, 1);
-            tableLayoutPanel1.Controls.Add(lblCpf, 0, 2);
-            tableLayoutPanel1.Controls.Add(lblDataNascimento, 0, 3);
-            tableLayoutPanel1.Controls.Add(txtConfirmarSenha, 1, 5);
-            tableLayoutPanel1.Controls.Add(datNascimento, 1, 3);
-            tableLayoutPanel1.Controls.Add(txtSenha, 1, 4);
-            tableLayoutPanel1.Controls.Add(lblSenha, 0, 4);
-            tableLayoutPanel1.Controls.Add(lblConfirmarSenha, 0, 5);
-            tableLayoutPanel1.Controls.Add(txtNome, 1, 0);
-            tableLayoutPanel1.Controls.Add(mskCpf, 1, 2);
-            tableLayoutPanel1.Controls.Add(txtEmail, 1, 1);
-            tableLayoutPanel1.Controls.Add(lblAviso, 0, 7);
-            tableLayoutPanel1.Location = new Point(12, 12);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(393, 269);
-            tableLayoutPanel1.TabIndex = 15;
+            tlpCadastro.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tlpCadastro.ColumnCount = 2;
+            tlpCadastro.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 125F));
+            tlpCadastro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpCadastro.Controls.Add(lblNome, 0, 0);
+            tlpCadastro.Controls.Add(btnCadastrar, 1, 7);
+            tlpCadastro.Controls.Add(chkAdmin, 1, 6);
+            tlpCadastro.Controls.Add(lblEmail, 0, 1);
+            tlpCadastro.Controls.Add(lblCpf, 0, 2);
+            tlpCadastro.Controls.Add(lblDataNascimento, 0, 3);
+            tlpCadastro.Controls.Add(txtConfirmarSenha, 1, 5);
+            tlpCadastro.Controls.Add(datNascimento, 1, 3);
+            tlpCadastro.Controls.Add(txtSenha, 1, 4);
+            tlpCadastro.Controls.Add(lblSenha, 0, 4);
+            tlpCadastro.Controls.Add(lblConfirmarSenha, 0, 5);
+            tlpCadastro.Controls.Add(txtNome, 1, 0);
+            tlpCadastro.Controls.Add(mskCpf, 1, 2);
+            tlpCadastro.Controls.Add(txtEmail, 1, 1);
+            tlpCadastro.Controls.Add(lblAviso, 0, 7);
+            tlpCadastro.Location = new Point(12, 12);
+            tlpCadastro.Name = "tlpCadastro";
+            tlpCadastro.RowCount = 8;
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.RowStyles.Add(new RowStyle());
+            tlpCadastro.Size = new Size(393, 269);
+            tlpCadastro.TabIndex = 15;
             // 
             // lblNome
             // 
@@ -153,7 +153,7 @@
             txtConfirmarSenha.PasswordChar = '*';
             txtConfirmarSenha.Size = new Size(262, 23);
             txtConfirmarSenha.TabIndex = 11;
-            txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
+            txtConfirmarSenha.KeyDown += txtConfirmarSenha_KeyDown;
             // 
             // datNascimento
             // 
@@ -161,7 +161,7 @@
             datNascimento.CustomFormat = "dd/MM/yyyy";
             datNascimento.Format = DateTimePickerFormat.Short;
             datNascimento.Location = new Point(128, 90);
-            datNascimento.MaxDate = new DateTime(2025, 2, 20, 0, 0, 0, 0);
+            datNascimento.MaxDate = new DateTime(2025, 2, 23, 0, 0, 0, 0);
             datNascimento.Name = "datNascimento";
             datNascimento.Size = new Size(262, 23);
             datNascimento.TabIndex = 9;
@@ -176,7 +176,7 @@
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(262, 23);
             txtSenha.TabIndex = 10;
-            txtSenha.TextChanged += txtSenha_TextChanged;
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // lblSenha
             // 
@@ -206,7 +206,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(262, 23);
             txtNome.TabIndex = 6;
-            txtNome.TextChanged += txtNome_TextChanged;
+            txtNome.KeyDown += txtNome_KeyDown;
             // 
             // mskCpf
             // 
@@ -218,7 +218,7 @@
             mskCpf.SkipLiterals = false;
             mskCpf.TabIndex = 8;
             mskCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            mskCpf.TextChanged += mskCpf_TextChanged;
+            mskCpf.KeyDown += mskCpf_KeyDown;
             // 
             // txtEmail
             // 
@@ -228,7 +228,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(262, 23);
             txtEmail.TabIndex = 7;
-            txtEmail.TextChanged += txtEmail_TextChanged;
+            txtEmail.KeyDown += txtEmail_KeyDown;
             // 
             // lblAviso
             // 
@@ -247,17 +247,17 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(417, 293);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tlpCadastro);
             Name = "FrmCadastro";
             Text = "Cadastrar Usuário";
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            tlpCadastro.ResumeLayout(false);
+            tlpCadastro.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tlpCadastro;
         private Label lblNome;
         private Button btnCadastrar;
         private CheckBox chkAdmin;

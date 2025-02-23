@@ -60,7 +60,7 @@ namespace AndreysGym.Forms
                 btnAvaliacoes.Enabled = true;
                 btnFrequencias.Enabled = true;
                 btnEditar.Enabled = true;
-                btnExcluir.Enabled = true;sss
+                btnExcluir.Enabled = true;
             }
         }
 
@@ -69,7 +69,7 @@ namespace AndreysGym.Forms
             if (_usuarioSelecionado != null)
             {
                 Usuario usuarioComCredencial = UsuarioRepository.FindByIdWCredencial(_usuarioSelecionado.Id);
-                FrmPerfil.GetInstance(usuarioComCredencial, true);
+                FrmPerfil.GetInstance(usuarioComCredencial, true).MdiParent = FrmPrincipal.GetInstance();
                 FrmPerfil.GetInstance().Show();
 
             }
