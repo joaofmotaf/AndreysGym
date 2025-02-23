@@ -47,27 +47,29 @@
             panel1.Controls.Add(txtEmail);
             panel1.Controls.Add(lblSenha);
             panel1.Controls.Add(lblEmail);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(14, 16);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(327, 86);
+            panel1.Size = new Size(374, 115);
             panel1.TabIndex = 0;
             // 
             // lblSucesso
             // 
             lblSucesso.AutoSize = true;
             lblSucesso.ForeColor = Color.Green;
-            lblSucesso.Location = new Point(3, 65);
+            lblSucesso.Location = new Point(3, 87);
             lblSucesso.Name = "lblSucesso";
-            lblSucesso.Size = new Size(99, 15);
+            lblSucesso.Size = new Size(125, 20);
             lblSucesso.TabIndex = 5;
             lblSucesso.Text = "Acesso permitido";
             lblSucesso.Visible = false;
             // 
             // btnEntrar
             // 
-            btnEntrar.Location = new Point(249, 61);
+            btnEntrar.Location = new Point(285, 81);
+            btnEntrar.Margin = new Padding(3, 4, 3, 4);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(75, 23);
+            btnEntrar.Size = new Size(86, 31);
             btnEntrar.TabIndex = 4;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
@@ -75,47 +77,51 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(51, 32);
+            txtSenha.Location = new Point(58, 43);
+            txtSenha.Margin = new Padding(3, 4, 3, 4);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(273, 23);
+            txtSenha.Size = new Size(311, 27);
             txtSenha.TabIndex = 3;
             txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(51, 3);
+            txtEmail.Location = new Point(58, 4);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(273, 23);
+            txtEmail.Size = new Size(311, 27);
             txtEmail.TabIndex = 2;
             txtEmail.KeyDown += txtEmail_KeyDown;
             // 
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(3, 35);
+            lblSenha.Location = new Point(3, 47);
             lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(42, 15);
+            lblSenha.Size = new Size(52, 20);
             lblSenha.TabIndex = 1;
             lblSenha.Text = "Senha:";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(3, 6);
+            lblEmail.Location = new Point(3, 8);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(39, 15);
+            lblEmail.Size = new Size(49, 20);
             lblEmail.TabIndex = 0;
             lblEmail.Text = "Email:";
             // 
             // FrmRegistroFrequencia
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(351, 110);
+            ClientSize = new Size(401, 147);
             Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmRegistroFrequencia";
             Text = "Registro de Frequência";
+            Load += FrmRegistroFrequencia_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

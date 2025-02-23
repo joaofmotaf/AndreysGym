@@ -1,6 +1,6 @@
 ﻿namespace AndreysGym.Forms
 {
-    partial class CadastroAvaliacao
+    partial class FrmCadastroAvaliacao
     {
         /// <summary>
         /// Required designer variable.
@@ -211,7 +211,6 @@
             lblAltura.Size = new Size(86, 20);
             lblAltura.TabIndex = 10;
             lblAltura.Text = "Altura (cm):";
-            lblAltura.Click += label11_Click;
             // 
             // lblPeso
             // 
@@ -221,7 +220,6 @@
             lblPeso.Size = new Size(72, 20);
             lblPeso.TabIndex = 9;
             lblPeso.Text = "Peso (kg):";
-            lblPeso.Click += label10_Click;
             // 
             // lblMassaGorda
             // 
@@ -231,7 +229,6 @@
             lblMassaGorda.Size = new Size(128, 20);
             lblMassaGorda.TabIndex = 8;
             lblMassaGorda.Text = "Massa Gorda (kg):";
-            lblMassaGorda.Click += label9_Click;
             // 
             // lblMassaMagra
             // 
@@ -241,7 +238,6 @@
             lblMassaMagra.Size = new Size(130, 20);
             lblMassaMagra.TabIndex = 7;
             lblMassaMagra.Text = "Massa Magra (kg):";
-            lblMassaMagra.Click += label8_Click;
             // 
             // lblHistorico
             // 
@@ -260,7 +256,6 @@
             lblProblemasSaude.Size = new Size(150, 20);
             lblProblemasSaude.TabIndex = 5;
             lblProblemasSaude.Text = "Problemas De Saúde:";
-            lblProblemasSaude.Click += label6_Click;
             // 
             // lblMedicamentos
             // 
@@ -288,7 +283,6 @@
             lblIdade.Size = new Size(50, 20);
             lblIdade.TabIndex = 2;
             lblIdade.Text = "Idade:";
-            lblIdade.Click += label3_Click;
             // 
             // lblDataRealizacao
             // 
@@ -298,7 +292,6 @@
             lblDataRealizacao.Size = new Size(141, 20);
             lblDataRealizacao.TabIndex = 1;
             lblDataRealizacao.Text = "Data de Realização:";
-            lblDataRealizacao.Click += label2_Click;
             // 
             // lblPersonal
             // 
@@ -308,7 +301,6 @@
             lblPersonal.Size = new Size(134, 20);
             lblPersonal.TabIndex = 0;
             lblPersonal.Text = "Nome do Personal:";
-            lblPersonal.Click += label1_Click;
             // 
             // CadastroAvaliacao
             // 

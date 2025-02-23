@@ -11,11 +11,22 @@ using System.Windows.Forms;
 
 namespace AndreysGym.Forms
 {
-    public partial class CadastroAvaliacao : Form
+    public partial class FrmCadastroAvaliacao : Form
     {
-        public CadastroAvaliacao()
+        private static FrmCadastroAvaliacao _instance;
+
+        private FrmCadastroAvaliacao()
         {
             InitializeComponent();
+        }
+
+        public static FrmCadastroAvaliacao GetInstancia()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new FrmCadastroAvaliacao();
+            }
+            return _instance;
         }
 
         private void label3_Click(object sender, EventArgs e)
