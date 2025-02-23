@@ -14,18 +14,29 @@ namespace AndreysGym.Forms
 {
     public partial class FrmProgramacao : Form
     {
-        private static Usuario _usuario;
+        private static Usuario _usuarioSelecionado;
         private static List<Programacao> _programacoes;
         private static FrmProgramacao _instance;
+        private static Usuario _usuarioAtivo;
         private FrmProgramacao()
         {
             InitializeComponent();
             AtualizarProgramacoes();
-
+            btnAdicionarProgramacao.Visible = _usuarioAtivo.Credencial.Admin;
+            btnConcluirTreino.Visible = (_usuarioAtivo.Id == _usuarioSelecionado.Id);
         }
-        public static FrmProgramacao GetInstance(Usuario usuario)
+        public static FrmProgramacao GetInstance(Usuario usuarioSelecionado, Usuario usuarioAtivo)
         {
-            _usuario = usuario;
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _usuarioSelecionado = usuarioSelecionado;
+                _usuarioAtivo = usuarioAtivo;
+                _instance = new FrmProgramacao();
+            }
+            return _instance;
+        }
+        public static FrmProgramacao GetInstance()
+        {
             if (_instance == null || _instance.IsDisposed)
             {
                 _instance = new FrmProgramacao();
@@ -34,7 +45,7 @@ namespace AndreysGym.Forms
         }
         private void AtualizarProgramacoes()
         {
-            _programacoes = ProgramacaoRepository.FindByUsuario(_usuario);
+            _programacoes = ProgramacaoRepository.FindByUsuario(_usuarioSelecionado);
             treProgramacoes.Nodes.Clear();
 
             foreach (Programacao programacao in _programacoes)
@@ -43,7 +54,16 @@ namespace AndreysGym.Forms
                 nodeProgramacao.Tag = programacao;
                 foreach (Treino treino in programacao.Treinos)
                 {
-                    TreeNode nodeTreino = new TreeNode($"Treino {treino.Nome}");
+                    TreeNode nodeTreino;
+                    if (treino.Id == _usuarioAtivo.TreinoAtualId)
+                    {
+                        nodeTreino = new TreeNode($"Treino {treino.Nome} (Atual)");
+                    }
+                    else
+                    {
+                        nodeTreino = new TreeNode($"Treino {treino.Nome}");
+                    }
+
                     nodeTreino.Tag = treino;
                     nodeProgramacao.Nodes.Add(nodeTreino);
                 }
@@ -53,31 +73,59 @@ namespace AndreysGym.Forms
 
         private void btnAdicionarProgramacao_Click(object sender, EventArgs e)
         {
-            Programacao programacao = new Programacao
-            {
-                DataInicio = DateTime.Today
-            };
+            FrmRegistroProgramacao.GetInstance().Show();
+        }
+
+        public void SalvarProgramacao(Programacao programacao)
+        {
+            programacao.Usuario = _usuarioSelecionado;
+            _usuarioSelecionado.TreinoAtual = programacao.Treinos.FirstOrDefault();
             _programacoes.Add(programacao);
+            ProgramacaoRepository.Save(programacao);
             TreeNode nodeProgramacao = new TreeNode($"Programação de {programacao.DataInicio:d}");
             nodeProgramacao.Tag = programacao;
 
             treProgramacoes.Nodes.Insert(0, nodeProgramacao);
-
-            FrmRegistroProgramacao.GetInstance(programacao, _usuario).Show();
+            AtualizarProgramacoes();
         }
 
         private void trvProgramacoes_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (treProgramacoes.SelectedNode.Tag is Programacao programacao)
+            lstExercicios.Items.Clear();
+            if (treProgramacoes.SelectedNode.Tag is Treino treino)
             {
-                var p = ProgramacaoRepository.FindWTreinos(programacao);
-                foreach (Treino treino in p.Treinos)
+                btnConcluirTreino.Enabled = (_usuarioAtivo.TreinoAtualId == treino.Id);
+                foreach (Exercicio exercicio in treino.Exercicios)
                 {
-                    TreeNode nodeTreino = new TreeNode($"Treino {treino.Nome}");
-                    nodeTreino.Tag = treino;
-                    treProgramacoes.SelectedNode.Nodes.Add(nodeTreino);
+                    ListViewItem item = new ListViewItem(exercicio.Nome);
+                    item.SubItems.Add(exercicio.QuantidadeSeries.ToString());
+                    item.SubItems.Add(exercicio.QuantidadeRepeticoes.ToString());
+
+                    item.Tag = exercicio;
+
+                    lstExercicios.Items.Add(item);
                 }
             }
+        }
+
+        private void btnConcluirTreino_Click(object sender, EventArgs e)
+        {
+            Programacao programacao = ((Treino)treProgramacoes.SelectedNode.Tag).Programacao;
+            var treinoAtual = programacao.Treinos.Where(t => t.Id == _usuarioAtivo.TreinoAtual.Id).FirstOrDefault();
+            var indiceTreinoAtual = programacao.Treinos.IndexOf(treinoAtual);
+            MessageBox.Show(_usuarioAtivo.TreinoAtual.Id.ToString());
+            MessageBox.Show(indiceTreinoAtual.ToString());
+            if (programacao.Treinos.Count == indiceTreinoAtual)
+            {
+                _usuarioAtivo.TreinoAtual = programacao.Treinos.FirstOrDefault();
+            }
+            else
+            {
+                _usuarioAtivo.TreinoAtual = programacao.Treinos[indiceTreinoAtual + 1];
+            }
+            UsuarioRepository.Save(_usuarioAtivo);
+            MessageBox.Show(_usuarioAtivo.TreinoAtual.Id.ToString());
+            AtualizarProgramacoes();
         }
     }
 }

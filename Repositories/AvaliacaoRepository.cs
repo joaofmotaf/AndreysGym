@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace AndreysGym.Repositories
 {
-    public class ProgramacaoRepository
+    public class AvaliacaoRepository
     {
-        public static void Save(Programacao programacao)
+        public static void Save(Avaliacao avaliacao)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    dbContext.Entry(programacao.Usuario).State = EntityState.Unchanged;
-                    if (programacao.Id == 0)
+                    dbContext.Entry(avaliacao.Usuario).State = EntityState.Unchanged;
+                    if (avaliacao.Id == 0)
                     {
-                        dbContext.Programacoes.Add(programacao);
+                        dbContext.Avaliacoes.Add(avaliacao);
                     }
                     else
                     {
-                        dbContext.Entry(programacao).State
+                        dbContext.Entry(avaliacao).State
                             = EntityState.Modified;
                     }
 
@@ -36,13 +36,13 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static List<Programacao> FindAll()
+        public static List<Avaliacao> FindAll()
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Programacoes.ToList();
+                    return dbContext.Avaliacoes.ToList();
                 }
             }
             catch (Exception)
@@ -51,13 +51,13 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static Programacao FindById(UInt64 id)
+        public static Avaliacao FindById(Int64 id)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Programacoes.Find(id);
+                    return dbContext.Avaliacoes.Find(id);
                 }
             }
             catch (Exception)
@@ -66,18 +66,16 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static List<Programacao> FindByUsuario(Usuario usuario)
+        public static List<Avaliacao> FindByUsuario(Usuario usuario)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Programacoes
+                    return dbContext.Avaliacoes
                         .Include("Usuario")
-                        .Include(p => p.Treinos)
-                        .ThenInclude(t => t.Exercicios)
                         .Where(p => p.Usuario.Id == usuario.Id)
-                        .ToList<Programacao>();
+                        .ToList<Avaliacao>();
                 }
             }
             catch (Exception)
@@ -86,14 +84,14 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static void Remove(Programacao programacao)
+        public static void Remove(Avaliacao avaliacao)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    dbContext.Programacoes.Attach(programacao);
-                    dbContext.Programacoes.Remove(programacao);
+                    dbContext.Avaliacoes.Attach(avaliacao);
+                    dbContext.Avaliacoes.Remove(avaliacao);
                     dbContext.SaveChanges();
                 }
             }
