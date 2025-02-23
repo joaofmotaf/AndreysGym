@@ -17,6 +17,17 @@ namespace AndreysGym.Forms
         private FrmPrincipal()
         {
             InitializeComponent();
+
+            //if (_usuario.Credencial.Admin)
+            //{
+            //    mnuPrincipalCliente.Enabled = false;
+            //    mnuPrincipalAdmnistrador.Enabled = true;
+            //}
+            //else
+            //{
+            //    mnuPrincipalCliente.Enabled = true;
+            //    mnuPrincipalAdmnistrador.Enabled = false;
+            //}
         }
         private static FrmPrincipal _instance;
         public static FrmPrincipal GetInstance(Usuario usuario)
