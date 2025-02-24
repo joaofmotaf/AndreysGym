@@ -49,7 +49,6 @@ namespace AndreysGym.Forms
         private void btnProgramacoes_Click(object sender, EventArgs e)
         {
             // Abrir janela de visualização de programações, com o botão de adicionar programações ativado
-            MessageBox.Show($"{_usuarioSelecionado.Nome}, {_usuarioAtivo.Nome}");
             FrmProgramacao.GetInstance(_usuarioSelecionado, _usuarioAtivo).Show();
         }
 
@@ -105,6 +104,14 @@ namespace AndreysGym.Forms
                 frequencia.MdiParent = FrmPrincipal.GetInstance();
                 frequencia.Show();
             }
+        }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPagamento.GetInstance().MdiParent = this;
+            FrmCadastroPagamento.GetInstance().WindowState = FormWindowState.Maximized;
+            FrmCadastroPagamento.GetInstance().Show();
+            FrmCadastroPagamento.GetInstance().BringToFront();
         }
     }
 }
