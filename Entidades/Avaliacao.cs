@@ -156,6 +156,11 @@ namespace AndreysGym.Entidades
         [Category("Indicadores")]
         [DisplayName("Índice de Massa Corporal (IMC)")]
         public String IMC => (Peso * 10000 / (Altura * Altura)).ToString("F2");
+
+        public override string ToString()
+        {
+            return $"Avaliação {Usuario.Avaliacoes.IndexOf(this) + 1} - {DataRealizacao:d}";
+        }
     }
 
 }
