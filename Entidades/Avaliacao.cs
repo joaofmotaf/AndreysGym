@@ -78,7 +78,7 @@ namespace AndreysGym.Entidades
         }
         public Decimal CalcularImc()
         {
-            return Peso / (Altura * Altura);
+            return Peso * 10000 / (Altura * Altura);
         }
     }
 }
