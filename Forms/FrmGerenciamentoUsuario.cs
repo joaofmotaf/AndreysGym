@@ -109,7 +109,7 @@ namespace AndreysGym.Forms
 
         private void btnAvaliacoes_Click(object sender, EventArgs e)
         {
-            FrmAvaliacoes.GetInstance().Show();
+            FrmAvaliacoes.GetInstance(_usuarioSelecionado, _usuarioAtivo).Show();
         }
     }
 }

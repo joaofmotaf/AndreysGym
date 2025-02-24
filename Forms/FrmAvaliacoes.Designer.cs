@@ -28,42 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            propertyGrid1 = new PropertyGrid();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCadastrarAvaliacao = new System.Windows.Forms.Button();
+            this.lstAvaliacoes = new System.Windows.Forms.ListView();
+            this.proAvaliacao = new System.Windows.Forms.PropertyGrid();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(propertyGrid1);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(776, 426);
-            panel1.TabIndex = 0;
+            this.panel1.Controls.Add(this.btnCadastrarAvaliacao);
+            this.panel1.Controls.Add(this.lstAvaliacoes);
+            this.panel1.Controls.Add(this.proAvaliacao);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(776, 426);
+            this.panel1.TabIndex = 0;
             // 
-            // propertyGrid1
+            // btnCadastrarAvaliacao
             // 
-            propertyGrid1.Dock = DockStyle.Fill;
-            propertyGrid1.Location = new Point(0, 0);
-            propertyGrid1.Name = "propertyGrid1";
-            propertyGrid1.Size = new Size(776, 426);
-            propertyGrid1.TabIndex = 0;
+            this.btnCadastrarAvaliacao.Location = new System.Drawing.Point(3, 400);
+            this.btnCadastrarAvaliacao.Name = "btnCadastrarAvaliacao";
+            this.btnCadastrarAvaliacao.Size = new System.Drawing.Size(206, 23);
+            this.btnCadastrarAvaliacao.TabIndex = 2;
+            this.btnCadastrarAvaliacao.Text = "Cadastrar Avaliação";
+            this.btnCadastrarAvaliacao.UseVisualStyleBackColor = true;
+            this.btnCadastrarAvaliacao.Click += new System.EventHandler(this.btnCadastrarAvaliacao_Click);
+            // 
+            // lstAvaliacoes
+            // 
+            this.lstAvaliacoes.FullRowSelect = true;
+            this.lstAvaliacoes.GridLines = true;
+            this.lstAvaliacoes.Location = new System.Drawing.Point(3, 3);
+            this.lstAvaliacoes.MultiSelect = false;
+            this.lstAvaliacoes.Name = "lstAvaliacoes";
+            this.lstAvaliacoes.Size = new System.Drawing.Size(206, 391);
+            this.lstAvaliacoes.TabIndex = 1;
+            this.lstAvaliacoes.UseCompatibleStateImageBehavior = false;
+            this.lstAvaliacoes.SelectedIndexChanged += new System.EventHandler(this.lstAvaliacoes_SelectedIndexChanged);
+            // 
+            // proAvaliacao
+            // 
+            this.proAvaliacao.Location = new System.Drawing.Point(215, 0);
+            this.proAvaliacao.Name = "proAvaliacao";
+            this.proAvaliacao.Size = new System.Drawing.Size(561, 426);
+            this.proAvaliacao.TabIndex = 0;
             // 
             // FrmAvaliacoes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
-            Name = "FrmAvaliacoes";
-            Text = "FrmAvaliacoes";
-            panel1.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
+            this.Name = "FrmAvaliacoes";
+            this.Text = "FrmAvaliacoes";
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
 
         private Panel panel1;
-        private PropertyGrid propertyGrid1;
+        private PropertyGrid proAvaliacao;
+        private ListView lstAvaliacoes;
+        private Button btnCadastrarAvaliacao;
     }
 }

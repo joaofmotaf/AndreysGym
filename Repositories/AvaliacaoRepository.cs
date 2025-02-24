@@ -16,6 +16,7 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
+                    dbContext.Entry(avaliacao.PersonalResponsavel).State = EntityState.Unchanged;
                     dbContext.Entry(avaliacao.Usuario).State = EntityState.Unchanged;
                     if (avaliacao.Id == 0)
                     {
@@ -75,6 +76,7 @@ namespace AndreysGym.Repositories
                     return dbContext.Avaliacoes
                         .Include("Usuario")
                         .Where(p => p.Usuario.Id == usuario.Id)
+                        .OrderByDescending(p => p.DataRealizacao)
                         .ToList<Avaliacao>();
                 }
             }

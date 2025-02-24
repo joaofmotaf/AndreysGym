@@ -136,18 +136,26 @@ namespace AndreysGym.Entidades
         [DisplayName("Panturrilha Direita (cm)")]
         public decimal PerimetroPanturrilhaDireita { get; set; }
 
+        //
         // Propriedades Calculadas
+        //
+        // Essas propriedades são calculadas no momento em que o objeto é carregado
+        // (tanto que não são carregadas no banco de dados); em decorrência disso,
+        // decidimos que seria melhor retorná-las como um String, pois não afeta a
+        // visualizaçao e ajuda a formatação no PropertyGrid.
+        //
+
         [Category("Indicadores")]
         [DisplayName("Porcentagem de Massa Magra (%)")]
-        public decimal PorcentagemMassaMagra => MassaMagra / (MassaMagra + MassaGorda) * 100;
+        public String PorcentagemMassaMagra => (MassaMagra / (MassaMagra + MassaGorda) * 100).ToString("F2");
 
         [Category("Indicadores")]
         [DisplayName("Porcentagem de Massa Gorda (%)")]
-        public decimal PorcentagemMassaGorda => MassaGorda / (MassaMagra + MassaGorda) * 100;
+        public String PorcentagemMassaGorda => (MassaGorda / (MassaMagra + MassaGorda) * 100).ToString("F2");
 
         [Category("Indicadores")]
         [DisplayName("Índice de Massa Corporal (IMC)")]
-        public decimal IMC => Peso * 10000 / (Altura * Altura);
+        public String IMC => (Peso * 10000 / (Altura * Altura)).ToString("F2");
     }
 
 }
