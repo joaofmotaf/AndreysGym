@@ -112,6 +112,8 @@ namespace AndreysGym.Forms
                 PerimetroQuadril = nudPerimetroQuadril.Value,
                 PerimetroToraxRelaxado = nudPerimetroToraxRelaxado.Value
             };
+            FrmAvaliacoes.GetInstance(_personalResponsavel, _usuarioAvaliado).SalvarAvaliacao(avaliacao);
+            Close();
         }
 
         private void pnlCadAvaliacao_Paint(object sender, PaintEventArgs e)

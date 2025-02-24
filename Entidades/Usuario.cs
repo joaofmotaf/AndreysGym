@@ -43,5 +43,10 @@ namespace AndreysGym.Entidades
         }
         public Treino? TreinoAtual { get; set; }
         public UInt64? TreinoAtualId { get; set; }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }

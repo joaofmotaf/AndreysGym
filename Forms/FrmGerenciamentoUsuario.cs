@@ -98,7 +98,7 @@ namespace AndreysGym.Forms
 
         private void btnFrequencias_Click(object sender, EventArgs e)
         {
-            if(_usuarioSelecionado != null)
+            if (_usuarioSelecionado != null)
             {
                 var frequencia = FrmFrequencia.GetInstance(_usuarioSelecionado);
                 frequencia.MdiParent = FrmPrincipal.GetInstance();
@@ -106,12 +106,9 @@ namespace AndreysGym.Forms
             }
         }
 
-        private void btnPagamentos_Click(object sender, EventArgs e)
+        private void btnAvaliacoes_Click(object sender, EventArgs e)
         {
-            FrmCadastroPagamento.GetInstance().MdiParent = this;
-            FrmCadastroPagamento.GetInstance().WindowState = FormWindowState.Maximized;
-            FrmCadastroPagamento.GetInstance().Show();
-            FrmCadastroPagamento.GetInstance().BringToFront();
+            FrmAvaliacoes.GetInstance(_usuarioSelecionado, _usuarioAtivo).Show();
         }
     }
 }

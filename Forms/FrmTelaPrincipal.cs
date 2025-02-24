@@ -138,5 +138,10 @@ namespace AndreysGym.Forms
             programacao.MdiParent = this;
             programacao.Show();
         }
+
+        private void mnuPrincipalClienteAvaliacoes_Click(object sender, EventArgs e)
+        {
+            FrmAvaliacoes.GetInstance(_usuario);
+        }
     }
 }

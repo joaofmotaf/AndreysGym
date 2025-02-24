@@ -229,14 +229,15 @@
             // 
             // btnAvaliacoes
             // 
-            this.btnAvaliacoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAvaliacoes.Enabled = false;
-            this.btnAvaliacoes.Location = new System.Drawing.Point(195, 273);
-            this.btnAvaliacoes.Name = "btnAvaliacoes";
-            this.btnAvaliacoes.Size = new System.Drawing.Size(54, 23);
-            this.btnAvaliacoes.TabIndex = 3;
-            this.btnAvaliacoes.Text = "Avaliações";
-            this.btnAvaliacoes.UseVisualStyleBackColor = true;
+            btnAvaliacoes.Dock = DockStyle.Fill;
+            btnAvaliacoes.Enabled = false;
+            btnAvaliacoes.Location = new Point(195, 273);
+            btnAvaliacoes.Name = "btnAvaliacoes";
+            btnAvaliacoes.Size = new Size(54, 23);
+            btnAvaliacoes.TabIndex = 3;
+            btnAvaliacoes.Text = "Avaliações";
+            btnAvaliacoes.UseVisualStyleBackColor = true;
+            btnAvaliacoes.Click += btnAvaliacoes_Click;
             // 
             // btnEditar
             // 
