@@ -29,21 +29,31 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lstAvaliacoes = new System.Windows.Forms.ListBox();
             this.btnCadastrarAvaliacao = new System.Windows.Forms.Button();
-            this.lstAvaliacoes = new System.Windows.Forms.ListView();
             this.proAvaliacao = new System.Windows.Forms.PropertyGrid();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnCadastrarAvaliacao);
             this.panel1.Controls.Add(this.lstAvaliacoes);
+            this.panel1.Controls.Add(this.btnCadastrarAvaliacao);
             this.panel1.Controls.Add(this.proAvaliacao);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 426);
             this.panel1.TabIndex = 0;
+            // 
+            // lstAvaliacoes
+            // 
+            this.lstAvaliacoes.FormattingEnabled = true;
+            this.lstAvaliacoes.ItemHeight = 15;
+            this.lstAvaliacoes.Location = new System.Drawing.Point(3, 3);
+            this.lstAvaliacoes.Name = "lstAvaliacoes";
+            this.lstAvaliacoes.Size = new System.Drawing.Size(206, 394);
+            this.lstAvaliacoes.TabIndex = 3;
+            this.lstAvaliacoes.SelectedIndexChanged += new System.EventHandler(this.lstAvaliacoes_SelectedIndexChanged);
             // 
             // btnCadastrarAvaliacao
             // 
@@ -54,18 +64,6 @@
             this.btnCadastrarAvaliacao.Text = "Cadastrar Avaliação";
             this.btnCadastrarAvaliacao.UseVisualStyleBackColor = true;
             this.btnCadastrarAvaliacao.Click += new System.EventHandler(this.btnCadastrarAvaliacao_Click);
-            // 
-            // lstAvaliacoes
-            // 
-            this.lstAvaliacoes.FullRowSelect = true;
-            this.lstAvaliacoes.GridLines = true;
-            this.lstAvaliacoes.Location = new System.Drawing.Point(3, 3);
-            this.lstAvaliacoes.MultiSelect = false;
-            this.lstAvaliacoes.Name = "lstAvaliacoes";
-            this.lstAvaliacoes.Size = new System.Drawing.Size(206, 391);
-            this.lstAvaliacoes.TabIndex = 1;
-            this.lstAvaliacoes.UseCompatibleStateImageBehavior = false;
-            this.lstAvaliacoes.SelectedIndexChanged += new System.EventHandler(this.lstAvaliacoes_SelectedIndexChanged);
             // 
             // proAvaliacao
             // 
@@ -91,7 +89,7 @@
 
         private Panel panel1;
         private PropertyGrid proAvaliacao;
-        private ListView lstAvaliacoes;
         private Button btnCadastrarAvaliacao;
+        private ListBox lstAvaliacoes;
     }
 }

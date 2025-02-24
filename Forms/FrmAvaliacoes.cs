@@ -47,23 +47,24 @@ namespace AndreysGym.Forms
 
         private void AtualizarAvaliacoes()
         {
+            lstAvaliacoes.Items.Clear();
             var avaliacoes = AvaliacaoRepository.FindByUsuario(_usuarioSelecionado);
+            _usuarioSelecionado.Avaliacoes = avaliacoes;
             for (int i = 0; i < avaliacoes.Count; i++)
             {
-                ListViewItem itemAvaliacao = new ListViewItem($"Avaliação {i + 1} | {avaliacoes[i].DataRealizacao}");
-                itemAvaliacao.Tag = avaliacoes[i];
-                lstAvaliacoes.Items.Add(itemAvaliacao);
+                avaliacoes[i].Usuario = _usuarioSelecionado;
+                lstAvaliacoes.Items.Insert(0, avaliacoes[i]);
             }
             if (lstAvaliacoes.Items.Count > 0)
             {
-                proAvaliacao.SelectedObject = (Avaliacao)lstAvaliacoes.Items[0].Tag;
+                proAvaliacao.SelectedObject = (Avaliacao)lstAvaliacoes.Items[0];
             }
         }
 
         private void lstAvaliacoes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(lstAvaliacoes.SelectedItems.Count > 0)
-                proAvaliacao.SelectedObject = (Avaliacao)lstAvaliacoes.SelectedItems[0].Tag;
+                proAvaliacao.SelectedObject = (Avaliacao)lstAvaliacoes.SelectedItem;
         }
 
         private void btnCadastrarAvaliacao_Click(object sender, EventArgs e)

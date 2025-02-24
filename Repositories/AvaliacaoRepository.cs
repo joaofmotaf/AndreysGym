@@ -74,9 +74,10 @@ namespace AndreysGym.Repositories
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Avaliacoes
-                        .Include("Usuario")
+                        .Include(p => p.PersonalResponsavel)
+                        .Include(p => p.Usuario)
                         .Where(p => p.Usuario.Id == usuario.Id)
-                        .OrderByDescending(p => p.DataRealizacao)
+                        .OrderBy(p => p.DataRealizacao)
                         .ToList<Avaliacao>();
                 }
             }
