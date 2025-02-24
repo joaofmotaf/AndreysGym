@@ -96,11 +96,29 @@ namespace AndreysGym.Forms
                 Peso = nudPeso.Value,
                 Altura = nudAltura.Value,
                 Usuario = _usuarioAvaliado,
-                PersonalResponsavel = _personalResponsavel
+                PersonalResponsavel = _personalResponsavel,
+                PerimetroPanturrilhaDireita = nudPerimetroPanturrilhaDir.Value,
+                PerimetroPanturrilhaEsquerda = nudPerimetroPanturrilhaEsq.Value,
+                PerimetroBracoDireitoRelaxado = nudPerimetroBracoDirRelaxado.Value,
+                PerimetroBracoEsquerdoRelaxado = nudPerimetroBracoEsqRelaxado.Value,
+                PerimetroBracoDireitoContraido = nudPerimetroBracoDirContraido.Value,
+                PerimetroBracoEsquerdoContraido = nudPerimetroBracoEsqContraido.Value,
+                PerimetroAntebracoDireito = nudPerimetroAntebracoDir.Value,
+                PerimetroAntebracoEsquerdo = nudPerimetroAntebracoEsq.Value,
+                PerimetroCoxaDireita = nudPerimetroCoxaDir.Value,
+                PerimetroCoxaEsquerda = nudPerimetroCoxaEsq.Value,
+                PerimetroAbdome = nudPerimetroAbdome.Value,
+                PerimetroCintura = nudPerimetroCintura.Value,
+                PerimetroQuadril = nudPerimetroQuadril.Value,
+                PerimetroToraxRelaxado = nudPerimetroToraxRelaxado.Value
             };
         }
 
         private void pnlCadAvaliacao_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void label10_Click_1(object sender, EventArgs e)
         {
 
         }

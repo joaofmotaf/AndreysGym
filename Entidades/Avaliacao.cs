@@ -40,33 +40,33 @@ namespace AndreysGym.Entidades
         [Required]
         public Decimal Altura { get; set; }
         [Required]
-        public UInt16 PerimetroToraxRelaxado { get; set; }
+        public Decimal PerimetroToraxRelaxado { get; set; }
         [Required]
-        public UInt16 PerimetroCintura { get; set; }
+        public Decimal PerimetroCintura { get; set; }
         [Required]
-        public UInt16 PerimetroAbdome { get; set; }
+        public Decimal PerimetroAbdome { get; set; }
         [Required]
-        public UInt16 PerimetroQuadril { get; set; }
+        public Decimal PerimetroQuadril { get; set; }
         [Required]
-        public UInt16 PerimetroBracoEsquerdoRelaxado { get; set; }
+        public Decimal PerimetroBracoEsquerdoRelaxado { get; set; }
         [Required]
-        public UInt16 PerimetroBracoEsquerdoContraido { get; set; }
+        public Decimal PerimetroBracoEsquerdoContraido { get; set; }
         [Required]
-        public UInt16 PerimetroBracoDireitoRelaxado { get; set; }
+        public Decimal PerimetroBracoDireitoRelaxado { get; set; }
         [Required]
-        public UInt16 PerimetroBracoDireitoContraido { get; set; }
+        public Decimal PerimetroBracoDireitoContraido { get; set; }
         [Required]
-        public UInt16 PerimetroAntebracoEsquerdo { get; set; }
+        public Decimal PerimetroAntebracoEsquerdo { get; set; }
         [Required]
-        public UInt16 PerimetroAntebracoDireito { get; set; }
+        public Decimal PerimetroAntebracoDireito { get; set; }
         [Required]
-        public UInt16 PerimetroCoxaEsquerda { get; set; }
+        public Decimal PerimetroCoxaEsquerda { get; set; }
         [Required]
-        public UInt16 PerimetroCoxaDireita { get; set; }
+        public Decimal PerimetroCoxaDireita { get; set; }
         [Required]
-        public UInt16 PerimetroPanturrilhaEsquerda { get; set; }
+        public Decimal PerimetroPanturrilhaEsquerda { get; set; }
         [Required]
-        public UInt16 PerimetroPanturrilhaDireita { get; set; }
+        public Decimal PerimetroPanturrilhaDireita { get; set; }
         public Decimal CalcularPorcentagemMassaMagra()
 
         {
