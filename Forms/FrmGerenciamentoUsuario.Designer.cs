@@ -99,6 +99,7 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(351, 217);
             this.dgvUsuarios.TabIndex = 2;
+            this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -196,18 +197,17 @@
             // btnProgramacoes
             // 
             this.btnProgramacoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnProgramacoes.Enabled = false;
             this.btnProgramacoes.Location = new System.Drawing.Point(15, 273);
             this.btnProgramacoes.Name = "btnProgramacoes";
             this.btnProgramacoes.Size = new System.Drawing.Size(54, 23);
             this.btnProgramacoes.TabIndex = 0;
             this.btnProgramacoes.Text = "Programações";
             this.btnProgramacoes.UseVisualStyleBackColor = true;
+            this.btnProgramacoes.Click += new System.EventHandler(this.btnProgramacoes_Click);
             // 
             // btnFrequencias
             // 
             this.btnFrequencias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFrequencias.Enabled = false;
             this.btnFrequencias.Location = new System.Drawing.Point(75, 273);
             this.btnFrequencias.Name = "btnFrequencias";
             this.btnFrequencias.Size = new System.Drawing.Size(54, 23);
@@ -218,7 +218,6 @@
             // btnPagamentos
             // 
             this.btnPagamentos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPagamentos.Enabled = false;
             this.btnPagamentos.Location = new System.Drawing.Point(135, 273);
             this.btnPagamentos.Name = "btnPagamentos";
             this.btnPagamentos.Size = new System.Drawing.Size(54, 23);
@@ -229,20 +228,17 @@
             // 
             // btnAvaliacoes
             // 
-            btnAvaliacoes.Dock = DockStyle.Fill;
-            btnAvaliacoes.Enabled = false;
-            btnAvaliacoes.Location = new Point(195, 273);
-            btnAvaliacoes.Name = "btnAvaliacoes";
-            btnAvaliacoes.Size = new Size(54, 23);
-            btnAvaliacoes.TabIndex = 3;
-            btnAvaliacoes.Text = "Avaliações";
-            btnAvaliacoes.UseVisualStyleBackColor = true;
-            btnAvaliacoes.Click += btnAvaliacoes_Click;
+            this.btnAvaliacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAvaliacoes.Location = new System.Drawing.Point(195, 273);
+            this.btnAvaliacoes.Name = "btnAvaliacoes";
+            this.btnAvaliacoes.Size = new System.Drawing.Size(54, 23);
+            this.btnAvaliacoes.TabIndex = 3;
+            this.btnAvaliacoes.Text = "Avaliações";
+            this.btnAvaliacoes.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
             this.btnEditar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(255, 273);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(54, 23);
@@ -253,7 +249,6 @@
             // btnExcluir
             // 
             this.btnExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExcluir.Enabled = false;
             this.btnExcluir.Location = new System.Drawing.Point(315, 273);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(57, 23);

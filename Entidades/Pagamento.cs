@@ -13,7 +13,6 @@ namespace AndreysGym.Entidades
         public UInt64 Id { get; set; }
         [Required]
         public DateTime DataPagamento { get; set; }
-        public Boolean Pago { get; set; }
         [Required]
         public Usuario Usuario { get; set; }
         public UInt64 UsuarioId { get; set; }

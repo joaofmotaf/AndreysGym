@@ -104,12 +104,14 @@
             this.mnuTelaPrincipalArquivoSair.Name = "mnuTelaPrincipalArquivoSair";
             this.mnuTelaPrincipalArquivoSair.Size = new System.Drawing.Size(320, 22);
             this.mnuTelaPrincipalArquivoSair.Text = "Sai&r";
+            this.mnuTelaPrincipalArquivoSair.Click += new System.EventHandler(this.mnuTelaPrincipalArquivoSair_Click);
             // 
             // mnuTelaPrincipalArquivoSairDoPrograma
             // 
             this.mnuTelaPrincipalArquivoSairDoPrograma.Name = "mnuTelaPrincipalArquivoSairDoPrograma";
             this.mnuTelaPrincipalArquivoSairDoPrograma.Size = new System.Drawing.Size(320, 22);
             this.mnuTelaPrincipalArquivoSairDoPrograma.Text = "Fechar o Aplicativo (só pd aparecer pra admin)";
+            this.mnuTelaPrincipalArquivoSairDoPrograma.Click += new System.EventHandler(this.mnuTelaPrincipalArquivoSairDoPrograma_Click);
             // 
             // mnuPrincipalAdmnistrador
             // 
@@ -156,32 +158,32 @@
             // mnuPrincipalClientePerfil
             // 
             this.mnuPrincipalClientePerfil.Name = "mnuPrincipalClientePerfil";
-            this.mnuPrincipalClientePerfil.Size = new System.Drawing.Size(180, 22);
+            this.mnuPrincipalClientePerfil.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClientePerfil.Text = "Perfil";
             // 
             // mnuPrincipalClienteFrequencia
             // 
             this.mnuPrincipalClienteFrequencia.Name = "mnuPrincipalClienteFrequencia";
-            this.mnuPrincipalClienteFrequencia.Size = new System.Drawing.Size(180, 22);
+            this.mnuPrincipalClienteFrequencia.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClienteFrequencia.Text = "Frequência";
             // 
             // mnuPrincipalClienteTreinos
             // 
             this.mnuPrincipalClienteTreinos.Name = "mnuPrincipalClienteTreinos";
-            this.mnuPrincipalClienteTreinos.Size = new System.Drawing.Size(180, 22);
+            this.mnuPrincipalClienteTreinos.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClienteTreinos.Text = "Treinos";
             // 
             // mnuPrincipalClienteAvaliacoes
             // 
             this.mnuPrincipalClienteAvaliacoes.Name = "mnuPrincipalClienteAvaliacoes";
-            this.mnuPrincipalClienteAvaliacoes.Size = new System.Drawing.Size(180, 22);
+            this.mnuPrincipalClienteAvaliacoes.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClienteAvaliacoes.Text = "Avaliações";
             this.mnuPrincipalClienteAvaliacoes.Click += new System.EventHandler(this.mnuPrincipalClienteAvaliacoes_Click);
             // 
             // mnuPrincipalClientePagamentos
             // 
             this.mnuPrincipalClientePagamentos.Name = "mnuPrincipalClientePagamentos";
-            this.mnuPrincipalClientePagamentos.Size = new System.Drawing.Size(180, 22);
+            this.mnuPrincipalClientePagamentos.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClientePagamentos.Text = "Pagamentos";
             // 
             // mnuPrincipalAjuda
@@ -217,6 +219,7 @@
             this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
             this.Text = "Tela Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTelaPrincipal_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mnuTelaPrincipal.ResumeLayout(false);

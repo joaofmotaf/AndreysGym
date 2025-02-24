@@ -67,7 +67,7 @@ namespace AndreysGym.Forms
 
         private void mnuPrincipalAdmnistradorCadastrar_Click(object sender, EventArgs e)
         {
-            FrmCadastro.GetInstance().MdiParent = this;
+            FrmCadastro.GetInstance().MdiParent = FrmPrincipal.GetInstance();
             FrmCadastro.GetInstance().WindowState = FormWindowState.Maximized;
             FrmCadastro.GetInstance().Show();
         }

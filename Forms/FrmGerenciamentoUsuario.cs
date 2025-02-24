@@ -110,5 +110,17 @@ namespace AndreysGym.Forms
         {
             FrmAvaliacoes.GetInstance(_usuarioSelecionado, _usuarioAtivo).Show();
         }
+
+        private void btnPagamentos_Click(object sender, EventArgs e)
+        {
+
+            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).MdiParent = FrmPrincipal.GetInstance();
+            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).WindowState = FormWindowState.Maximized;
+            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).Show();
+            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).BringToFront();
+
+            
+
+        }
     }
 }
