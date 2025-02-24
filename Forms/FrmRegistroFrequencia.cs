@@ -72,5 +72,10 @@ namespace AndreysGym.Forms
         {
             lblSucesso.Hide();
         }
+
+        private void FrmRegistroFrequencia_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

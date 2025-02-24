@@ -11,11 +11,29 @@ using System.Windows.Forms;
 
 namespace AndreysGym.Forms
 {
-    public partial class CadastroAvaliacao : Form
+    public partial class FrmCadastroAvaliacao : Form
     {
-        public CadastroAvaliacao()
+        private static Usuario _usuarioAvaliado;
+        private static Usuario _personalResponsavel;
+
+        private static FrmCadastroAvaliacao _instance;
+
+        private FrmCadastroAvaliacao()
         {
             InitializeComponent();
+        }
+
+        
+        public static FrmCadastroAvaliacao GetInstance(Usuario usuarioAvaliado, Usuario personalResponsavel)
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new FrmCadastroAvaliacao();
+
+                _usuarioAvaliado = usuarioAvaliado;
+                _personalResponsavel = personalResponsavel;
+            }
+            return _instance;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -76,7 +94,9 @@ namespace AndreysGym.Forms
                 MassaMagra = nudMassaMagra.Value,
                 MassaGorda = nudMassaGorda.Value,
                 Peso = nudPeso.Value,
-                Altura = nudAltura.Value
+                Altura = nudAltura.Value,
+                Usuario = _usuarioAvaliado,
+                PersonalResponsavel = _personalResponsavel
             };
         }
 
