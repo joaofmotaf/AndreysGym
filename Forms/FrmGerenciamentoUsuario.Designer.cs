@@ -233,6 +233,7 @@
             btnAvaliacoes.TabIndex = 3;
             btnAvaliacoes.Text = "Avaliações";
             btnAvaliacoes.UseVisualStyleBackColor = true;
+            btnAvaliacoes.Click += btnAvaliacoes_Click;
             // 
             // btnEditar
             // 

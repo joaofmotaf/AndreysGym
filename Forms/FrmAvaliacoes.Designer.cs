@@ -43,9 +43,10 @@
             // 
             // propertyGrid1
             // 
-            propertyGrid1.Location = new Point(127, 51);
+            propertyGrid1.Dock = DockStyle.Fill;
+            propertyGrid1.Location = new Point(0, 0);
             propertyGrid1.Name = "propertyGrid1";
-            propertyGrid1.Size = new Size(130, 130);
+            propertyGrid1.Size = new Size(776, 426);
             propertyGrid1.TabIndex = 0;
             // 
             // FrmAvaliacoes
