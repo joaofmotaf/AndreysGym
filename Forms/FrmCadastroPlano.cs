@@ -21,6 +21,16 @@ namespace AndreysGym.Forms
            
         }
 
+        private static FrmCadastroPlano instancia;
+
+        public static FrmCadastroPlano GetInstance()
+        {
+            if (instancia == null || instancia.IsDisposed)
+            {
+                instancia = new FrmCadastroPlano();
+            }
+            return instancia;
+        }
         private void btnCadastrarPlano_Click(object sender, EventArgs e)
         {
             Plano plano = new Plano()

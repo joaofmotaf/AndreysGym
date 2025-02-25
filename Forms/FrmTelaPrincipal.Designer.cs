@@ -29,183 +29,177 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
-            this.mnuTelaPrincipal = new System.Windows.Forms.MenuStrip();
-            this.mnuPrincipalArquivoSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTelaPrincipalArquivoSair = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTelaPrincipalArquivoSairDoPrograma = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalAdmnistrador = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalAdmnistradorCadastrar = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalAdminstradorUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarFrequênciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalCliente = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalClientePerfil = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalClienteFrequencia = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalClienteTreinos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalClienteAvaliacoes = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalClientePagamentos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalAjuda = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalAjudaTermosDeUso = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipalAjudaSobre = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTelaPrincipal.SuspendLayout();
-            this.SuspendLayout();
+            mnuTelaPrincipal = new MenuStrip();
+            mnuPrincipalArquivoSair = new ToolStripMenuItem();
+            mnuTelaPrincipalArquivoSair = new ToolStripMenuItem();
+            mnuTelaPrincipalArquivoSairDoPrograma = new ToolStripMenuItem();
+            mnuPrincipalAdmnistrador = new ToolStripMenuItem();
+            mnuPrincipalAdmnistradorCadastrar = new ToolStripMenuItem();
+            mnuPrincipalAdminstradorUsuarios = new ToolStripMenuItem();
+            registrarFrequênciaToolStripMenuItem = new ToolStripMenuItem();
+            cadastrarPlanosToolStripMenuItem = new ToolStripMenuItem();
+            mnuPrincipalCliente = new ToolStripMenuItem();
+            mnuPrincipalClientePerfil = new ToolStripMenuItem();
+            mnuPrincipalClienteFrequencia = new ToolStripMenuItem();
+            mnuPrincipalClienteTreinos = new ToolStripMenuItem();
+            mnuPrincipalClienteAvaliacoes = new ToolStripMenuItem();
+            mnuPrincipalClientePagamentos = new ToolStripMenuItem();
+            mnuPrincipalAjuda = new ToolStripMenuItem();
+            mnuPrincipalAjudaTermosDeUso = new ToolStripMenuItem();
+            mnuPrincipalAjudaSobre = new ToolStripMenuItem();
+            mnuTelaPrincipal.SuspendLayout();
+            SuspendLayout();
             // 
             // mnuTelaPrincipal
             // 
-            this.mnuTelaPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mnuTelaPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuPrincipalArquivoSair,
-            this.mnuPrincipalAdmnistrador,
-            this.mnuPrincipalCliente,
-            this.mnuPrincipalAjuda});
-            this.mnuTelaPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.mnuTelaPrincipal.Name = "mnuTelaPrincipal";
-            this.mnuTelaPrincipal.Size = new System.Drawing.Size(800, 24);
-            this.mnuTelaPrincipal.TabIndex = 9;
-            this.mnuTelaPrincipal.Text = "menuStrip1";
+            mnuTelaPrincipal.ImageScalingSize = new Size(20, 20);
+            mnuTelaPrincipal.Items.AddRange(new ToolStripItem[] { mnuPrincipalArquivoSair, mnuPrincipalAdmnistrador, mnuPrincipalCliente, mnuPrincipalAjuda });
+            mnuTelaPrincipal.Location = new Point(0, 0);
+            mnuTelaPrincipal.Name = "mnuTelaPrincipal";
+            mnuTelaPrincipal.Padding = new Padding(7, 3, 0, 3);
+            mnuTelaPrincipal.Size = new Size(914, 30);
+            mnuTelaPrincipal.TabIndex = 9;
+            mnuTelaPrincipal.Text = "menuStrip1";
             // 
             // mnuPrincipalArquivoSair
             // 
-            this.mnuPrincipalArquivoSair.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuTelaPrincipalArquivoSair,
-            this.mnuTelaPrincipalArquivoSairDoPrograma});
-            this.mnuPrincipalArquivoSair.Name = "mnuPrincipalArquivoSair";
-            this.mnuPrincipalArquivoSair.Size = new System.Drawing.Size(61, 20);
-            this.mnuPrincipalArquivoSair.Text = "A&rquivo";
+            mnuPrincipalArquivoSair.DropDownItems.AddRange(new ToolStripItem[] { mnuTelaPrincipalArquivoSair, mnuTelaPrincipalArquivoSairDoPrograma });
+            mnuPrincipalArquivoSair.Name = "mnuPrincipalArquivoSair";
+            mnuPrincipalArquivoSair.Size = new Size(75, 24);
+            mnuPrincipalArquivoSair.Text = "A&rquivo";
             // 
             // mnuTelaPrincipalArquivoSair
             // 
-            this.mnuTelaPrincipalArquivoSair.Image = global::AndreysGym.Properties.Resources.free_exit_icon_2860_thumb;
-            this.mnuTelaPrincipalArquivoSair.Name = "mnuTelaPrincipalArquivoSair";
-            this.mnuTelaPrincipalArquivoSair.Size = new System.Drawing.Size(320, 22);
-            this.mnuTelaPrincipalArquivoSair.Text = "Sai&r";
-            this.mnuTelaPrincipalArquivoSair.Click += new System.EventHandler(this.mnuTelaPrincipalArquivoSair_Click);
+            mnuTelaPrincipalArquivoSair.Image = Properties.Resources.free_exit_icon_2860_thumb;
+            mnuTelaPrincipalArquivoSair.Name = "mnuTelaPrincipalArquivoSair";
+            mnuTelaPrincipalArquivoSair.Size = new Size(404, 26);
+            mnuTelaPrincipalArquivoSair.Text = "Sai&r";
+            mnuTelaPrincipalArquivoSair.Click += mnuTelaPrincipalArquivoSair_Click;
             // 
             // mnuTelaPrincipalArquivoSairDoPrograma
             // 
-            this.mnuTelaPrincipalArquivoSairDoPrograma.Name = "mnuTelaPrincipalArquivoSairDoPrograma";
-            this.mnuTelaPrincipalArquivoSairDoPrograma.Size = new System.Drawing.Size(320, 22);
-            this.mnuTelaPrincipalArquivoSairDoPrograma.Text = "Fechar o Aplicativo (só pd aparecer pra admin)";
-            this.mnuTelaPrincipalArquivoSairDoPrograma.Click += new System.EventHandler(this.mnuTelaPrincipalArquivoSairDoPrograma_Click);
+            mnuTelaPrincipalArquivoSairDoPrograma.Name = "mnuTelaPrincipalArquivoSairDoPrograma";
+            mnuTelaPrincipalArquivoSairDoPrograma.Size = new Size(404, 26);
+            mnuTelaPrincipalArquivoSairDoPrograma.Text = "Fechar o Aplicativo (só pd aparecer pra admin)";
+            mnuTelaPrincipalArquivoSairDoPrograma.Click += mnuTelaPrincipalArquivoSairDoPrograma_Click;
             // 
             // mnuPrincipalAdmnistrador
             // 
-            this.mnuPrincipalAdmnistrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuPrincipalAdmnistradorCadastrar,
-            this.mnuPrincipalAdminstradorUsuarios,
-            this.registrarFrequênciaToolStripMenuItem});
-            this.mnuPrincipalAdmnistrador.Name = "mnuPrincipalAdmnistrador";
-            this.mnuPrincipalAdmnistrador.Size = new System.Drawing.Size(139, 20);
-            this.mnuPrincipalAdmnistrador.Text = "Área do &Administrador";
+            mnuPrincipalAdmnistrador.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalAdmnistradorCadastrar, mnuPrincipalAdminstradorUsuarios, registrarFrequênciaToolStripMenuItem, cadastrarPlanosToolStripMenuItem });
+            mnuPrincipalAdmnistrador.Name = "mnuPrincipalAdmnistrador";
+            mnuPrincipalAdmnistrador.Size = new Size(175, 24);
+            mnuPrincipalAdmnistrador.Text = "Área do &Administrador";
             // 
             // mnuPrincipalAdmnistradorCadastrar
             // 
-            this.mnuPrincipalAdmnistradorCadastrar.Name = "mnuPrincipalAdmnistradorCadastrar";
-            this.mnuPrincipalAdmnistradorCadastrar.Size = new System.Drawing.Size(219, 22);
-            this.mnuPrincipalAdmnistradorCadastrar.Text = "Cadastrar usuário";
-            this.mnuPrincipalAdmnistradorCadastrar.Click += new System.EventHandler(this.mnuPrincipalAdmnistradorCadastrar_Click);
+            mnuPrincipalAdmnistradorCadastrar.Name = "mnuPrincipalAdmnistradorCadastrar";
+            mnuPrincipalAdmnistradorCadastrar.Size = new Size(274, 26);
+            mnuPrincipalAdmnistradorCadastrar.Text = "Cadastrar usuário";
+            mnuPrincipalAdmnistradorCadastrar.Click += mnuPrincipalAdmnistradorCadastrar_Click;
             // 
             // mnuPrincipalAdminstradorUsuarios
             // 
-            this.mnuPrincipalAdminstradorUsuarios.Name = "mnuPrincipalAdminstradorUsuarios";
-            this.mnuPrincipalAdminstradorUsuarios.Size = new System.Drawing.Size(219, 22);
-            this.mnuPrincipalAdminstradorUsuarios.Text = "Gerenciamento de Usuarios";
-            this.mnuPrincipalAdminstradorUsuarios.Click += new System.EventHandler(this.mnuPrincipalAdminstradorUsuarios_Click);
+            mnuPrincipalAdminstradorUsuarios.Name = "mnuPrincipalAdminstradorUsuarios";
+            mnuPrincipalAdminstradorUsuarios.Size = new Size(274, 26);
+            mnuPrincipalAdminstradorUsuarios.Text = "Gerenciamento de Usuarios";
+            mnuPrincipalAdminstradorUsuarios.Click += mnuPrincipalAdminstradorUsuarios_Click;
             // 
             // registrarFrequênciaToolStripMenuItem
             // 
-            this.registrarFrequênciaToolStripMenuItem.Name = "registrarFrequênciaToolStripMenuItem";
-            this.registrarFrequênciaToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.registrarFrequênciaToolStripMenuItem.Text = "Registrar Frequência";
-            this.registrarFrequênciaToolStripMenuItem.Click += new System.EventHandler(this.registrarFrequênciaToolStripMenuItem_Click);
+            registrarFrequênciaToolStripMenuItem.Name = "registrarFrequênciaToolStripMenuItem";
+            registrarFrequênciaToolStripMenuItem.Size = new Size(274, 26);
+            registrarFrequênciaToolStripMenuItem.Text = "Registrar Frequência";
+            registrarFrequênciaToolStripMenuItem.Click += registrarFrequênciaToolStripMenuItem_Click;
+            // 
+            // cadastrarPlanosToolStripMenuItem
+            // 
+            cadastrarPlanosToolStripMenuItem.Name = "cadastrarPlanosToolStripMenuItem";
+            cadastrarPlanosToolStripMenuItem.Size = new Size(274, 26);
+            cadastrarPlanosToolStripMenuItem.Text = "Visualizar  Planos";
+            cadastrarPlanosToolStripMenuItem.Click += cadastrarPlanosToolStripMenuItem_Click;
             // 
             // mnuPrincipalCliente
             // 
-            this.mnuPrincipalCliente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuPrincipalClientePerfil,
-            this.mnuPrincipalClienteFrequencia,
-            this.mnuPrincipalClienteTreinos,
-            this.mnuPrincipalClienteAvaliacoes,
-            this.mnuPrincipalClientePagamentos});
-            this.mnuPrincipalCliente.Name = "mnuPrincipalCliente";
-            this.mnuPrincipalCliente.Size = new System.Drawing.Size(100, 20);
-            this.mnuPrincipalCliente.Text = "Área do &Cliente";
+            mnuPrincipalCliente.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalClientePerfil, mnuPrincipalClienteFrequencia, mnuPrincipalClienteTreinos, mnuPrincipalClienteAvaliacoes, mnuPrincipalClientePagamentos });
+            mnuPrincipalCliente.Name = "mnuPrincipalCliente";
+            mnuPrincipalCliente.Size = new Size(126, 24);
+            mnuPrincipalCliente.Text = "Área do &Cliente";
             // 
             // mnuPrincipalClientePerfil
             // 
-            this.mnuPrincipalClientePerfil.Name = "mnuPrincipalClientePerfil";
-            this.mnuPrincipalClientePerfil.Size = new System.Drawing.Size(140, 22);
-            this.mnuPrincipalClientePerfil.Text = "Perfil";
-            this.mnuPrincipalClientePerfil.Click += new System.EventHandler(this.mnuPrincipalClientePerfil_Click);
+            mnuPrincipalClientePerfil.Name = "mnuPrincipalClientePerfil";
+            mnuPrincipalClientePerfil.Size = new Size(173, 26);
+            mnuPrincipalClientePerfil.Text = "Perfil";
+            mnuPrincipalClientePerfil.Click += mnuPrincipalClientePerfil_Click;
             // 
             // mnuPrincipalClienteFrequencia
             // 
-            this.mnuPrincipalClienteFrequencia.Name = "mnuPrincipalClienteFrequencia";
-            this.mnuPrincipalClienteFrequencia.Size = new System.Drawing.Size(140, 22);
-            this.mnuPrincipalClienteFrequencia.Text = "Frequência";
-            this.mnuPrincipalClienteFrequencia.Click += new System.EventHandler(this.mnuPrincipalClienteFrequencia_Click);
+            mnuPrincipalClienteFrequencia.Name = "mnuPrincipalClienteFrequencia";
+            mnuPrincipalClienteFrequencia.Size = new Size(173, 26);
+            mnuPrincipalClienteFrequencia.Text = "Frequência";
+            mnuPrincipalClienteFrequencia.Click += mnuPrincipalClienteFrequencia_Click;
             // 
             // mnuPrincipalClienteTreinos
             // 
-            this.mnuPrincipalClienteTreinos.Name = "mnuPrincipalClienteTreinos";
-            this.mnuPrincipalClienteTreinos.Size = new System.Drawing.Size(140, 22);
-            this.mnuPrincipalClienteTreinos.Text = "Treinos";
-            this.mnuPrincipalClienteTreinos.Click += new System.EventHandler(this.mnuPrincipalClienteTreinos_Click);
+            mnuPrincipalClienteTreinos.Name = "mnuPrincipalClienteTreinos";
+            mnuPrincipalClienteTreinos.Size = new Size(173, 26);
+            mnuPrincipalClienteTreinos.Text = "Treinos";
+            mnuPrincipalClienteTreinos.Click += mnuPrincipalClienteTreinos_Click;
             // 
             // mnuPrincipalClienteAvaliacoes
             // 
-            this.mnuPrincipalClienteAvaliacoes.Name = "mnuPrincipalClienteAvaliacoes";
-            this.mnuPrincipalClienteAvaliacoes.Size = new System.Drawing.Size(140, 22);
-            this.mnuPrincipalClienteAvaliacoes.Text = "Avaliações";
-            this.mnuPrincipalClienteAvaliacoes.Click += new System.EventHandler(this.mnuPrincipalClienteAvaliacoes_Click);
+            mnuPrincipalClienteAvaliacoes.Name = "mnuPrincipalClienteAvaliacoes";
+            mnuPrincipalClienteAvaliacoes.Size = new Size(173, 26);
+            mnuPrincipalClienteAvaliacoes.Text = "Avaliações";
+            mnuPrincipalClienteAvaliacoes.Click += mnuPrincipalClienteAvaliacoes_Click;
             // 
             // mnuPrincipalClientePagamentos
             // 
-            this.mnuPrincipalClientePagamentos.Name = "mnuPrincipalClientePagamentos";
-            this.mnuPrincipalClientePagamentos.Size = new System.Drawing.Size(140, 22);
-            this.mnuPrincipalClientePagamentos.Text = "Pagamentos";
+            mnuPrincipalClientePagamentos.Name = "mnuPrincipalClientePagamentos";
+            mnuPrincipalClientePagamentos.Size = new Size(173, 26);
+            mnuPrincipalClientePagamentos.Text = "Pagamentos";
             // 
             // mnuPrincipalAjuda
             // 
-            this.mnuPrincipalAjuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuPrincipalAjudaTermosDeUso,
-            this.mnuPrincipalAjudaSobre});
-            this.mnuPrincipalAjuda.Name = "mnuPrincipalAjuda";
-            this.mnuPrincipalAjuda.Size = new System.Drawing.Size(50, 20);
-            this.mnuPrincipalAjuda.Text = "A&juda";
+            mnuPrincipalAjuda.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalAjudaTermosDeUso, mnuPrincipalAjudaSobre });
+            mnuPrincipalAjuda.Name = "mnuPrincipalAjuda";
+            mnuPrincipalAjuda.Size = new Size(62, 24);
+            mnuPrincipalAjuda.Text = "A&juda";
             // 
             // mnuPrincipalAjudaTermosDeUso
             // 
-            this.mnuPrincipalAjudaTermosDeUso.Name = "mnuPrincipalAjudaTermosDeUso";
-            this.mnuPrincipalAjudaTermosDeUso.Size = new System.Drawing.Size(180, 22);
-            this.mnuPrincipalAjudaTermosDeUso.Text = "Termos de uso";
-            this.mnuPrincipalAjudaTermosDeUso.Click += new System.EventHandler(this.mnuPrincipalAjudaTermosDeUso_Click);
+            mnuPrincipalAjudaTermosDeUso.Name = "mnuPrincipalAjudaTermosDeUso";
+            mnuPrincipalAjudaTermosDeUso.Size = new Size(188, 26);
+            mnuPrincipalAjudaTermosDeUso.Text = "Termos de uso";
+            mnuPrincipalAjudaTermosDeUso.Click += mnuPrincipalAjudaTermosDeUso_Click;
             // 
             // mnuPrincipalAjudaSobre
             // 
-            this.mnuPrincipalAjudaSobre.Name = "mnuPrincipalAjudaSobre";
-            this.mnuPrincipalAjudaSobre.Size = new System.Drawing.Size(180, 22);
-            this.mnuPrincipalAjudaSobre.Text = "Sobre";
-            this.mnuPrincipalAjudaSobre.Click += new System.EventHandler(this.mnuPrincipalAjudaSobre_Click);
+            mnuPrincipalAjudaSobre.Name = "mnuPrincipalAjudaSobre";
+            mnuPrincipalAjudaSobre.Size = new Size(188, 26);
+            mnuPrincipalAjudaSobre.Text = "Sobre";
+            mnuPrincipalAjudaSobre.Click += mnuPrincipalAjudaSobre_Click;
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::AndreysGym.Properties.Resources.image_removebg_preview;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.mnuTelaPrincipal);
-            this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
-            this.Name = "FrmPrincipal";
-            this.Text = "Tela Principal";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTelaPrincipal_FormClosing);
-            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
-            this.mnuTelaPrincipal.ResumeLayout(false);
-            this.mnuTelaPrincipal.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.image_removebg_preview;
+            BackgroundImageLayout = ImageLayout.Center;
+            ClientSize = new Size(914, 600);
+            Controls.Add(mnuTelaPrincipal);
+            DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            IsMdiContainer = true;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FrmPrincipal";
+            Text = "Tela Principal";
+            FormClosing += FrmTelaPrincipal_FormClosing;
+            Load += FrmPrincipal_Load;
+            mnuTelaPrincipal.ResumeLayout(false);
+            mnuTelaPrincipal.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -227,5 +221,6 @@
         private ToolStripMenuItem mnuPrincipalAjuda;
         private ToolStripMenuItem mnuPrincipalAjudaTermosDeUso;
         private ToolStripMenuItem mnuPrincipalAjudaSobre;
+        private ToolStripMenuItem cadastrarPlanosToolStripMenuItem;
     }
 }
