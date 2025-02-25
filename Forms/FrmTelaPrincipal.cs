@@ -160,5 +160,12 @@ namespace AndreysGym.Forms
                 mdiClient.BackgroundImageLayout = ImageLayout.Stretch; // Ajuste conforme necessário
             }
         }
+
+        private void cadastrarPlanosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPlano.GetInstance().MdiParent = FrmPrincipal.GetInstance();
+            FrmCadastroPlano.GetInstance().WindowState = FormWindowState.Maximized;
+            FrmCadastroPlano.GetInstance().Show();
+        }
     }
 }
