@@ -22,5 +22,9 @@ namespace AndreysGym.Entidades
         {
             Pagamentos = new List<Pagamento>();
         }
+        public override string ToString()
+        {
+            return $"{Nome} - {QuantidadeDias} dias - {Preco:C} - {Periodicidade.ToString()}";
+        }
     }
 }

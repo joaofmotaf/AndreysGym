@@ -60,7 +60,6 @@
             mnuTelaPrincipal.Size = new Size(914, 30);
             mnuTelaPrincipal.TabIndex = 9;
             mnuTelaPrincipal.Text = "menuStrip1";
-            mnuTelaPrincipal.ItemClicked += mnuTelaPrincipal_ItemClicked;
             // 
             // mnuPrincipalArquivoSair
             // 
@@ -68,7 +67,6 @@
             mnuPrincipalArquivoSair.Name = "mnuPrincipalArquivoSair";
             mnuPrincipalArquivoSair.Size = new Size(75, 24);
             mnuPrincipalArquivoSair.Text = "A&rquivo";
-            mnuPrincipalArquivoSair.Click += mnuPrincipalArquivoSair_Click;
             // 
             // mnuTelaPrincipalArquivoSair
             // 
@@ -92,7 +90,6 @@
             mnuPrincipalAdmnistrador.Name = "mnuPrincipalAdmnistrador";
             mnuPrincipalAdmnistrador.Size = new Size(175, 24);
             mnuPrincipalAdmnistrador.Text = "Área do &Administrador";
-            mnuPrincipalAdmnistrador.Click += mnuPrincipalAdmnistrador_Click;
             // 
             // mnuPrincipalAdmnistradorCadastrar
             // 
@@ -131,7 +128,6 @@
             mnuPrincipalCliente.Name = "mnuPrincipalCliente";
             mnuPrincipalCliente.Size = new Size(126, 24);
             mnuPrincipalCliente.Text = "Área do &Cliente";
-            mnuPrincipalCliente.Click += mnuPrincipalCliente_Click;
             // 
             // mnuPrincipalClientePerfil
             // 
@@ -171,7 +167,6 @@
             mnuPrincipalClientePagamentos.Name = "mnuPrincipalClientePagamentos";
             mnuPrincipalClientePagamentos.Size = new Size(173, 26);
             mnuPrincipalClientePagamentos.Text = "Pagamentos";
-            mnuPrincipalClientePagamentos.Click += mnuPrincipalClientePagamentos_Click;
             // 
             // mnuPrincipalAjuda
             // 

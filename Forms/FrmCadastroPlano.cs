@@ -14,22 +14,25 @@ namespace AndreysGym.Forms
 {
     public partial class FrmCadastroPlano : Form
     {
+        private BindingList<Plano> _planos;
         private FrmCadastroPlano()
         {
             InitializeComponent();
             cmbPeriodicidade.DataSource = Enum.GetValues(typeof(Periodicidade));
-           
+            cmbPeriodicidade.SelectedItem = cmbPeriodicidade.Items[0];
+            _planos = new BindingList<Plano>(PlanoRepository.FindAll());
+            lstPlanos.DataSource = _planos;
         }
 
-        private static FrmCadastroPlano instancia;
+        private static FrmCadastroPlano _instance;
 
         public static FrmCadastroPlano GetInstance()
         {
-            if (instancia == null || instancia.IsDisposed)
+            if (_instance == null || _instance.IsDisposed)
             {
-                instancia = new FrmCadastroPlano();
+                _instance = new FrmCadastroPlano();
             }
-            return instancia;
+            return _instance;
         }
         private void btnCadastrarPlano_Click(object sender, EventArgs e)
         {
@@ -38,13 +41,14 @@ namespace AndreysGym.Forms
                 Nome = txtNomePlano.Text,
                 QuantidadeDias = Convert.ToByte(nudTotalDias.Value),
                 Preco = nudValor.Value,
-                
+                Periodicidade = (Periodicidade)cmbPeriodicidade.SelectedItem
             };
             txtNomePlano.Clear();
-           
+
             try
             {
                 PlanoRepository.Save(plano);
+                _planos.Add(plano);
                 lblAviso.Text = "Cadastro efetuado com sucesso";
                 lblAviso.ForeColor = Color.Green;
                 lblAviso.Show();
@@ -53,6 +57,16 @@ namespace AndreysGym.Forms
             {
                 lblAviso.Text = "Plano já cadastrado";
                 lblAviso.ForeColor = Color.Red;
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (lstPlanos.SelectedItem != null)
+            {
+                Plano plano = (Plano)lstPlanos.SelectedItem;
+                PlanoRepository.Remove(plano);
+                _planos.Remove(plano);
             }
         }
     }

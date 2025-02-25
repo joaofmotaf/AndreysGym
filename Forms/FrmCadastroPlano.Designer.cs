@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlCadastroPlano = new Panel();
+            lstPlanos = new ListBox();
             lblPeriodicidade = new Label();
             cmbPeriodicidade = new ComboBox();
             lblAviso = new Label();
@@ -39,6 +40,7 @@
             nudTotalDias = new NumericUpDown();
             txtNomePlano = new TextBox();
             btnCadastrarPlano = new Button();
+            btnExcluir = new Button();
             pnlCadastroPlano.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudValor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTotalDias).BeginInit();
@@ -47,6 +49,8 @@
             // pnlCadastroPlano
             // 
             pnlCadastroPlano.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pnlCadastroPlano.Controls.Add(btnExcluir);
+            pnlCadastroPlano.Controls.Add(lstPlanos);
             pnlCadastroPlano.Controls.Add(lblPeriodicidade);
             pnlCadastroPlano.Controls.Add(cmbPeriodicidade);
             pnlCadastroPlano.Controls.Add(lblAviso);
@@ -57,45 +61,53 @@
             pnlCadastroPlano.Controls.Add(nudTotalDias);
             pnlCadastroPlano.Controls.Add(txtNomePlano);
             pnlCadastroPlano.Controls.Add(btnCadastrarPlano);
-            pnlCadastroPlano.Location = new Point(21, 24);
-            pnlCadastroPlano.Margin = new Padding(3, 4, 3, 4);
+            pnlCadastroPlano.Location = new Point(18, 18);
             pnlCadastroPlano.Name = "pnlCadastroPlano";
-            pnlCadastroPlano.Size = new Size(880, 563);
+            pnlCadastroPlano.Size = new Size(770, 422);
             pnlCadastroPlano.TabIndex = 0;
+            // 
+            // lstPlanos
+            // 
+            lstPlanos.FormattingEnabled = true;
+            lstPlanos.ItemHeight = 15;
+            lstPlanos.Location = new Point(118, 3);
+            lstPlanos.Name = "lstPlanos";
+            lstPlanos.Size = new Size(515, 274);
+            lstPlanos.TabIndex = 11;
             // 
             // lblPeriodicidade
             // 
             lblPeriodicidade.AutoSize = true;
-            lblPeriodicidade.Location = new Point(27, 128);
+            lblPeriodicidade.Location = new Point(132, 364);
             lblPeriodicidade.Name = "lblPeriodicidade";
-            lblPeriodicidade.Size = new Size(103, 20);
+            lblPeriodicidade.Size = new Size(82, 15);
             lblPeriodicidade.TabIndex = 10;
             lblPeriodicidade.Text = "Periodicidade:";
             // 
             // cmbPeriodicidade
             // 
             cmbPeriodicidade.FormattingEnabled = true;
-            cmbPeriodicidade.Location = new Point(135, 125);
+            cmbPeriodicidade.Location = new Point(220, 361);
+            cmbPeriodicidade.Margin = new Padding(3, 2, 3, 2);
             cmbPeriodicidade.Name = "cmbPeriodicidade";
-            cmbPeriodicidade.Size = new Size(347, 28);
+            cmbPeriodicidade.Size = new Size(304, 23);
             cmbPeriodicidade.TabIndex = 9;
             // 
             // lblAviso
             // 
             lblAviso.AutoSize = true;
-            lblAviso.Location = new Point(135, 164);
+            lblAviso.Location = new Point(220, 390);
             lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(45, 20);
+            lblAviso.Size = new Size(0, 15);
             lblAviso.TabIndex = 8;
-            lblAviso.Text = "Aviso";
             // 
             // lblPreco
             // 
             lblPreco.AutoSize = true;
             lblPreco.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPreco.Location = new Point(80, 91);
+            lblPreco.Location = new Point(174, 337);
             lblPreco.Name = "lblPreco";
-            lblPreco.Size = new Size(49, 20);
+            lblPreco.Size = new Size(40, 15);
             lblPreco.TabIndex = 7;
             lblPreco.Text = "Preco:";
             // 
@@ -103,9 +115,9 @@
             // 
             lblTotalDias.AutoSize = true;
             lblTotalDias.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTotalDias.Location = new Point(13, 58);
+            lblTotalDias.Location = new Point(122, 311);
             lblTotalDias.Name = "lblTotalDias";
-            lblTotalDias.Size = new Size(117, 20);
+            lblTotalDias.Size = new Size(92, 15);
             lblTotalDias.TabIndex = 6;
             lblTotalDias.Text = "Dias p/ Semana:";
             // 
@@ -113,56 +125,61 @@
             // 
             lblNomePlano.AutoSize = true;
             lblNomePlano.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNomePlano.Location = new Point(13, 21);
+            lblNomePlano.Location = new Point(121, 287);
             lblNomePlano.Name = "lblNomePlano";
-            lblNomePlano.Size = new Size(116, 20);
+            lblNomePlano.Size = new Size(93, 15);
             lblNomePlano.TabIndex = 5;
             lblNomePlano.Text = "Nome do Plano:";
             // 
             // nudValor
             // 
             nudValor.DecimalPlaces = 2;
-            nudValor.Location = new Point(135, 91);
-            nudValor.Margin = new Padding(3, 4, 3, 4);
+            nudValor.Location = new Point(220, 335);
             nudValor.Name = "nudValor";
-            nudValor.Size = new Size(347, 27);
+            nudValor.Size = new Size(304, 23);
             nudValor.TabIndex = 4;
             // 
             // nudTotalDias
             // 
-            nudTotalDias.Location = new Point(135, 56);
-            nudTotalDias.Margin = new Padding(3, 4, 3, 4);
+            nudTotalDias.Location = new Point(220, 309);
             nudTotalDias.Maximum = new decimal(new int[] { 7, 0, 0, 0 });
             nudTotalDias.Name = "nudTotalDias";
-            nudTotalDias.Size = new Size(347, 27);
+            nudTotalDias.Size = new Size(304, 23);
             nudTotalDias.TabIndex = 3;
             // 
             // txtNomePlano
             // 
-            txtNomePlano.Location = new Point(135, 21);
-            txtNomePlano.Margin = new Padding(3, 4, 3, 4);
+            txtNomePlano.Location = new Point(220, 283);
             txtNomePlano.Name = "txtNomePlano";
-            txtNomePlano.Size = new Size(347, 27);
+            txtNomePlano.Size = new Size(304, 23);
             txtNomePlano.TabIndex = 2;
             // 
             // btnCadastrarPlano
             // 
-            btnCadastrarPlano.Location = new Point(388, 160);
-            btnCadastrarPlano.Margin = new Padding(3, 4, 3, 4);
+            btnCadastrarPlano.Location = new Point(442, 387);
             btnCadastrarPlano.Name = "btnCadastrarPlano";
-            btnCadastrarPlano.Size = new Size(94, 29);
+            btnCadastrarPlano.Size = new Size(82, 22);
             btnCadastrarPlano.TabIndex = 0;
             btnCadastrarPlano.Text = "Cadastrar";
             btnCadastrarPlano.UseVisualStyleBackColor = true;
             btnCadastrarPlano.Click += btnCadastrarPlano_Click;
             // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(558, 283);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.TabIndex = 12;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
             // FrmCadastroPlano
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(pnlCadastroPlano);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmCadastroPlano";
             Text = "Cadastrar Planos";
             pnlCadastroPlano.ResumeLayout(false);
@@ -186,5 +203,7 @@
         private Label lblAviso;
         private Label lblPeriodicidade;
         private ComboBox cmbPeriodicidade;
+        private ListBox lstPlanos;
+        private Button btnExcluir;
     }
 }
