@@ -72,6 +72,7 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             pictureBox1.Visible = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // mnuTelaPrincipal
             // 
