@@ -16,6 +16,7 @@ namespace AndreysGym.Forms
     {
         private static FrmCadastroPagamento _instance;
         private static Usuario _usuario;
+        private static Usuario _usuario2;
         private FrmCadastroPagamento()
         {
             InitializeComponent();
@@ -26,10 +27,17 @@ namespace AndreysGym.Forms
             InitializeComponent();
 
             _usuario = UsuarioRepository.FindByIdWCredencial(usuario.Id);
+            
+            _usuario2 = UsuarioRepository.FindByIdWPlano(usuario.Id);
+
+            _usuario.Plano = _usuario2.Plano;
 
             txtNome.Text = _usuario.Nome;
             txtEmail.Text = _usuario.Credencial.Email;
             txtCpf.Text = Convert.ToString(_usuario.Cpf);
+            txtPlano.Text = _usuario.Plano.Nome;
+            txtPeriodicidade.Text = Convert.ToString(_usuario.Plano.Periodicidade);
+            txtPreco.Text = Convert.ToString(_usuario.Plano.Preco);
 
             mtbPagamento.Text = Convert.ToString(DateTime.Now);
         }
