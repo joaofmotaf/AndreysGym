@@ -28,251 +28,255 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            usuarioBindingSource = new BindingSource(components);
-            tlpUsuarios = new TableLayoutPanel();
-            dgvUsuarios = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dataNascimentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cpfDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Credencial = new DataGridViewTextBoxColumn();
-            txtPesquisa = new TextBox();
-            btnPesquisar = new Button();
-            tlpPrincipal = new TableLayoutPanel();
-            btnProgramacoes = new Button();
-            btnFrequencias = new Button();
-            btnPagamentos = new Button();
-            btnAvaliacoes = new Button();
-            btnEditar = new Button();
-            btnExcluir = new Button();
-            ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
-            tlpUsuarios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
-            tlpPrincipal.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tlpUsuarios = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataNascimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credencial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.tlpPrincipal = new System.Windows.Forms.TableLayoutPanel();
+            this.btnProgramacoes = new System.Windows.Forms.Button();
+            this.btnFrequencias = new System.Windows.Forms.Button();
+            this.btnPagamentos = new System.Windows.Forms.Button();
+            this.btnAvaliacoes = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            this.tlpUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.tlpPrincipal.SuspendLayout();
+            this.SuspendLayout();
             // 
             // usuarioBindingSource
             // 
-            usuarioBindingSource.DataSource = typeof(Entidades.Usuario);
+            this.usuarioBindingSource.DataSource = typeof(AndreysGym.Entidades.Usuario);
             // 
             // tlpUsuarios
             // 
-            tlpUsuarios.AutoSize = true;
-            tlpUsuarios.ColumnCount = 2;
-            tlpPrincipal.SetColumnSpan(tlpUsuarios, 6);
-            tlpUsuarios.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
-            tlpUsuarios.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tlpUsuarios.Controls.Add(dgvUsuarios, 1, 1);
-            tlpUsuarios.Controls.Add(txtPesquisa, 0, 0);
-            tlpUsuarios.Controls.Add(btnPesquisar, 1, 0);
-            tlpUsuarios.Dock = DockStyle.Fill;
-            tlpUsuarios.Location = new Point(15, 15);
-            tlpUsuarios.Name = "tlpUsuarios";
-            tlpUsuarios.RowCount = 2;
-            tlpUsuarios.RowStyles.Add(new RowStyle());
-            tlpUsuarios.RowStyles.Add(new RowStyle());
-            tlpUsuarios.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlpUsuarios.Size = new Size(357, 252);
-            tlpUsuarios.TabIndex = 0;
+            this.tlpUsuarios.AutoSize = true;
+            this.tlpUsuarios.ColumnCount = 2;
+            this.tlpPrincipal.SetColumnSpan(this.tlpUsuarios, 6);
+            this.tlpUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlpUsuarios.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpUsuarios.Controls.Add(this.dgvUsuarios, 1, 1);
+            this.tlpUsuarios.Controls.Add(this.txtPesquisa, 0, 0);
+            this.tlpUsuarios.Controls.Add(this.btnPesquisar, 1, 0);
+            this.tlpUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpUsuarios.Location = new System.Drawing.Point(15, 15);
+            this.tlpUsuarios.Name = "tlpUsuarios";
+            this.tlpUsuarios.RowCount = 2;
+            this.tlpUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUsuarios.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpUsuarios.Size = new System.Drawing.Size(357, 252);
+            this.tlpUsuarios.TabIndex = 0;
             // 
             // dgvUsuarios
             // 
-            dgvUsuarios.AllowUserToAddRows = false;
-            dgvUsuarios.AllowUserToDeleteRows = false;
-            dgvUsuarios.AutoGenerateColumns = false;
-            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, dataNascimentoDataGridViewTextBoxColumn, cpfDataGridViewTextBoxColumn, Credencial });
-            tlpUsuarios.SetColumnSpan(dgvUsuarios, 2);
-            dgvUsuarios.DataSource = usuarioBindingSource;
-            dgvUsuarios.Dock = DockStyle.Fill;
-            dgvUsuarios.Location = new Point(3, 32);
-            dgvUsuarios.MultiSelect = false;
-            dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.ReadOnly = true;
-            dgvUsuarios.RowTemplate.Height = 25;
-            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuarios.Size = new Size(351, 217);
-            dgvUsuarios.TabIndex = 2;
-            dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.AutoGenerateColumns = false;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.dataNascimentoDataGridViewTextBoxColumn,
+            this.cpfDataGridViewTextBoxColumn,
+            this.Credencial});
+            this.tlpUsuarios.SetColumnSpan(this.dgvUsuarios, 2);
+            this.dgvUsuarios.DataSource = this.usuarioBindingSource;
+            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUsuarios.Location = new System.Drawing.Point(3, 32);
+            this.dgvUsuarios.MultiSelect = false;
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RowTemplate.Height = 25;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.Size = new System.Drawing.Size(351, 217);
+            this.dgvUsuarios.TabIndex = 2;
+            this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
-            idDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.FillWeight = 5F;
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Visible = false;
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 5F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
-            nomeDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.FillWeight = 45F;
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.FillWeight = 45F;
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataNascimentoDataGridViewTextBoxColumn
             // 
-            dataNascimentoDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataNascimentoDataGridViewTextBoxColumn.DataPropertyName = "DataNascimento";
-            dataNascimentoDataGridViewTextBoxColumn.FillWeight = 15F;
-            dataNascimentoDataGridViewTextBoxColumn.HeaderText = "Data de Nascimento";
-            dataNascimentoDataGridViewTextBoxColumn.Name = "dataNascimentoDataGridViewTextBoxColumn";
-            dataNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataNascimentoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataNascimentoDataGridViewTextBoxColumn.DataPropertyName = "DataNascimento";
+            this.dataNascimentoDataGridViewTextBoxColumn.FillWeight = 15F;
+            this.dataNascimentoDataGridViewTextBoxColumn.HeaderText = "Data de Nascimento";
+            this.dataNascimentoDataGridViewTextBoxColumn.Name = "dataNascimentoDataGridViewTextBoxColumn";
+            this.dataNascimentoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cpfDataGridViewTextBoxColumn
             // 
-            cpfDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            cpfDataGridViewTextBoxColumn.DataPropertyName = "Cpf";
-            cpfDataGridViewTextBoxColumn.FillWeight = 15F;
-            cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
-            cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
-            cpfDataGridViewTextBoxColumn.ReadOnly = true;
-            cpfDataGridViewTextBoxColumn.Visible = false;
+            this.cpfDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cpfDataGridViewTextBoxColumn.DataPropertyName = "Cpf";
+            this.cpfDataGridViewTextBoxColumn.FillWeight = 15F;
+            this.cpfDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cpfDataGridViewTextBoxColumn.Name = "cpfDataGridViewTextBoxColumn";
+            this.cpfDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cpfDataGridViewTextBoxColumn.Visible = false;
             // 
             // Credencial
             // 
-            Credencial.DataPropertyName = "Credencial";
-            Credencial.HeaderText = "Credencial";
-            Credencial.Name = "Credencial";
-            Credencial.ReadOnly = true;
-            Credencial.Visible = false;
+            this.Credencial.DataPropertyName = "Credencial";
+            this.Credencial.HeaderText = "Credencial";
+            this.Credencial.Name = "Credencial";
+            this.Credencial.ReadOnly = true;
+            this.Credencial.Visible = false;
             // 
             // txtPesquisa
             // 
-            txtPesquisa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtPesquisa.Location = new Point(3, 3);
-            txtPesquisa.Name = "txtPesquisa";
-            txtPesquisa.PlaceholderText = "Insira o nome do usuário...";
-            txtPesquisa.Size = new Size(279, 23);
-            txtPesquisa.TabIndex = 0;
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisa.Location = new System.Drawing.Point(3, 3);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.PlaceholderText = "Insira o nome do usuário...";
+            this.txtPesquisa.Size = new System.Drawing.Size(279, 23);
+            this.txtPesquisa.TabIndex = 0;
             // 
             // btnPesquisar
             // 
-            btnPesquisar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            btnPesquisar.Location = new Point(288, 3);
-            btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(66, 23);
-            btnPesquisar.TabIndex = 3;
-            btnPesquisar.Text = "Pesquisar";
-            btnPesquisar.UseVisualStyleBackColor = true;
-            btnPesquisar.Click += btnPesquisar_Click;
+            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisar.Location = new System.Drawing.Point(288, 3);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(66, 23);
+            this.btnPesquisar.TabIndex = 3;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // tlpPrincipal
             // 
-            tlpPrincipal.ColumnCount = 6;
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpPrincipal.Controls.Add(tlpUsuarios, 0, 0);
-            tlpPrincipal.Controls.Add(btnProgramacoes, 0, 1);
-            tlpPrincipal.Controls.Add(btnFrequencias, 1, 1);
-            tlpPrincipal.Controls.Add(btnPagamentos, 2, 1);
-            tlpPrincipal.Controls.Add(btnAvaliacoes, 3, 1);
-            tlpPrincipal.Controls.Add(btnEditar, 4, 1);
-            tlpPrincipal.Controls.Add(btnExcluir, 5, 1);
-            tlpPrincipal.Dock = DockStyle.Fill;
-            tlpPrincipal.Location = new Point(0, 0);
-            tlpPrincipal.Name = "tlpPrincipal";
-            tlpPrincipal.Padding = new Padding(12);
-            tlpPrincipal.RowCount = 2;
-            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpPrincipal.RowStyles.Add(new RowStyle());
-            tlpPrincipal.Size = new Size(387, 311);
-            tlpPrincipal.TabIndex = 1;
+            this.tlpPrincipal.ColumnCount = 6;
+            this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpPrincipal.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpPrincipal.Controls.Add(this.tlpUsuarios, 0, 0);
+            this.tlpPrincipal.Controls.Add(this.btnProgramacoes, 0, 1);
+            this.tlpPrincipal.Controls.Add(this.btnFrequencias, 1, 1);
+            this.tlpPrincipal.Controls.Add(this.btnPagamentos, 2, 1);
+            this.tlpPrincipal.Controls.Add(this.btnAvaliacoes, 3, 1);
+            this.tlpPrincipal.Controls.Add(this.btnEditar, 4, 1);
+            this.tlpPrincipal.Controls.Add(this.btnExcluir, 5, 1);
+            this.tlpPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.tlpPrincipal.Name = "tlpPrincipal";
+            this.tlpPrincipal.Padding = new System.Windows.Forms.Padding(12);
+            this.tlpPrincipal.RowCount = 2;
+            this.tlpPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpPrincipal.Size = new System.Drawing.Size(387, 311);
+            this.tlpPrincipal.TabIndex = 1;
             // 
             // btnProgramacoes
             // 
-            btnProgramacoes.Dock = DockStyle.Fill;
-            btnProgramacoes.Enabled = false;
-            btnProgramacoes.Location = new Point(15, 273);
-            btnProgramacoes.Name = "btnProgramacoes";
-            btnProgramacoes.Size = new Size(54, 23);
-            btnProgramacoes.TabIndex = 0;
-            btnProgramacoes.Text = "Programações";
-            btnProgramacoes.UseVisualStyleBackColor = true;
-            btnProgramacoes.Click += btnProgramacoes_Click;
+            this.btnProgramacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnProgramacoes.Location = new System.Drawing.Point(15, 273);
+            this.btnProgramacoes.Name = "btnProgramacoes";
+            this.btnProgramacoes.Size = new System.Drawing.Size(54, 23);
+            this.btnProgramacoes.TabIndex = 0;
+            this.btnProgramacoes.Text = "Programações";
+            this.btnProgramacoes.UseVisualStyleBackColor = true;
+            this.btnProgramacoes.Click += new System.EventHandler(this.btnProgramacoes_Click);
             // 
             // btnFrequencias
             // 
-            btnFrequencias.Dock = DockStyle.Fill;
-            btnFrequencias.Enabled = false;
-            btnFrequencias.Location = new Point(75, 273);
-            btnFrequencias.Name = "btnFrequencias";
-            btnFrequencias.Size = new Size(54, 23);
-            btnFrequencias.TabIndex = 1;
-            btnFrequencias.Text = "Frequências";
-            btnFrequencias.UseVisualStyleBackColor = true;
-            btnFrequencias.Click += btnFrequencias_Click;
+            this.btnFrequencias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFrequencias.Location = new System.Drawing.Point(75, 273);
+            this.btnFrequencias.Name = "btnFrequencias";
+            this.btnFrequencias.Size = new System.Drawing.Size(54, 23);
+            this.btnFrequencias.TabIndex = 1;
+            this.btnFrequencias.Text = "Frequências";
+            this.btnFrequencias.UseVisualStyleBackColor = true;
+            this.btnFrequencias.Click += new System.EventHandler(this.btnFrequencias_Click);
             // 
             // btnPagamentos
             // 
-            btnPagamentos.Dock = DockStyle.Fill;
-            btnPagamentos.Enabled = false;
-            btnPagamentos.Location = new Point(135, 273);
-            btnPagamentos.Name = "btnPagamentos";
-            btnPagamentos.Size = new Size(54, 23);
-            btnPagamentos.TabIndex = 2;
-            btnPagamentos.Text = "Pagamentos";
-            btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPagamentos.Location = new System.Drawing.Point(135, 273);
+            this.btnPagamentos.Name = "btnPagamentos";
+            this.btnPagamentos.Size = new System.Drawing.Size(54, 23);
+            this.btnPagamentos.TabIndex = 2;
+            this.btnPagamentos.Text = "Pagamentos";
+            this.btnPagamentos.UseVisualStyleBackColor = true;
+            this.btnPagamentos.Click += new System.EventHandler(this.btnPagamentos_Click);
             // 
             // btnAvaliacoes
             // 
-            btnAvaliacoes.Dock = DockStyle.Fill;
-            btnAvaliacoes.Enabled = false;
-            btnAvaliacoes.Location = new Point(195, 273);
-            btnAvaliacoes.Name = "btnAvaliacoes";
-            btnAvaliacoes.Size = new Size(54, 23);
-            btnAvaliacoes.TabIndex = 3;
-            btnAvaliacoes.Text = "Avaliações";
-            btnAvaliacoes.UseVisualStyleBackColor = true;
+            this.btnAvaliacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAvaliacoes.Location = new System.Drawing.Point(195, 273);
+            this.btnAvaliacoes.Name = "btnAvaliacoes";
+            this.btnAvaliacoes.Size = new System.Drawing.Size(54, 23);
+            this.btnAvaliacoes.TabIndex = 3;
+            this.btnAvaliacoes.Text = "Avaliações";
+            this.btnAvaliacoes.UseVisualStyleBackColor = true;
+            this.btnAvaliacoes.Click += new System.EventHandler(this.btnAvaliacoes_Click);
             // 
             // btnEditar
             // 
-            btnEditar.Dock = DockStyle.Fill;
-            btnEditar.Enabled = false;
-            btnEditar.Location = new Point(255, 273);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(54, 23);
-            btnEditar.TabIndex = 4;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
+            this.btnEditar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditar.Location = new System.Drawing.Point(255, 273);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(54, 23);
+            this.btnEditar.TabIndex = 4;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
-            btnExcluir.Dock = DockStyle.Fill;
-            btnExcluir.Enabled = false;
-            btnExcluir.Location = new Point(315, 273);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(57, 23);
-            btnExcluir.TabIndex = 5;
-            btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = true;
-            btnExcluir.Click += btnExcluir_Click;
+            this.btnExcluir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExcluir.Location = new System.Drawing.Point(315, 273);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(57, 23);
+            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // FrmGerenciamentoUsuario
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(387, 311);
-            Controls.Add(tlpPrincipal);
-            Name = "FrmGerenciamentoUsuario";
-            Text = "FrmGerenciamentoUsuario";
-            ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).EndInit();
-            tlpUsuarios.ResumeLayout(false);
-            tlpUsuarios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
-            tlpPrincipal.ResumeLayout(false);
-            tlpPrincipal.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(387, 311);
+            this.Controls.Add(this.tlpPrincipal);
+            this.Name = "FrmGerenciamentoUsuario";
+            this.Text = "FrmGerenciamentoUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            this.tlpUsuarios.ResumeLayout(false);
+            this.tlpUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.tlpPrincipal.ResumeLayout(false);
+            this.tlpPrincipal.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -67,7 +67,7 @@ namespace AndreysGym.Forms
 
         private void mnuPrincipalAdmnistradorCadastrar_Click(object sender, EventArgs e)
         {
-            FrmCadastro.GetInstance().MdiParent = this;
+            FrmCadastro.GetInstance().MdiParent = FrmPrincipal.GetInstance();
             FrmCadastro.GetInstance().WindowState = FormWindowState.Maximized;
             FrmCadastro.GetInstance().Show();
         }
@@ -122,6 +122,7 @@ namespace AndreysGym.Forms
         {
             FrmFrequencia frequencia = FrmFrequencia.GetInstance(_usuario);
             frequencia.MdiParent = this;
+            frequencia.WindowState = FormWindowState.Maximized;
             frequencia.Show();
         }
 
@@ -129,6 +130,7 @@ namespace AndreysGym.Forms
         {
             FrmPerfil perfil = FrmPerfil.GetInstance(_usuario, _usuario.Credencial.Admin);
             perfil.MdiParent = this;
+            perfil.WindowState = FormWindowState.Maximized;
             perfil.Show();
         }
 
@@ -136,52 +138,34 @@ namespace AndreysGym.Forms
         {
             FrmProgramacao programacao = FrmProgramacao.GetInstance(_usuario, _usuario);
             programacao.MdiParent = this;
+            programacao.WindowState = FormWindowState.Maximized;
             programacao.Show();
-        }
-
-        private void mnuPrincipalCliente_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void mnuPrincipalClienteAvaliacoes_Click(object sender, EventArgs e)
         {
-
+            var avaliacoes = FrmAvaliacoes.GetInstance(_usuario);
+            avaliacoes.MdiParent = this;
+            avaliacoes.WindowState = FormWindowState.Maximized;
+            avaliacoes.Show();
         }
 
-        private void mnuPrincipalClientePagamentos_Click(object sender, EventArgs e)
+        private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            var mdiClient = this.Controls.OfType<MdiClient>().FirstOrDefault();
 
+            if (mdiClient != null)
+            {
+                mdiClient.BackgroundImage = this.BackgroundImage;
+                mdiClient.BackgroundImageLayout = ImageLayout.Stretch; // Ajuste conforme necessário
+            }
         }
 
-        private void mnuPrincipalAjudaTermosDeUso_Click_1(object sender, EventArgs e)
+        private void cadastrarPlanosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void mnuPrincipalAjudaSobre_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuPrincipalArquivoSair_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuPrincipalAdmnistrador_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mnuTelaPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            FrmCadastroPlano.GetInstance().MdiParent = FrmPrincipal.GetInstance();
+            FrmCadastroPlano.GetInstance().WindowState = FormWindowState.Maximized;
+            FrmCadastroPlano.GetInstance().Show();
         }
     }
 }

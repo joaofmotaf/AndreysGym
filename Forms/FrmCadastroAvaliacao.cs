@@ -21,6 +21,9 @@ namespace AndreysGym.Forms
         private FrmCadastroAvaliacao()
         {
             InitializeComponent();
+            txtPersonal.Text = _personalResponsavel.Nome;
+            dtpDataRealizacao.Value = DateTime.Today;
+            nudIdade.Value = _usuarioAvaliado.CalcularIdade();
         }
 
         
@@ -28,10 +31,9 @@ namespace AndreysGym.Forms
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new FrmCadastroAvaliacao();
-
-                _usuarioAvaliado = usuarioAvaliado;
                 _personalResponsavel = personalResponsavel;
+                _usuarioAvaliado = usuarioAvaliado;
+                _instance = new FrmCadastroAvaliacao();
             }
             return _instance;
         }
@@ -96,6 +98,7 @@ namespace AndreysGym.Forms
                 Peso = nudPeso.Value,
                 Altura = nudAltura.Value,
                 Usuario = _usuarioAvaliado,
+                IdadeCliente = (Int32)nudIdade.Value,
                 PersonalResponsavel = _personalResponsavel,
                 PerimetroPanturrilhaDireita = nudPerimetroPanturrilhaDir.Value,
                 PerimetroPanturrilhaEsquerda = nudPerimetroPanturrilhaEsq.Value,
@@ -112,6 +115,8 @@ namespace AndreysGym.Forms
                 PerimetroQuadril = nudPerimetroQuadril.Value,
                 PerimetroToraxRelaxado = nudPerimetroToraxRelaxado.Value
             };
+            FrmAvaliacoes.GetInstance(_personalResponsavel, _usuarioAvaliado).SalvarAvaliacao(avaliacao);
+            Close();
         }
 
         private void pnlCadAvaliacao_Paint(object sender, PaintEventArgs e)

@@ -28,94 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlProgramacao = new Panel();
-            btnConcluirTreino = new Button();
-            lstExercicios = new ListView();
-            nomeExercicio = new ColumnHeader();
-            series = new ColumnHeader();
-            repeticoes = new ColumnHeader();
-            btnAdicionarProgramacao = new Button();
-            treProgramacoes = new TreeView();
-            pnlProgramacao.SuspendLayout();
-            SuspendLayout();
+            this.pnlProgramacao = new System.Windows.Forms.Panel();
+            this.btnConcluirTreino = new System.Windows.Forms.Button();
+            this.lstExercicios = new System.Windows.Forms.ListView();
+            this.nomeExercicio = new System.Windows.Forms.ColumnHeader();
+            this.series = new System.Windows.Forms.ColumnHeader();
+            this.repeticoes = new System.Windows.Forms.ColumnHeader();
+            this.btnAdicionarProgramacao = new System.Windows.Forms.Button();
+            this.treProgramacoes = new System.Windows.Forms.TreeView();
+            this.pnlProgramacao.SuspendLayout();
+            this.SuspendLayout();
             // 
             // pnlProgramacao
             // 
-            pnlProgramacao.Controls.Add(btnConcluirTreino);
-            pnlProgramacao.Controls.Add(lstExercicios);
-            pnlProgramacao.Controls.Add(btnAdicionarProgramacao);
-            pnlProgramacao.Controls.Add(treProgramacoes);
-            pnlProgramacao.Location = new Point(12, 12);
-            pnlProgramacao.Name = "pnlProgramacao";
-            pnlProgramacao.Size = new Size(776, 426);
-            pnlProgramacao.TabIndex = 0;
+            this.pnlProgramacao.Controls.Add(this.btnConcluirTreino);
+            this.pnlProgramacao.Controls.Add(this.lstExercicios);
+            this.pnlProgramacao.Controls.Add(this.btnAdicionarProgramacao);
+            this.pnlProgramacao.Controls.Add(this.treProgramacoes);
+            this.pnlProgramacao.Location = new System.Drawing.Point(12, 12);
+            this.pnlProgramacao.Name = "pnlProgramacao";
+            this.pnlProgramacao.Size = new System.Drawing.Size(776, 388);
+            this.pnlProgramacao.TabIndex = 0;
             // 
             // btnConcluirTreino
             // 
-            btnConcluirTreino.Enabled = false;
-            btnConcluirTreino.Location = new Point(670, 371);
-            btnConcluirTreino.Name = "btnConcluirTreino";
-            btnConcluirTreino.Size = new Size(103, 23);
-            btnConcluirTreino.TabIndex = 3;
-            btnConcluirTreino.Text = "Concluir Treino";
-            btnConcluirTreino.UseVisualStyleBackColor = true;
-            btnConcluirTreino.Click += btnConcluirTreino_Click;
+            this.btnConcluirTreino.Enabled = false;
+            this.btnConcluirTreino.Location = new System.Drawing.Point(670, 316);
+            this.btnConcluirTreino.Name = "btnConcluirTreino";
+            this.btnConcluirTreino.Size = new System.Drawing.Size(103, 23);
+            this.btnConcluirTreino.TabIndex = 3;
+            this.btnConcluirTreino.Text = "Concluir Treino";
+            this.btnConcluirTreino.UseVisualStyleBackColor = true;
+            this.btnConcluirTreino.Click += new System.EventHandler(this.btnConcluirTreino_Click);
             // 
             // lstExercicios
             // 
-            lstExercicios.Columns.AddRange(new ColumnHeader[] { nomeExercicio, series, repeticoes });
-            lstExercicios.FullRowSelect = true;
-            lstExercicios.GridLines = true;
-            lstExercicios.Location = new Point(193, 3);
-            lstExercicios.Name = "lstExercicios";
-            lstExercicios.Size = new Size(580, 351);
-            lstExercicios.TabIndex = 2;
-            lstExercicios.UseCompatibleStateImageBehavior = false;
-            lstExercicios.View = View.Details;
+            this.lstExercicios.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nomeExercicio,
+            this.series,
+            this.repeticoes});
+            this.lstExercicios.FullRowSelect = true;
+            this.lstExercicios.GridLines = true;
+            this.lstExercicios.Location = new System.Drawing.Point(193, 3);
+            this.lstExercicios.Name = "lstExercicios";
+            this.lstExercicios.Size = new System.Drawing.Size(580, 307);
+            this.lstExercicios.TabIndex = 2;
+            this.lstExercicios.UseCompatibleStateImageBehavior = false;
+            this.lstExercicios.View = System.Windows.Forms.View.Details;
             // 
             // nomeExercicio
             // 
-            nomeExercicio.Text = "Nome do Exercício";
-            nomeExercicio.Width = 250;
+            this.nomeExercicio.Text = "Nome do Exercício";
+            this.nomeExercicio.Width = 250;
             // 
             // series
             // 
-            series.Text = "Séries";
-            series.Width = 70;
+            this.series.Text = "Séries";
+            this.series.Width = 70;
             // 
             // repeticoes
             // 
-            repeticoes.Text = "Repetições";
-            repeticoes.Width = 90;
+            this.repeticoes.Text = "Repetições";
+            this.repeticoes.Width = 90;
             // 
             // btnAdicionarProgramacao
             // 
-            btnAdicionarProgramacao.Location = new Point(3, 400);
-            btnAdicionarProgramacao.Name = "btnAdicionarProgramacao";
-            btnAdicionarProgramacao.Size = new Size(140, 23);
-            btnAdicionarProgramacao.TabIndex = 1;
-            btnAdicionarProgramacao.Text = "Adicionar Programação";
-            btnAdicionarProgramacao.UseVisualStyleBackColor = true;
-            btnAdicionarProgramacao.Click += btnAdicionarProgramacao_Click;
+            this.btnAdicionarProgramacao.Location = new System.Drawing.Point(3, 358);
+            this.btnAdicionarProgramacao.Name = "btnAdicionarProgramacao";
+            this.btnAdicionarProgramacao.Size = new System.Drawing.Size(140, 23);
+            this.btnAdicionarProgramacao.TabIndex = 1;
+            this.btnAdicionarProgramacao.Text = "Adicionar Programação";
+            this.btnAdicionarProgramacao.UseVisualStyleBackColor = true;
+            this.btnAdicionarProgramacao.Click += new System.EventHandler(this.btnAdicionarProgramacao_Click);
             // 
             // treProgramacoes
             // 
-            treProgramacoes.Location = new Point(3, 3);
-            treProgramacoes.Name = "treProgramacoes";
-            treProgramacoes.Size = new Size(184, 391);
-            treProgramacoes.TabIndex = 0;
-            treProgramacoes.AfterSelect += trvProgramacoes_AfterSelect;
+            this.treProgramacoes.Location = new System.Drawing.Point(3, 3);
+            this.treProgramacoes.Name = "treProgramacoes";
+            this.treProgramacoes.Size = new System.Drawing.Size(184, 349);
+            this.treProgramacoes.TabIndex = 0;
+            this.treProgramacoes.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvProgramacoes_AfterSelect);
             // 
             // FrmProgramacao
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(pnlProgramacao);
-            Name = "FrmProgramacao";
-            Text = "Programações";
-            pnlProgramacao.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 408);
+            this.Controls.Add(this.pnlProgramacao);
+            this.Name = "FrmProgramacao";
+            this.Text = "Programações";
+            this.pnlProgramacao.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -148,5 +148,23 @@ namespace AndreysGym.Repositories
                 throw;
             }
         }
+
+        public static Usuario FindByIdWPlano(UInt64 id)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Usuarios
+                        .Include("Plano")
+                        .Where(u => u.Id == id)
+                        .FirstOrDefault<Usuario>();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

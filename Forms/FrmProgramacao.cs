@@ -71,12 +71,18 @@ namespace AndreysGym.Forms
                 }
                 treProgramacoes.Nodes.Insert(0, nodeProgramacao);
             }
-            treProgramacoes.Nodes[0].Expand();
+            if (treProgramacoes.Nodes.Count != 0)
+            {
+                treProgramacoes.Nodes[0].Expand();
+            }
         }
 
         private void btnAdicionarProgramacao_Click(object sender, EventArgs e)
         {
-            FrmRegistroProgramacao.GetInstance().Show();
+            var registroProgramacao = FrmRegistroProgramacao.GetInstance();
+            registroProgramacao.MdiParent = FrmPrincipal.GetInstance();
+            registroProgramacao.WindowState = FormWindowState.Maximized;
+            registroProgramacao.Show();
         }
 
         public void SalvarProgramacao(Programacao programacao)
@@ -115,7 +121,6 @@ namespace AndreysGym.Forms
             var indiceTreinoAtual = programacao.Treinos.IndexOf(treinoAtual);
             if (programacao.Treinos.Count - 1 == indiceTreinoAtual)
             {
-                MessageBox.Show(programacao.Treinos.FirstOrDefault().Id.ToString());
                 _usuarioAtivo.TreinoAtualId = programacao.Treinos.FirstOrDefault().Id;
             }
             else

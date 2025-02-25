@@ -45,11 +45,7 @@ namespace AndreysGym.Forms
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e)
         {
-            lblInvalido.Hide();
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnEntrar.PerformClick();
-            }
+
         }
 
         private void txtEmail_KeyDown(object sender, KeyEventArgs e)
@@ -64,6 +60,11 @@ namespace AndreysGym.Forms
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Email = adm@mail.com\nSenha = admin");
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+            lblInvalido.Hide();
         }
     }
 }
