@@ -173,5 +173,15 @@ namespace AndreysGym.Forms
         {
 
         }
+
+        private void mnuPrincipalAdmnistrador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuTelaPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

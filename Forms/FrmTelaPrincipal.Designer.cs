@@ -48,6 +48,7 @@
             mnuPrincipalAjuda = new ToolStripMenuItem();
             mnuPrincipalAjudaTermosDeUso = new ToolStripMenuItem();
             mnuPrincipalAjudaSobre = new ToolStripMenuItem();
+            áreaDoAdministradorToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             mnuTelaPrincipal.SuspendLayout();
@@ -56,19 +57,20 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.image_removebg_preview;
-            pictureBox2.Location = new Point(-605, 33);
+            pictureBox2.Location = new Point(-573, 33);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(853, 545);
+            pictureBox2.Size = new Size(997, 569);
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             pictureBox2.Visible = false;
             // 
             // pictureBox1
             // 
+            pictureBox1.ErrorImage = null;
             pictureBox1.Image = Properties.Resources.image_removebg_preview;
-            pictureBox1.Location = new Point(191, 33);
+            pictureBox1.Location = new Point(286, 33);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(853, 545);
+            pictureBox1.Size = new Size(964, 569);
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             pictureBox1.Visible = false;
@@ -84,6 +86,7 @@
             mnuTelaPrincipal.Size = new Size(914, 30);
             mnuTelaPrincipal.TabIndex = 9;
             mnuTelaPrincipal.Text = "menuStrip1";
+            mnuTelaPrincipal.ItemClicked += mnuTelaPrincipal_ItemClicked;
             // 
             // mnuPrincipalArquivoSair
             // 
@@ -111,10 +114,11 @@
             // 
             // mnuPrincipalAdmnistrador
             // 
-            mnuPrincipalAdmnistrador.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalAdmnistradorCadastrar, mnuPrincipalAdminstradorUsuarios, registrarFrequênciaToolStripMenuItem });
+            mnuPrincipalAdmnistrador.DropDownItems.AddRange(new ToolStripItem[] { mnuPrincipalAdmnistradorCadastrar, mnuPrincipalAdminstradorUsuarios, registrarFrequênciaToolStripMenuItem, áreaDoAdministradorToolStripMenuItem });
             mnuPrincipalAdmnistrador.Name = "mnuPrincipalAdmnistrador";
             mnuPrincipalAdmnistrador.Size = new Size(175, 24);
             mnuPrincipalAdmnistrador.Text = "Área do &Administrador";
+            mnuPrincipalAdmnistrador.Click += mnuPrincipalAdmnistrador_Click;
             // 
             // mnuPrincipalAdmnistradorCadastrar
             // 
@@ -207,9 +211,16 @@
             // 
             mnuPrincipalAjudaSobre.Image = (Image)resources.GetObject("mnuPrincipalAjudaSobre.Image");
             mnuPrincipalAjudaSobre.Name = "mnuPrincipalAjudaSobre";
-            mnuPrincipalAjudaSobre.Size = new Size(188, 26);
+            mnuPrincipalAjudaSobre.Size = new Size(224, 26);
             mnuPrincipalAjudaSobre.Text = "Sobre";
             mnuPrincipalAjudaSobre.Click += mnuPrincipalAjudaSobre_Click_1;
+            // 
+            // áreaDoAdministradorToolStripMenuItem
+            // 
+            áreaDoAdministradorToolStripMenuItem.Image = (Image)resources.GetObject("áreaDoAdministradorToolStripMenuItem.Image");
+            áreaDoAdministradorToolStripMenuItem.Name = "áreaDoAdministradorToolStripMenuItem";
+            áreaDoAdministradorToolStripMenuItem.Size = new Size(274, 26);
+            áreaDoAdministradorToolStripMenuItem.Text = "Área do &Administrador";
             // 
             // FrmPrincipal
             // 
@@ -254,5 +265,6 @@
         private ToolStripMenuItem mnuPrincipalAjuda;
         private ToolStripMenuItem mnuPrincipalAjudaTermosDeUso;
         private ToolStripMenuItem mnuPrincipalAjudaSobre;
+        private ToolStripMenuItem áreaDoAdministradorToolStripMenuItem;
     }
 }
