@@ -42,7 +42,7 @@
             this.panel1.Controls.Add(this.proAvaliacao);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 426);
+            this.panel1.Size = new System.Drawing.Size(776, 369);
             this.panel1.TabIndex = 0;
             // 
             // lstAvaliacoes
@@ -51,13 +51,13 @@
             this.lstAvaliacoes.ItemHeight = 15;
             this.lstAvaliacoes.Location = new System.Drawing.Point(3, 3);
             this.lstAvaliacoes.Name = "lstAvaliacoes";
-            this.lstAvaliacoes.Size = new System.Drawing.Size(206, 394);
+            this.lstAvaliacoes.Size = new System.Drawing.Size(206, 334);
             this.lstAvaliacoes.TabIndex = 3;
             this.lstAvaliacoes.SelectedIndexChanged += new System.EventHandler(this.lstAvaliacoes_SelectedIndexChanged);
             // 
             // btnCadastrarAvaliacao
             // 
-            this.btnCadastrarAvaliacao.Location = new System.Drawing.Point(3, 400);
+            this.btnCadastrarAvaliacao.Location = new System.Drawing.Point(3, 343);
             this.btnCadastrarAvaliacao.Name = "btnCadastrarAvaliacao";
             this.btnCadastrarAvaliacao.Size = new System.Drawing.Size(206, 23);
             this.btnCadastrarAvaliacao.TabIndex = 2;
@@ -69,14 +69,14 @@
             // 
             this.proAvaliacao.Location = new System.Drawing.Point(215, 0);
             this.proAvaliacao.Name = "proAvaliacao";
-            this.proAvaliacao.Size = new System.Drawing.Size(561, 426);
+            this.proAvaliacao.Size = new System.Drawing.Size(561, 360);
             this.proAvaliacao.TabIndex = 0;
             // 
             // FrmAvaliacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 393);
             this.Controls.Add(this.panel1);
             this.Name = "FrmAvaliacoes";
             this.Text = "FrmAvaliacoes";

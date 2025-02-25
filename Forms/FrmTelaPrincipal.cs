@@ -143,5 +143,16 @@ namespace AndreysGym.Forms
         {
             FrmAvaliacoes.GetInstance(_usuario);
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            var mdiClient = this.Controls.OfType<MdiClient>().FirstOrDefault();
+
+            if (mdiClient != null)
+            {
+                mdiClient.BackgroundImage = this.BackgroundImage;
+                mdiClient.BackgroundImageLayout = ImageLayout.Stretch; // Ajuste conforme necessário
+            }
+        }
     }
 }

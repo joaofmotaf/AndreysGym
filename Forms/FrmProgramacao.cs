@@ -79,7 +79,10 @@ namespace AndreysGym.Forms
 
         private void btnAdicionarProgramacao_Click(object sender, EventArgs e)
         {
-            FrmRegistroProgramacao.GetInstance().Show();
+            var registroProgramacao = FrmRegistroProgramacao.GetInstance();
+            registroProgramacao.MdiParent = FrmPrincipal.GetInstance();
+            registroProgramacao.WindowState = FormWindowState.Maximized;
+            registroProgramacao.Show();
         }
 
         public void SalvarProgramacao(Programacao programacao)

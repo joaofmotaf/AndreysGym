@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mnuTelaPrincipal = new System.Windows.Forms.MenuStrip();
             this.mnuPrincipalArquivoSair = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTelaPrincipalArquivoSair = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,32 +46,8 @@
             this.mnuPrincipalAjuda = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipalAjudaTermosDeUso = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipalAjudaSobre = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mnuTelaPrincipal.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::AndreysGym.Properties.Resources.image_removebg_preview;
-            this.pictureBox2.Location = new System.Drawing.Point(-529, 25);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(746, 409);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AndreysGym.Properties.Resources.image_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(178, 25);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(746, 409);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // mnuTelaPrincipal
             // 
@@ -142,6 +116,7 @@
             this.registrarFrequênciaToolStripMenuItem.Name = "registrarFrequênciaToolStripMenuItem";
             this.registrarFrequênciaToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.registrarFrequênciaToolStripMenuItem.Text = "Registrar Frequência";
+            this.registrarFrequênciaToolStripMenuItem.Click += new System.EventHandler(this.registrarFrequênciaToolStripMenuItem_Click);
             // 
             // mnuPrincipalCliente
             // 
@@ -160,18 +135,21 @@
             this.mnuPrincipalClientePerfil.Name = "mnuPrincipalClientePerfil";
             this.mnuPrincipalClientePerfil.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClientePerfil.Text = "Perfil";
+            this.mnuPrincipalClientePerfil.Click += new System.EventHandler(this.mnuPrincipalClientePerfil_Click);
             // 
             // mnuPrincipalClienteFrequencia
             // 
             this.mnuPrincipalClienteFrequencia.Name = "mnuPrincipalClienteFrequencia";
             this.mnuPrincipalClienteFrequencia.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClienteFrequencia.Text = "Frequência";
+            this.mnuPrincipalClienteFrequencia.Click += new System.EventHandler(this.mnuPrincipalClienteFrequencia_Click);
             // 
             // mnuPrincipalClienteTreinos
             // 
             this.mnuPrincipalClienteTreinos.Name = "mnuPrincipalClienteTreinos";
             this.mnuPrincipalClienteTreinos.Size = new System.Drawing.Size(140, 22);
             this.mnuPrincipalClienteTreinos.Text = "Treinos";
+            this.mnuPrincipalClienteTreinos.Click += new System.EventHandler(this.mnuPrincipalClienteTreinos_Click);
             // 
             // mnuPrincipalClienteAvaliacoes
             // 
@@ -211,17 +189,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AndreysGym.Properties.Resources.image_removebg_preview;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mnuTelaPrincipal);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
             this.Text = "Tela Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTelaPrincipal_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.mnuTelaPrincipal.ResumeLayout(false);
             this.mnuTelaPrincipal.PerformLayout();
             this.ResumeLayout(false);
@@ -230,9 +208,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
         private MenuStrip mnuTelaPrincipal;
         private ToolStripMenuItem mnuPrincipalArquivoSair;
         private ToolStripMenuItem mnuTelaPrincipalArquivoSair;

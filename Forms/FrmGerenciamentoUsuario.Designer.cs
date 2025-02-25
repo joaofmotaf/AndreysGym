@@ -214,6 +214,7 @@
             this.btnFrequencias.TabIndex = 1;
             this.btnFrequencias.Text = "Frequências";
             this.btnFrequencias.UseVisualStyleBackColor = true;
+            this.btnFrequencias.Click += new System.EventHandler(this.btnFrequencias_Click);
             // 
             // btnPagamentos
             // 
@@ -235,6 +236,7 @@
             this.btnAvaliacoes.TabIndex = 3;
             this.btnAvaliacoes.Text = "Avaliações";
             this.btnAvaliacoes.UseVisualStyleBackColor = true;
+            this.btnAvaliacoes.Click += new System.EventHandler(this.btnAvaliacoes_Click);
             // 
             // btnEditar
             // 
@@ -245,6 +247,7 @@
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -255,6 +258,7 @@
             this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // FrmGerenciamentoUsuario
             // 

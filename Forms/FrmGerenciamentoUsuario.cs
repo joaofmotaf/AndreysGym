@@ -48,8 +48,10 @@ namespace AndreysGym.Forms
 
         private void btnProgramacoes_Click(object sender, EventArgs e)
         {
-            // Abrir janela de visualização de programações, com o botão de adicionar programações ativado
-            FrmProgramacao.GetInstance(_usuarioSelecionado, _usuarioAtivo).Show();
+            var programacao = FrmProgramacao.GetInstance(_usuarioSelecionado, _usuarioAtivo);
+            programacao.MdiParent = FrmPrincipal.GetInstance();
+            programacao.WindowState = FormWindowState.Maximized;
+            programacao.Show();
         }
 
         private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
@@ -71,8 +73,10 @@ namespace AndreysGym.Forms
             if (_usuarioSelecionado != null)
             {
                 Usuario usuarioComCredencial = UsuarioRepository.FindByIdWCredencial(_usuarioSelecionado.Id);
-                FrmPerfil.GetInstance(usuarioComCredencial, true).MdiParent = FrmPrincipal.GetInstance();
-                FrmPerfil.GetInstance().Show();
+                var perfil = FrmPerfil.GetInstance(usuarioComCredencial, true);
+                perfil.MdiParent = FrmPrincipal.GetInstance();
+                perfil.WindowState = FormWindowState.Maximized;
+                perfil.Show();
 
             }
         }
@@ -102,13 +106,17 @@ namespace AndreysGym.Forms
             {
                 var frequencia = FrmFrequencia.GetInstance(_usuarioSelecionado);
                 frequencia.MdiParent = FrmPrincipal.GetInstance();
+                frequencia.WindowState = FormWindowState.Maximized;
                 frequencia.Show();
             }
         }
 
         private void btnAvaliacoes_Click(object sender, EventArgs e)
         {
-            FrmAvaliacoes.GetInstance(_usuarioSelecionado, _usuarioAtivo).Show();
+            var avaliacoes = FrmAvaliacoes.GetInstance(_usuarioSelecionado, _usuarioAtivo);
+            avaliacoes.MdiParent = FrmPrincipal.GetInstance();
+            avaliacoes.WindowState = FormWindowState.Maximized;
+            avaliacoes.Show();
         }
 
         private void btnPagamentos_Click(object sender, EventArgs e)
@@ -118,9 +126,6 @@ namespace AndreysGym.Forms
             FrmCadastroPagamento.GetInstance(_usuarioSelecionado).WindowState = FormWindowState.Maximized;
             FrmCadastroPagamento.GetInstance(_usuarioSelecionado).Show();
             FrmCadastroPagamento.GetInstance(_usuarioSelecionado).BringToFront();
-
-            
-
         }
     }
 }

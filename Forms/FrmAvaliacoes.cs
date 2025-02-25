@@ -69,7 +69,10 @@ namespace AndreysGym.Forms
 
         private void btnCadastrarAvaliacao_Click(object sender, EventArgs e)
         {
-            FrmCadastroAvaliacao.GetInstance(_usuarioSelecionado, _usuarioLogado).Show();
+            var cadastrarAvaliacao = FrmCadastroAvaliacao.GetInstance(_usuarioSelecionado, _usuarioLogado);
+            cadastrarAvaliacao.MdiParent = FrmPrincipal.GetInstance();
+            cadastrarAvaliacao.WindowState = FormWindowState.Maximized;
+            cadastrarAvaliacao.Show();
         }
         public void SalvarAvaliacao(Avaliacao avaliacao)
         {
