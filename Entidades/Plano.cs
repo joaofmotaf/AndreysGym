@@ -18,13 +18,14 @@ namespace AndreysGym.Entidades
         public Byte QuantidadeDias { get; set; }
         [Required]
         public List<Pagamento> Pagamentos { get; set; }
+        public Boolean Ativo { get; set; }
         public Plano()
         {
             Pagamentos = new List<Pagamento>();
         }
         public override string ToString()
         {
-            return $"{Nome} - {QuantidadeDias} dias - {Preco:C} - {Periodicidade.ToString()}";
+            return $"{Nome} - {QuantidadeDias} dias - {Preco:C} - {Periodicidade.ToString()}" + (Ativo ? null : " (Desativado)");
         }
     }
 }

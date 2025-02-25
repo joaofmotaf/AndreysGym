@@ -16,6 +16,10 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
+                    if (usuario.Plano != null)
+                    {
+                        dbContext.Entry(usuario.Plano).State = EntityState.Unchanged;
+                    }
                     if (usuario.Id == 0)
                     {
                         dbContext.Usuarios.Add(usuario);

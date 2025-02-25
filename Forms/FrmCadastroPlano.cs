@@ -22,6 +22,7 @@ namespace AndreysGym.Forms
             cmbPeriodicidade.SelectedItem = cmbPeriodicidade.Items[0];
             _planos = new BindingList<Plano>(PlanoRepository.FindAll());
             lstPlanos.DataSource = _planos;
+            btnDesativar.Enabled = (lstPlanos.SelectedItem != null && ((Plano)lstPlanos.SelectedItem).Ativo);
         }
 
         private static FrmCadastroPlano _instance;
@@ -41,7 +42,8 @@ namespace AndreysGym.Forms
                 Nome = txtNomePlano.Text,
                 QuantidadeDias = Convert.ToByte(nudTotalDias.Value),
                 Preco = nudValor.Value,
-                Periodicidade = (Periodicidade)cmbPeriodicidade.SelectedItem
+                Periodicidade = (Periodicidade)cmbPeriodicidade.SelectedItem,
+                Ativo = true
             };
             txtNomePlano.Clear();
 
@@ -53,21 +55,31 @@ namespace AndreysGym.Forms
                 lblAviso.ForeColor = Color.Green;
                 lblAviso.Show();
             }
-            catch (Microsoft.EntityFrameworkCore.DbUpdateException exception)
+            catch (Microsoft.EntityFrameworkCore.DbUpdateException)
             {
                 lblAviso.Text = "Plano já cadastrado";
                 lblAviso.ForeColor = Color.Red;
             }
+            btnDesativar.Enabled = (lstPlanos.SelectedItem != null && ((Plano)lstPlanos.SelectedItem).Ativo);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             if (lstPlanos.SelectedItem != null)
             {
-                Plano plano = (Plano)lstPlanos.SelectedItem;
-                PlanoRepository.Remove(plano);
-                _planos.Remove(plano);
+                var resultado = MessageBox.Show("Tem certeza que deseja desativar esse plano?", "Desativar plano?", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    Plano plano = _planos.First(p => p == (Plano)lstPlanos.SelectedItem);
+                    plano.Ativo = false;
+                    PlanoRepository.Save(plano);
+                }
             }
+        }
+
+        private void lstPlanos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnDesativar.Enabled = (lstPlanos.SelectedItem != null && ((Plano)lstPlanos.SelectedItem).Ativo);
         }
     }
 }

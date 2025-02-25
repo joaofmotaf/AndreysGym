@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlCadastroPlano = new Panel();
+            btnDesativar = new Button();
             lstPlanos = new ListBox();
             lblPeriodicidade = new Label();
             cmbPeriodicidade = new ComboBox();
@@ -40,7 +41,6 @@
             nudTotalDias = new NumericUpDown();
             txtNomePlano = new TextBox();
             btnCadastrarPlano = new Button();
-            btnExcluir = new Button();
             pnlCadastroPlano.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudValor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTotalDias).BeginInit();
@@ -49,7 +49,7 @@
             // pnlCadastroPlano
             // 
             pnlCadastroPlano.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlCadastroPlano.Controls.Add(btnExcluir);
+            pnlCadastroPlano.Controls.Add(btnDesativar);
             pnlCadastroPlano.Controls.Add(lstPlanos);
             pnlCadastroPlano.Controls.Add(lblPeriodicidade);
             pnlCadastroPlano.Controls.Add(cmbPeriodicidade);
@@ -66,6 +66,16 @@
             pnlCadastroPlano.Size = new Size(770, 422);
             pnlCadastroPlano.TabIndex = 0;
             // 
+            // btnDesativar
+            // 
+            btnDesativar.Location = new Point(530, 283);
+            btnDesativar.Name = "btnDesativar";
+            btnDesativar.Size = new Size(103, 23);
+            btnDesativar.TabIndex = 12;
+            btnDesativar.Text = "Desativar";
+            btnDesativar.UseVisualStyleBackColor = true;
+            btnDesativar.Click += btnExcluir_Click;
+            // 
             // lstPlanos
             // 
             lstPlanos.FormattingEnabled = true;
@@ -74,6 +84,7 @@
             lstPlanos.Name = "lstPlanos";
             lstPlanos.Size = new Size(515, 274);
             lstPlanos.TabIndex = 11;
+            lstPlanos.SelectedIndexChanged += lstPlanos_SelectedIndexChanged;
             // 
             // lblPeriodicidade
             // 
@@ -86,6 +97,7 @@
             // 
             // cmbPeriodicidade
             // 
+            cmbPeriodicidade.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbPeriodicidade.FormattingEnabled = true;
             cmbPeriodicidade.Location = new Point(220, 361);
             cmbPeriodicidade.Margin = new Padding(3, 2, 3, 2);
@@ -164,16 +176,6 @@
             btnCadastrarPlano.UseVisualStyleBackColor = true;
             btnCadastrarPlano.Click += btnCadastrarPlano_Click;
             // 
-            // btnExcluir
-            // 
-            btnExcluir.Location = new Point(558, 283);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(75, 23);
-            btnExcluir.TabIndex = 12;
-            btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = true;
-            btnExcluir.Click += btnExcluir_Click;
-            // 
             // FrmCadastroPlano
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -204,6 +206,6 @@
         private Label lblPeriodicidade;
         private ComboBox cmbPeriodicidade;
         private ListBox lstPlanos;
-        private Button btnExcluir;
+        private Button btnDesativar;
     }
 }

@@ -50,6 +50,23 @@ namespace AndreysGym.Repositories
             }
         }
 
+        public static List<Plano> FindAllAtivos()
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Planos
+                        .Where(p => p.Ativo)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public static Plano FindById(Int64 id)
         {
             try

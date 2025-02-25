@@ -19,6 +19,7 @@ namespace AndreysGym.Forms
         {
             InitializeComponent();
             datNascimento.MaxDate = DateTime.Now;
+            cmbPlano.DataSource = PlanoRepository.FindAllAtivos();
         }
         public static FrmCadastro GetInstance()
         {
@@ -86,6 +87,7 @@ namespace AndreysGym.Forms
                     Admin = chkAdmin.Checked
                 }
             };
+            usuario.Plano = (Plano)(cmbPlano.SelectedItem ?? null);
             txtNome.Clear();
             datNascimento.Value = DateTime.Today;
             mskCpf.Clear();
@@ -93,6 +95,7 @@ namespace AndreysGym.Forms
             txtSenha.Clear();
             txtConfirmarSenha.Clear();
             chkAdmin.Checked = false;
+            cmbPlano.SelectedItem = null;
             try
             {
                 UsuarioRepository.Save(usuario);
@@ -100,10 +103,11 @@ namespace AndreysGym.Forms
                 lblAviso.ForeColor = Color.Green;
                 lblAviso.Show();
             }
-            catch (Microsoft.EntityFrameworkCore.DbUpdateException exception)
+            catch (Microsoft.EntityFrameworkCore.DbUpdateException)
             {
                 lblAviso.Text = "Email e/ou CPF já cadastrado";
                 lblAviso.ForeColor = Color.Red;
+                throw;
             }
             lblAviso.Show();
         }
