@@ -28,53 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlFrequencia = new Panel();
-            mntFrequencia = new MonthCalendar();
-            lblDetalhes = new Label();
-            pnlFrequencia.SuspendLayout();
-            SuspendLayout();
+            this.pnlFrequencia = new System.Windows.Forms.Panel();
+            this.lblDetalhes = new System.Windows.Forms.Label();
+            this.mntFrequencia = new System.Windows.Forms.MonthCalendar();
+            this.pnlFrequencia.SuspendLayout();
+            this.SuspendLayout();
             // 
             // pnlFrequencia
             // 
-            pnlFrequencia.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlFrequencia.Controls.Add(lblDetalhes);
-            pnlFrequencia.Controls.Add(mntFrequencia);
-            pnlFrequencia.Location = new Point(10, 9);
-            pnlFrequencia.Margin = new Padding(3, 2, 3, 2);
-            pnlFrequencia.Name = "pnlFrequencia";
-            pnlFrequencia.Size = new Size(679, 320);
-            pnlFrequencia.TabIndex = 0;
-            // 
-            // mntFrequencia
-            // 
-            mntFrequencia.Location = new Point(8, 7);
-            mntFrequencia.Margin = new Padding(8, 7, 8, 7);
-            mntFrequencia.Name = "mntFrequencia";
-            mntFrequencia.TabIndex = 0;
-            mntFrequencia.DateSelected += mntFrequencia_DateSelected;
+            this.pnlFrequencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFrequencia.Controls.Add(this.lblDetalhes);
+            this.pnlFrequencia.Controls.Add(this.mntFrequencia);
+            this.pnlFrequencia.Location = new System.Drawing.Point(10, 9);
+            this.pnlFrequencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlFrequencia.Name = "pnlFrequencia";
+            this.pnlFrequencia.Size = new System.Drawing.Size(679, 320);
+            this.pnlFrequencia.TabIndex = 0;
             // 
             // lblDetalhes
             // 
-            lblDetalhes.AutoSize = true;
-            lblDetalhes.Location = new Point(264, 95);
-            lblDetalhes.Name = "lblDetalhes";
-            lblDetalhes.Size = new Size(38, 15);
-            lblDetalhes.TabIndex = 1;
-            lblDetalhes.Text = "label1";
+            this.lblDetalhes.AutoSize = true;
+            this.lblDetalhes.Location = new System.Drawing.Point(246, 7);
+            this.lblDetalhes.Name = "lblDetalhes";
+            this.lblDetalhes.Size = new System.Drawing.Size(110, 15);
+            this.lblDetalhes.TabIndex = 1;
+            this.lblDetalhes.Text = "Selecione uma data";
+            // 
+            // mntFrequencia
+            // 
+            this.mntFrequencia.Location = new System.Drawing.Point(8, 7);
+            this.mntFrequencia.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.mntFrequencia.Name = "mntFrequencia";
+            this.mntFrequencia.TabIndex = 0;
+            this.mntFrequencia.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mntFrequencia_DateSelected);
             // 
             // FrmFrequencia
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
-            Controls.Add(pnlFrequencia);
-            Margin = new Padding(3, 2, 3, 2);
-            MaximizeBox = false;
-            Name = "FrmFrequencia";
-            Text = "FrmFrequencia";
-            pnlFrequencia.ResumeLayout(false);
-            pnlFrequencia.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.pnlFrequencia);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.Name = "FrmFrequencia";
+            this.Text = "FrmFrequencia";
+            this.pnlFrequencia.ResumeLayout(false);
+            this.pnlFrequencia.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

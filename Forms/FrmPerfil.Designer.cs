@@ -28,215 +28,227 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
-            lblNome = new Label();
-            btnSalvar = new Button();
-            chkAdmin = new CheckBox();
-            lblEmail = new Label();
-            lblCpf = new Label();
-            lblDataNascimento = new Label();
-            txtConfirmarSenha = new TextBox();
-            txtSenha = new TextBox();
-            lblSenha = new Label();
-            lblConfirmarSenha = new Label();
-            txtNome = new TextBox();
-            mskCpf = new MaskedTextBox();
-            txtEmail = new TextBox();
-            txtNascimento = new TextBox();
-            tableLayoutPanel1.SuspendLayout();
-            SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.chkAdmin = new System.Windows.Forms.CheckBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblCpf = new System.Windows.Forms.Label();
+            this.lblDataNascimento = new System.Windows.Forms.Label();
+            this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.lblConfirmarSenha = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNascimento = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 125F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(lblNome, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnSalvar, 1, 7);
-            tableLayoutPanel1.Controls.Add(chkAdmin, 1, 6);
-            tableLayoutPanel1.Controls.Add(lblEmail, 0, 1);
-            tableLayoutPanel1.Controls.Add(lblCpf, 0, 2);
-            tableLayoutPanel1.Controls.Add(lblDataNascimento, 0, 3);
-            tableLayoutPanel1.Controls.Add(txtConfirmarSenha, 1, 5);
-            tableLayoutPanel1.Controls.Add(txtSenha, 1, 4);
-            tableLayoutPanel1.Controls.Add(lblSenha, 0, 4);
-            tableLayoutPanel1.Controls.Add(lblConfirmarSenha, 0, 5);
-            tableLayoutPanel1.Controls.Add(txtNome, 1, 0);
-            tableLayoutPanel1.Controls.Add(mskCpf, 1, 2);
-            tableLayoutPanel1.Controls.Add(txtEmail, 1, 1);
-            tableLayoutPanel1.Controls.Add(txtNascimento, 1, 3);
-            tableLayoutPanel1.Location = new Point(12, 12);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(393, 230);
-            tableLayoutPanel1.TabIndex = 15;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.lblNome, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalvar, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.chkAdmin, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblCpf, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblDataNascimento, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtConfirmarSenha, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtSenha, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblSenha, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblConfirmarSenha, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtNome, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.mskCpf, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtNascimento, 1, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(393, 230);
+            this.tableLayoutPanel1.TabIndex = 15;
             // 
             // lblNome
             // 
-            lblNome.Anchor = AnchorStyles.Right;
-            lblNome.AutoSize = true;
-            lblNome.Location = new Point(79, 7);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new Size(43, 15);
-            lblNome.TabIndex = 0;
-            lblNome.Text = "Nome:";
+            this.lblNome.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(79, 7);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(43, 15);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome:";
             // 
             // btnSalvar
             // 
-            btnSalvar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnSalvar.Location = new Point(320, 202);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(70, 23);
-            btnSalvar.TabIndex = 13;
-            btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Click += btnSalvar_Click;
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.Location = new System.Drawing.Point(320, 202);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(70, 23);
+            this.btnSalvar.TabIndex = 13;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // chkAdmin
             // 
-            chkAdmin.AutoSize = true;
-            chkAdmin.Enabled = false;
-            chkAdmin.Location = new Point(128, 177);
-            chkAdmin.Name = "chkAdmin";
-            chkAdmin.Size = new Size(102, 19);
-            chkAdmin.TabIndex = 12;
-            chkAdmin.Text = "Administrador";
-            chkAdmin.UseVisualStyleBackColor = true;
+            this.chkAdmin.AutoSize = true;
+            this.chkAdmin.Enabled = false;
+            this.chkAdmin.Location = new System.Drawing.Point(128, 177);
+            this.chkAdmin.Name = "chkAdmin";
+            this.chkAdmin.Size = new System.Drawing.Size(102, 19);
+            this.chkAdmin.TabIndex = 12;
+            this.chkAdmin.Text = "Administrador";
+            this.chkAdmin.UseVisualStyleBackColor = true;
             // 
             // lblEmail
             // 
-            lblEmail.Anchor = AnchorStyles.Right;
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(83, 36);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(39, 15);
-            lblEmail.TabIndex = 1;
-            lblEmail.Text = "Email:";
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(83, 36);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(39, 15);
+            this.lblEmail.TabIndex = 1;
+            this.lblEmail.Text = "Email:";
             // 
             // lblCpf
             // 
-            lblCpf.Anchor = AnchorStyles.Right;
-            lblCpf.AutoSize = true;
-            lblCpf.Location = new Point(91, 65);
-            lblCpf.Name = "lblCpf";
-            lblCpf.Size = new Size(31, 15);
-            lblCpf.TabIndex = 2;
-            lblCpf.Text = "CPF:";
+            this.lblCpf.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.Location = new System.Drawing.Point(91, 65);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(31, 15);
+            this.lblCpf.TabIndex = 2;
+            this.lblCpf.Text = "CPF:";
             // 
             // lblDataNascimento
             // 
-            lblDataNascimento.Anchor = AnchorStyles.Right;
-            lblDataNascimento.AutoSize = true;
-            lblDataNascimento.Location = new Point(5, 94);
-            lblDataNascimento.Name = "lblDataNascimento";
-            lblDataNascimento.Size = new Size(117, 15);
-            lblDataNascimento.TabIndex = 3;
-            lblDataNascimento.Text = "Data de Nascimento:";
+            this.lblDataNascimento.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDataNascimento.AutoSize = true;
+            this.lblDataNascimento.Location = new System.Drawing.Point(5, 94);
+            this.lblDataNascimento.Name = "lblDataNascimento";
+            this.lblDataNascimento.Size = new System.Drawing.Size(117, 15);
+            this.lblDataNascimento.TabIndex = 3;
+            this.lblDataNascimento.Text = "Data de Nascimento:";
             // 
             // txtConfirmarSenha
             // 
-            txtConfirmarSenha.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtConfirmarSenha.Location = new Point(128, 148);
-            txtConfirmarSenha.MaxLength = 64;
-            txtConfirmarSenha.Name = "txtConfirmarSenha";
-            txtConfirmarSenha.PasswordChar = '*';
-            txtConfirmarSenha.Size = new Size(262, 23);
-            txtConfirmarSenha.TabIndex = 11;
-            txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
+            this.txtConfirmarSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConfirmarSenha.Location = new System.Drawing.Point(128, 148);
+            this.txtConfirmarSenha.MaxLength = 64;
+            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
+            this.txtConfirmarSenha.PasswordChar = '*';
+            this.txtConfirmarSenha.Size = new System.Drawing.Size(262, 23);
+            this.txtConfirmarSenha.TabIndex = 11;
+            this.txtConfirmarSenha.TextChanged += new System.EventHandler(this.txtConfirmarSenha_TextChanged);
             // 
             // txtSenha
             // 
-            txtSenha.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtSenha.Location = new Point(128, 119);
-            txtSenha.MaxLength = 64;
-            txtSenha.Name = "txtSenha";
-            txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(262, 23);
-            txtSenha.TabIndex = 10;
-            txtSenha.TextChanged += txtSenha_TextChanged;
+            this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSenha.Location = new System.Drawing.Point(128, 119);
+            this.txtSenha.MaxLength = 64;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(262, 23);
+            this.txtSenha.TabIndex = 10;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // lblSenha
             // 
-            lblSenha.Anchor = AnchorStyles.Right;
-            lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(43, 123);
-            lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(79, 15);
-            lblSenha.TabIndex = 4;
-            lblSenha.Text = "Alterar senha:";
+            this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Location = new System.Drawing.Point(43, 123);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(79, 15);
+            this.lblSenha.TabIndex = 4;
+            this.lblSenha.Text = "Alterar senha:";
             // 
             // lblConfirmarSenha
             // 
-            lblConfirmarSenha.Anchor = AnchorStyles.Right;
-            lblConfirmarSenha.AutoSize = true;
-            lblConfirmarSenha.Location = new Point(23, 152);
-            lblConfirmarSenha.Name = "lblConfirmarSenha";
-            lblConfirmarSenha.Size = new Size(99, 15);
-            lblConfirmarSenha.TabIndex = 5;
-            lblConfirmarSenha.Text = "Confirmar Senha:";
+            this.lblConfirmarSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblConfirmarSenha.AutoSize = true;
+            this.lblConfirmarSenha.Location = new System.Drawing.Point(23, 152);
+            this.lblConfirmarSenha.Name = "lblConfirmarSenha";
+            this.lblConfirmarSenha.Size = new System.Drawing.Size(99, 15);
+            this.lblConfirmarSenha.TabIndex = 5;
+            this.lblConfirmarSenha.Text = "Confirmar Senha:";
             // 
             // txtNome
             // 
-            txtNome.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtNome.Location = new Point(128, 3);
-            txtNome.MaxLength = 255;
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(262, 23);
-            txtNome.TabIndex = 6;
-            txtNome.TextChanged += txtNome_TextChanged;
+            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNome.Location = new System.Drawing.Point(128, 3);
+            this.txtNome.MaxLength = 255;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(262, 23);
+            this.txtNome.TabIndex = 6;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // mskCpf
             // 
-            mskCpf.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            mskCpf.Location = new Point(128, 61);
-            mskCpf.Mask = "000,000,000-00";
-            mskCpf.Name = "mskCpf";
-            mskCpf.ReadOnly = true;
-            mskCpf.Size = new Size(262, 23);
-            mskCpf.SkipLiterals = false;
-            mskCpf.TabIndex = 8;
-            mskCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            mskCpf.KeyDown += mskCpf_KeyDown;
+            this.mskCpf.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mskCpf.Location = new System.Drawing.Point(128, 61);
+            this.mskCpf.Mask = "000,000,000-00";
+            this.mskCpf.Name = "mskCpf";
+            this.mskCpf.ReadOnly = true;
+            this.mskCpf.Size = new System.Drawing.Size(262, 23);
+            this.mskCpf.SkipLiterals = false;
+            this.mskCpf.TabIndex = 8;
+            this.mskCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtEmail
             // 
-            txtEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtEmail.Location = new Point(128, 32);
-            txtEmail.MaxLength = 255;
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(262, 23);
-            txtEmail.TabIndex = 7;
-            txtEmail.TextChanged += txtEmail_TextChanged;
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(128, 32);
+            this.txtEmail.MaxLength = 255;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(262, 23);
+            this.txtEmail.TabIndex = 7;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtNascimento
             // 
-            txtNascimento.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtNascimento.Location = new Point(128, 90);
-            txtNascimento.Name = "txtNascimento";
-            txtNascimento.ReadOnly = true;
-            txtNascimento.Size = new Size(262, 23);
-            txtNascimento.TabIndex = 14;
+            this.txtNascimento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNascimento.Location = new System.Drawing.Point(128, 90);
+            this.txtNascimento.Name = "txtNascimento";
+            this.txtNascimento.ReadOnly = true;
+            this.txtNascimento.Size = new System.Drawing.Size(262, 23);
+            this.txtNascimento.TabIndex = 14;
             // 
             // FrmPerfil
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(417, 254);
-            Controls.Add(tableLayoutPanel1);
-            Name = "FrmPerfil";
-            Text = "Perfil do Usuário";
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(417, 254);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Name = "FrmPerfil";
+            this.Text = "Perfil do Usuário";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -107,6 +107,7 @@
             this.treProgramacoes.Name = "treProgramacoes";
             this.treProgramacoes.Size = new System.Drawing.Size(184, 349);
             this.treProgramacoes.TabIndex = 0;
+            this.treProgramacoes.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvProgramacoes_AfterSelect);
             // 
             // FrmProgramacao
             // 

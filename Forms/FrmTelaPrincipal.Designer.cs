@@ -176,14 +176,16 @@
             // mnuPrincipalAjudaTermosDeUso
             // 
             this.mnuPrincipalAjudaTermosDeUso.Name = "mnuPrincipalAjudaTermosDeUso";
-            this.mnuPrincipalAjudaTermosDeUso.Size = new System.Drawing.Size(150, 22);
+            this.mnuPrincipalAjudaTermosDeUso.Size = new System.Drawing.Size(180, 22);
             this.mnuPrincipalAjudaTermosDeUso.Text = "Termos de uso";
+            this.mnuPrincipalAjudaTermosDeUso.Click += new System.EventHandler(this.mnuPrincipalAjudaTermosDeUso_Click);
             // 
             // mnuPrincipalAjudaSobre
             // 
             this.mnuPrincipalAjudaSobre.Name = "mnuPrincipalAjudaSobre";
-            this.mnuPrincipalAjudaSobre.Size = new System.Drawing.Size(150, 22);
+            this.mnuPrincipalAjudaSobre.Size = new System.Drawing.Size(180, 22);
             this.mnuPrincipalAjudaSobre.Text = "Sobre";
+            this.mnuPrincipalAjudaSobre.Click += new System.EventHandler(this.mnuPrincipalAjudaSobre_Click);
             // 
             // FrmPrincipal
             // 

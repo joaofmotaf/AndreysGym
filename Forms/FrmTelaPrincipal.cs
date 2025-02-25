@@ -122,6 +122,7 @@ namespace AndreysGym.Forms
         {
             FrmFrequencia frequencia = FrmFrequencia.GetInstance(_usuario);
             frequencia.MdiParent = this;
+            frequencia.WindowState = FormWindowState.Maximized;
             frequencia.Show();
         }
 
@@ -129,6 +130,7 @@ namespace AndreysGym.Forms
         {
             FrmPerfil perfil = FrmPerfil.GetInstance(_usuario, _usuario.Credencial.Admin);
             perfil.MdiParent = this;
+            perfil.WindowState = FormWindowState.Maximized;
             perfil.Show();
         }
 
@@ -136,12 +138,16 @@ namespace AndreysGym.Forms
         {
             FrmProgramacao programacao = FrmProgramacao.GetInstance(_usuario, _usuario);
             programacao.MdiParent = this;
+            programacao.WindowState = FormWindowState.Maximized;
             programacao.Show();
         }
 
         private void mnuPrincipalClienteAvaliacoes_Click(object sender, EventArgs e)
         {
-            FrmAvaliacoes.GetInstance(_usuario);
+            var avaliacoes = FrmAvaliacoes.GetInstance(_usuario);
+            avaliacoes.MdiParent = this;
+            avaliacoes.WindowState = FormWindowState.Maximized;
+            avaliacoes.Show();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
