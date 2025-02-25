@@ -131,8 +131,8 @@ namespace AndreysGym.Forms
                 Treino = (Treino)treTreinos.SelectedNode.Tag
             };
             txtNomeExercicio.Clear();
-            numSeries.ResetText();
-            numRepeticoes.ResetText();
+            numSeries.Value = 0;
+            numRepeticoes.Value = 0;
             ((Treino)treTreinos.SelectedNode.Tag).Exercicios.Add(exercicio);
             ListViewItem itemExercicio = new ListViewItem(exercicio.Nome);
             itemExercicio.SubItems.Add(exercicio.QuantidadeSeries.ToString());
