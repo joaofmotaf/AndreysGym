@@ -138,5 +138,35 @@ namespace AndreysGym.Forms
             programacao.MdiParent = this;
             programacao.Show();
         }
+
+        private void mnuPrincipalCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPrincipalClienteAvaliacoes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPrincipalClientePagamentos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPrincipalAjudaTermosDeUso_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPrincipalAjudaSobre_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuPrincipalArquivoSair_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
