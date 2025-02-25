@@ -163,7 +163,7 @@
             // 
             mnuPrincipalClientePerfil.Image = (Image)resources.GetObject("mnuPrincipalClientePerfil.Image");
             mnuPrincipalClientePerfil.Name = "mnuPrincipalClientePerfil";
-            mnuPrincipalClientePerfil.Size = new Size(224, 26);
+            mnuPrincipalClientePerfil.Size = new Size(173, 26);
             mnuPrincipalClientePerfil.Text = "Perfil";
             mnuPrincipalClientePerfil.Click += mnuPrincipalClientePerfil_Click;
             // 
@@ -171,7 +171,7 @@
             // 
             mnuPrincipalClienteFrequencia.Image = (Image)resources.GetObject("mnuPrincipalClienteFrequencia.Image");
             mnuPrincipalClienteFrequencia.Name = "mnuPrincipalClienteFrequencia";
-            mnuPrincipalClienteFrequencia.Size = new Size(224, 26);
+            mnuPrincipalClienteFrequencia.Size = new Size(173, 26);
             mnuPrincipalClienteFrequencia.Text = "Frequência";
             mnuPrincipalClienteFrequencia.Click += mnuPrincipalClienteFrequencia_Click;
             // 
@@ -179,7 +179,7 @@
             // 
             mnuPrincipalClienteTreinos.Image = (Image)resources.GetObject("mnuPrincipalClienteTreinos.Image");
             mnuPrincipalClienteTreinos.Name = "mnuPrincipalClienteTreinos";
-            mnuPrincipalClienteTreinos.Size = new Size(224, 26);
+            mnuPrincipalClienteTreinos.Size = new Size(173, 26);
             mnuPrincipalClienteTreinos.Text = "Treinos";
             mnuPrincipalClienteTreinos.Click += mnuPrincipalClienteTreinos_Click;
             // 
@@ -187,7 +187,7 @@
             // 
             mnuPrincipalClienteAvaliacoes.Image = (Image)resources.GetObject("mnuPrincipalClienteAvaliacoes.Image");
             mnuPrincipalClienteAvaliacoes.Name = "mnuPrincipalClienteAvaliacoes";
-            mnuPrincipalClienteAvaliacoes.Size = new Size(224, 26);
+            mnuPrincipalClienteAvaliacoes.Size = new Size(173, 26);
             mnuPrincipalClienteAvaliacoes.Text = "Avaliações";
             mnuPrincipalClienteAvaliacoes.Click += mnuPrincipalClienteAvaliacoes_Click;
             // 
@@ -195,7 +195,7 @@
             // 
             mnuPrincipalClientePagamentos.Image = (Image)resources.GetObject("mnuPrincipalClientePagamentos.Image");
             mnuPrincipalClientePagamentos.Name = "mnuPrincipalClientePagamentos";
-            mnuPrincipalClientePagamentos.Size = new Size(224, 26);
+            mnuPrincipalClientePagamentos.Size = new Size(173, 26);
             mnuPrincipalClientePagamentos.Text = "Pagamentos";
             mnuPrincipalClientePagamentos.Click += mnuPrincipalClientePagamentos_Click;
             // 
@@ -210,7 +210,7 @@
             // 
             mnuPrincipalAjudaTermosDeUso.Image = (Image)resources.GetObject("mnuPrincipalAjudaTermosDeUso.Image");
             mnuPrincipalAjudaTermosDeUso.Name = "mnuPrincipalAjudaTermosDeUso";
-            mnuPrincipalAjudaTermosDeUso.Size = new Size(224, 26);
+            mnuPrincipalAjudaTermosDeUso.Size = new Size(188, 26);
             mnuPrincipalAjudaTermosDeUso.Text = "Termos de uso";
             mnuPrincipalAjudaTermosDeUso.Click += mnuPrincipalAjudaTermosDeUso_Click_1;
             // 
@@ -218,7 +218,7 @@
             // 
             mnuPrincipalAjudaSobre.Image = (Image)resources.GetObject("mnuPrincipalAjudaSobre.Image");
             mnuPrincipalAjudaSobre.Name = "mnuPrincipalAjudaSobre";
-            mnuPrincipalAjudaSobre.Size = new Size(224, 26);
+            mnuPrincipalAjudaSobre.Size = new Size(188, 26);
             mnuPrincipalAjudaSobre.Text = "Sobre";
             mnuPrincipalAjudaSobre.Click += mnuPrincipalAjudaSobre_Click_1;
             // 
