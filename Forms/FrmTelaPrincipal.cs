@@ -167,5 +167,12 @@ namespace AndreysGym.Forms
             FrmCadastroPlano.GetInstance().WindowState = FormWindowState.Maximized;
             FrmCadastroPlano.GetInstance().Show();
         }
+
+        private void mnuPrincipalAdmnistradorCadastrarPagamentos_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPagamento.GetInstance(_usuario).MdiParent = FrmPrincipal.GetInstance();
+            FrmCadastroPagamento.GetInstance(_usuario).WindowState = FormWindowState.Maximized;
+            FrmCadastroPagamento.GetInstance(_usuario).Show();
+        }
     }
 }

@@ -33,7 +33,22 @@ namespace AndreysGym.Forms
             txtSenha.Visible = _acessoAdmin;
             lblConfirmarSenha.Visible = _acessoAdmin;
             txtConfirmarSenha.Visible = _acessoAdmin;
+
+            cmbPlano.DataSource = PlanoRepository.FindAll();
+
+            if (_acessoAdmin)
+            {
+                cmbPlano.Enabled = true;
+                btnSalvar.Enabled = true;
+            }
+            else 
+            {
+                cmbPlano.Enabled = false;
+                btnSalvar.Enabled = false;
+            }
+
         }
+
         public static FrmPerfil GetInstance(Usuario usuario, Boolean acessoAdmin)
         {
             _acessoAdmin = acessoAdmin;

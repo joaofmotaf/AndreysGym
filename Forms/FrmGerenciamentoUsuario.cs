@@ -33,6 +33,7 @@ namespace AndreysGym.Forms
                 _instance = new FrmGerenciamentoUsuario();
             }
             return _instance;
+        
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace AndreysGym.Forms
             {
                 Usuario usuarioComCredencial = UsuarioRepository.FindByIdWCredencial(_usuarioSelecionado.Id);
                 var perfil = FrmPerfil.GetInstance(usuarioComCredencial, true);
-                perfil.MdiParent = FrmPrincipal.GetInstance();
+                perfil.MdiParent = FrmPrincipal.GetInstance(_usuarioSelecionado);
                 perfil.WindowState = FormWindowState.Maximized;
                 perfil.Show();
 

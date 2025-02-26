@@ -72,6 +72,7 @@
             // 
             // txtPreco
             // 
+            txtPreco.Enabled = false;
             txtPreco.Location = new Point(152, 226);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(291, 27);
@@ -97,6 +98,7 @@
             // 
             // txtPeriodicidade
             // 
+            txtPeriodicidade.Enabled = false;
             txtPeriodicidade.Location = new Point(152, 193);
             txtPeriodicidade.Name = "txtPeriodicidade";
             txtPeriodicidade.Size = new Size(291, 27);
@@ -104,6 +106,7 @@
             // 
             // txtPlano
             // 
+            txtPlano.Enabled = false;
             txtPlano.Location = new Point(152, 160);
             txtPlano.Name = "txtPlano";
             txtPlano.Size = new Size(291, 27);
@@ -127,6 +130,7 @@
             btnCadastrar.TabIndex = 8;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtCpf
             // 
