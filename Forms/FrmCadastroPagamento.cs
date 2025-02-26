@@ -17,20 +17,10 @@ namespace AndreysGym.Forms
         private static FrmCadastroPagamento _instance;
         private static Usuario _usuario;
         private static Usuario _usuario2;
+
         private FrmCadastroPagamento()
         {
             InitializeComponent();
-        }
-
-        private FrmCadastroPagamento(Usuario usuario)
-        {
-            InitializeComponent();
-
-            _usuario = UsuarioRepository.FindByIdWCredencial(usuario.Id);
-            
-            _usuario2 = UsuarioRepository.FindByIdWPlano(usuario.Id);
-
-            _usuario.Plano = _usuario2.Plano;
 
             txtNome.Text = _usuario.Nome;
             txtEmail.Text = _usuario.Credencial.Email;
@@ -46,9 +36,15 @@ namespace AndreysGym.Forms
         {
             if (_instance == null || _instance.IsDisposed)
             {
-                _instance = new FrmCadastroPagamento(usuario);
+                _usuario = usuario;
+                _instance = new FrmCadastroPagamento();
             }
             return _instance;
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
