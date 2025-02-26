@@ -42,7 +42,9 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Frequencias.ToList();
+                    return dbContext.Frequencias
+                        .OrderByDescending(f => f.Entrada)
+                        .ToList();
                 }
             }
             catch (Exception)
@@ -74,6 +76,7 @@ namespace AndreysGym.Repositories
                 {
                     return dbContext.Frequencias
                         .Include("Usuario")
+                        .OrderByDescending(f => f.Entrada)
                         .Where(p => p.Usuario.Id == usuario.Id)
                         .ToList<Frequencia>();
                 }

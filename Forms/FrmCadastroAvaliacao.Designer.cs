@@ -53,6 +53,7 @@
             btnSalvar = new Button();
             chkSedentarismo = new CheckBox();
             pnlCadAvaliacao = new Panel();
+            lblObrigatorio = new Label();
             nudPerimetroPanturrilhaDir = new NumericUpDown();
             nudPerimetroPanturrilhaEsq = new NumericUpDown();
             nudPerimetroCoxaDir = new NumericUpDown();
@@ -106,197 +107,217 @@
             // lblPersonal
             // 
             lblPersonal.AutoSize = true;
-            lblPersonal.Location = new Point(23, 18);
+            lblPersonal.Location = new Point(18, 43);
             lblPersonal.Name = "lblPersonal";
-            lblPersonal.Size = new Size(134, 20);
+            lblPersonal.Size = new Size(108, 15);
             lblPersonal.TabIndex = 0;
             lblPersonal.Text = "Nome do Personal:";
             // 
             // lblDataRealizacao
             // 
             lblDataRealizacao.AutoSize = true;
-            lblDataRealizacao.Location = new Point(23, 51);
+            lblDataRealizacao.Location = new Point(18, 67);
             lblDataRealizacao.Name = "lblDataRealizacao";
-            lblDataRealizacao.Size = new Size(141, 20);
+            lblDataRealizacao.Size = new Size(108, 15);
             lblDataRealizacao.TabIndex = 1;
             lblDataRealizacao.Text = "Data de Realização:";
             // 
             // lblIdade
             // 
             lblIdade.AutoSize = true;
-            lblIdade.Location = new Point(23, 86);
+            lblIdade.Location = new Point(18, 93);
             lblIdade.Name = "lblIdade";
-            lblIdade.Size = new Size(50, 20);
+            lblIdade.Size = new Size(39, 15);
             lblIdade.TabIndex = 2;
             lblIdade.Text = "Idade:";
             // 
             // lblObjetivo
             // 
             lblObjetivo.AutoSize = true;
-            lblObjetivo.Location = new Point(23, 119);
+            lblObjetivo.Location = new Point(18, 118);
             lblObjetivo.Name = "lblObjetivo";
-            lblObjetivo.Size = new Size(69, 20);
+            lblObjetivo.Size = new Size(60, 15);
             lblObjetivo.TabIndex = 3;
-            lblObjetivo.Text = "Objetivo:";
+            lblObjetivo.Text = "Objetivo*:";
             // 
             // lblMedicamentos
             // 
             lblMedicamentos.AutoSize = true;
-            lblMedicamentos.Location = new Point(23, 152);
+            lblMedicamentos.Location = new Point(18, 143);
             lblMedicamentos.Name = "lblMedicamentos";
-            lblMedicamentos.Size = new Size(110, 20);
+            lblMedicamentos.Size = new Size(94, 15);
             lblMedicamentos.TabIndex = 4;
-            lblMedicamentos.Text = "Medicamentos:";
+            lblMedicamentos.Text = "Medicamentos*:";
             // 
             // lblProblemasSaude
             // 
             lblProblemasSaude.AutoSize = true;
-            lblProblemasSaude.Location = new Point(23, 221);
+            lblProblemasSaude.Location = new Point(18, 195);
             lblProblemasSaude.Name = "lblProblemasSaude";
-            lblProblemasSaude.Size = new Size(150, 20);
+            lblProblemasSaude.Size = new Size(122, 15);
             lblProblemasSaude.TabIndex = 5;
-            lblProblemasSaude.Text = "Problemas De Saúde:";
+            lblProblemasSaude.Text = "Problemas de Saúde*:";
             // 
             // lblHistorico
             // 
             lblHistorico.AutoSize = true;
-            lblHistorico.Location = new Point(23, 254);
+            lblHistorico.Location = new Point(18, 219);
             lblHistorico.Name = "lblHistorico";
-            lblHistorico.Size = new Size(128, 20);
+            lblHistorico.Size = new Size(108, 15);
             lblHistorico.TabIndex = 6;
-            lblHistorico.Text = "Historico Familiar:";
+            lblHistorico.Text = "Historico Familiar*:";
             // 
             // lblMassaMagra
             // 
             lblMassaMagra.AutoSize = true;
-            lblMassaMagra.Location = new Point(23, 308);
+            lblMassaMagra.Location = new Point(18, 260);
             lblMassaMagra.Name = "lblMassaMagra";
-            lblMassaMagra.Size = new Size(130, 20);
+            lblMassaMagra.Size = new Size(109, 15);
             lblMassaMagra.TabIndex = 7;
-            lblMassaMagra.Text = "Massa Magra (kg):";
+            lblMassaMagra.Text = "Massa Magra (kg)*:";
             // 
             // lblMassaGorda
             // 
             lblMassaGorda.AutoSize = true;
-            lblMassaGorda.Location = new Point(23, 341);
+            lblMassaGorda.Location = new Point(18, 285);
             lblMassaGorda.Name = "lblMassaGorda";
-            lblMassaGorda.Size = new Size(128, 20);
+            lblMassaGorda.Size = new Size(107, 15);
             lblMassaGorda.TabIndex = 8;
-            lblMassaGorda.Text = "Massa Gorda (kg):";
+            lblMassaGorda.Text = "Massa Gorda (kg)*:";
             // 
             // lblPeso
             // 
             lblPeso.AutoSize = true;
-            lblPeso.Location = new Point(23, 369);
+            lblPeso.Location = new Point(18, 306);
             lblPeso.Name = "lblPeso";
-            lblPeso.Size = new Size(72, 20);
+            lblPeso.Size = new Size(64, 15);
             lblPeso.TabIndex = 9;
-            lblPeso.Text = "Peso (kg):";
+            lblPeso.Text = "Peso (kg)*:";
             // 
             // lblAltura
             // 
             lblAltura.AutoSize = true;
-            lblAltura.Location = new Point(23, 402);
+            lblAltura.Location = new Point(18, 331);
             lblAltura.Name = "lblAltura";
-            lblAltura.Size = new Size(86, 20);
+            lblAltura.Size = new Size(75, 15);
             lblAltura.TabIndex = 10;
-            lblAltura.Text = "Altura (cm):";
+            lblAltura.Text = "Altura (cm)*:";
             // 
             // txtPersonal
             // 
             txtPersonal.Enabled = false;
-            txtPersonal.Location = new Point(179, 11);
+            txtPersonal.Location = new Point(155, 37);
+            txtPersonal.Margin = new Padding(3, 2, 3, 2);
             txtPersonal.Name = "txtPersonal";
-            txtPersonal.Size = new Size(277, 27);
+            txtPersonal.Size = new Size(243, 23);
             txtPersonal.TabIndex = 13;
             // 
             // txtObjetivo
             // 
-            txtObjetivo.Location = new Point(179, 112);
+            txtObjetivo.Location = new Point(155, 113);
+            txtObjetivo.Margin = new Padding(3, 2, 3, 2);
             txtObjetivo.Name = "txtObjetivo";
-            txtObjetivo.Size = new Size(277, 27);
+            txtObjetivo.Size = new Size(243, 23);
             txtObjetivo.TabIndex = 14;
+            txtObjetivo.TextChanged += txtObjetivo_TextChanged;
             // 
             // txtMedicamentos
             // 
-            txtMedicamentos.Location = new Point(179, 145);
+            txtMedicamentos.Location = new Point(155, 138);
+            txtMedicamentos.Margin = new Padding(3, 2, 3, 2);
             txtMedicamentos.Name = "txtMedicamentos";
-            txtMedicamentos.Size = new Size(277, 27);
+            txtMedicamentos.Size = new Size(243, 23);
             txtMedicamentos.TabIndex = 15;
+            txtMedicamentos.TextChanged += txtMedicamentos_TextChanged;
             // 
             // txtProblemasSaude
             // 
-            txtProblemasSaude.Location = new Point(179, 214);
+            txtProblemasSaude.Location = new Point(155, 189);
+            txtProblemasSaude.Margin = new Padding(3, 2, 3, 2);
             txtProblemasSaude.Name = "txtProblemasSaude";
-            txtProblemasSaude.Size = new Size(277, 27);
+            txtProblemasSaude.Size = new Size(243, 23);
             txtProblemasSaude.TabIndex = 16;
+            txtProblemasSaude.TextChanged += txtProblemasSaude_TextChanged;
             // 
             // txtHistorico
             // 
-            txtHistorico.Location = new Point(179, 247);
+            txtHistorico.Location = new Point(155, 214);
+            txtHistorico.Margin = new Padding(3, 2, 3, 2);
             txtHistorico.Name = "txtHistorico";
-            txtHistorico.Size = new Size(277, 27);
+            txtHistorico.Size = new Size(243, 23);
             txtHistorico.TabIndex = 17;
+            txtHistorico.TextChanged += txtHistorico_TextChanged;
             // 
             // dtpDataRealizacao
             // 
             dtpDataRealizacao.Enabled = false;
             dtpDataRealizacao.Format = DateTimePickerFormat.Short;
-            dtpDataRealizacao.Location = new Point(179, 44);
+            dtpDataRealizacao.Location = new Point(155, 62);
+            dtpDataRealizacao.Margin = new Padding(3, 2, 3, 2);
             dtpDataRealizacao.Name = "dtpDataRealizacao";
-            dtpDataRealizacao.Size = new Size(112, 27);
+            dtpDataRealizacao.Size = new Size(98, 23);
             dtpDataRealizacao.TabIndex = 18;
             // 
             // nudIdade
             // 
             nudIdade.Enabled = false;
-            nudIdade.Location = new Point(179, 79);
+            nudIdade.Location = new Point(155, 88);
+            nudIdade.Margin = new Padding(3, 2, 3, 2);
             nudIdade.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudIdade.Name = "nudIdade";
-            nudIdade.Size = new Size(112, 27);
+            nudIdade.Size = new Size(98, 23);
             nudIdade.TabIndex = 19;
             // 
             // nudMassaMagra
             // 
             nudMassaMagra.DecimalPlaces = 2;
-            nudMassaMagra.Location = new Point(179, 301);
+            nudMassaMagra.Location = new Point(155, 255);
+            nudMassaMagra.Margin = new Padding(3, 2, 3, 2);
             nudMassaMagra.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             nudMassaMagra.Name = "nudMassaMagra";
-            nudMassaMagra.Size = new Size(66, 27);
+            nudMassaMagra.Size = new Size(58, 23);
             nudMassaMagra.TabIndex = 20;
+            nudMassaMagra.ValueChanged += nudMassaMagra_ValueChanged;
             // 
             // nudMassaGorda
             // 
             nudMassaGorda.DecimalPlaces = 2;
-            nudMassaGorda.Location = new Point(179, 334);
+            nudMassaGorda.Location = new Point(155, 279);
+            nudMassaGorda.Margin = new Padding(3, 2, 3, 2);
             nudMassaGorda.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             nudMassaGorda.Name = "nudMassaGorda";
-            nudMassaGorda.Size = new Size(66, 27);
+            nudMassaGorda.Size = new Size(58, 23);
             nudMassaGorda.TabIndex = 21;
+            nudMassaGorda.ValueChanged += nudMassaGorda_ValueChanged;
             // 
             // nudPeso
             // 
             nudPeso.DecimalPlaces = 2;
-            nudPeso.Location = new Point(179, 367);
+            nudPeso.Enabled = false;
+            nudPeso.Location = new Point(155, 304);
+            nudPeso.Margin = new Padding(3, 2, 3, 2);
             nudPeso.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPeso.Name = "nudPeso";
-            nudPeso.Size = new Size(66, 27);
+            nudPeso.Size = new Size(58, 23);
             nudPeso.TabIndex = 22;
             // 
             // nudAltura
             // 
             nudAltura.DecimalPlaces = 2;
-            nudAltura.Location = new Point(179, 402);
+            nudAltura.Location = new Point(155, 331);
+            nudAltura.Margin = new Padding(3, 2, 3, 2);
             nudAltura.Maximum = new decimal(new int[] { 3, 0, 0, 0 });
             nudAltura.Name = "nudAltura";
-            nudAltura.Size = new Size(66, 27);
+            nudAltura.Size = new Size(58, 23);
             nudAltura.TabIndex = 23;
+            nudAltura.ValueChanged += nudAltura_ValueChanged;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(556, 648);
+            btnSalvar.Location = new Point(486, 486);
+            btnSalvar.Margin = new Padding(3, 2, 3, 2);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(158, 42);
+            btnSalvar.Size = new Size(138, 32);
             btnSalvar.TabIndex = 24;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
@@ -305,15 +326,17 @@
             // chkSedentarismo
             // 
             chkSedentarismo.AutoSize = true;
-            chkSedentarismo.Location = new Point(23, 185);
+            chkSedentarismo.Location = new Point(18, 168);
+            chkSedentarismo.Margin = new Padding(3, 2, 3, 2);
             chkSedentarismo.Name = "chkSedentarismo";
-            chkSedentarismo.Size = new Size(122, 24);
+            chkSedentarismo.Size = new Size(98, 19);
             chkSedentarismo.TabIndex = 25;
             chkSedentarismo.Text = "Sedentarismo";
             chkSedentarismo.UseVisualStyleBackColor = true;
             // 
             // pnlCadAvaliacao
             // 
+            pnlCadAvaliacao.Controls.Add(lblObrigatorio);
             pnlCadAvaliacao.Controls.Add(nudPerimetroPanturrilhaDir);
             pnlCadAvaliacao.Controls.Add(nudPerimetroPanturrilhaEsq);
             pnlCadAvaliacao.Controls.Add(nudPerimetroCoxaDir);
@@ -366,270 +389,295 @@
             pnlCadAvaliacao.Controls.Add(lblIdade);
             pnlCadAvaliacao.Controls.Add(lblDataRealizacao);
             pnlCadAvaliacao.Controls.Add(lblPersonal);
-            pnlCadAvaliacao.Location = new Point(6, 3);
+            pnlCadAvaliacao.Location = new Point(5, 2);
+            pnlCadAvaliacao.Margin = new Padding(3, 2, 3, 2);
             pnlCadAvaliacao.Name = "pnlCadAvaliacao";
-            pnlCadAvaliacao.Size = new Size(772, 856);
+            pnlCadAvaliacao.Size = new Size(676, 642);
             pnlCadAvaliacao.TabIndex = 0;
             pnlCadAvaliacao.Paint += pnlCadAvaliacao_Paint;
+            // 
+            // lblObrigatorio
+            // 
+            lblObrigatorio.AutoSize = true;
+            lblObrigatorio.Location = new Point(84, 11);
+            lblObrigatorio.Name = "lblObrigatorio";
+            lblObrigatorio.Size = new Size(149, 15);
+            lblObrigatorio.TabIndex = 54;
+            lblObrigatorio.Text = "* Indica dados obrigatórios";
             // 
             // nudPerimetroPanturrilhaDir
             // 
             nudPerimetroPanturrilhaDir.DecimalPlaces = 2;
-            nudPerimetroPanturrilhaDir.Location = new Point(648, 565);
+            nudPerimetroPanturrilhaDir.Location = new Point(565, 453);
+            nudPerimetroPanturrilhaDir.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroPanturrilhaDir.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroPanturrilhaDir.Name = "nudPerimetroPanturrilhaDir";
-            nudPerimetroPanturrilhaDir.Size = new Size(66, 27);
+            nudPerimetroPanturrilhaDir.Size = new Size(58, 23);
             nudPerimetroPanturrilhaDir.TabIndex = 53;
             // 
             // nudPerimetroPanturrilhaEsq
             // 
             nudPerimetroPanturrilhaEsq.DecimalPlaces = 2;
-            nudPerimetroPanturrilhaEsq.Location = new Point(648, 532);
+            nudPerimetroPanturrilhaEsq.Location = new Point(565, 428);
+            nudPerimetroPanturrilhaEsq.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroPanturrilhaEsq.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroPanturrilhaEsq.Name = "nudPerimetroPanturrilhaEsq";
-            nudPerimetroPanturrilhaEsq.Size = new Size(66, 27);
+            nudPerimetroPanturrilhaEsq.Size = new Size(58, 23);
             nudPerimetroPanturrilhaEsq.TabIndex = 52;
             // 
             // nudPerimetroCoxaDir
             // 
             nudPerimetroCoxaDir.DecimalPlaces = 2;
-            nudPerimetroCoxaDir.Location = new Point(648, 499);
+            nudPerimetroCoxaDir.Location = new Point(565, 403);
+            nudPerimetroCoxaDir.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroCoxaDir.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroCoxaDir.Name = "nudPerimetroCoxaDir";
-            nudPerimetroCoxaDir.Size = new Size(66, 27);
+            nudPerimetroCoxaDir.Size = new Size(58, 23);
             nudPerimetroCoxaDir.TabIndex = 51;
             // 
             // nudPerimetroCoxaEsq
             // 
             nudPerimetroCoxaEsq.DecimalPlaces = 2;
-            nudPerimetroCoxaEsq.Location = new Point(648, 466);
+            nudPerimetroCoxaEsq.Location = new Point(565, 379);
+            nudPerimetroCoxaEsq.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroCoxaEsq.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroCoxaEsq.Name = "nudPerimetroCoxaEsq";
-            nudPerimetroCoxaEsq.Size = new Size(66, 27);
+            nudPerimetroCoxaEsq.Size = new Size(58, 23);
             nudPerimetroCoxaEsq.TabIndex = 50;
             // 
             // nudPerimetroAntebracoEsq
             // 
             nudPerimetroAntebracoEsq.DecimalPlaces = 2;
-            nudPerimetroAntebracoEsq.Location = new Point(648, 400);
+            nudPerimetroAntebracoEsq.Location = new Point(565, 329);
+            nudPerimetroAntebracoEsq.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroAntebracoEsq.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroAntebracoEsq.Name = "nudPerimetroAntebracoEsq";
-            nudPerimetroAntebracoEsq.Size = new Size(66, 27);
+            nudPerimetroAntebracoEsq.Size = new Size(58, 23);
             nudPerimetroAntebracoEsq.TabIndex = 49;
             // 
             // nudPerimetroAntebracoDir
             // 
             nudPerimetroAntebracoDir.DecimalPlaces = 2;
-            nudPerimetroAntebracoDir.Location = new Point(648, 433);
+            nudPerimetroAntebracoDir.Location = new Point(565, 354);
+            nudPerimetroAntebracoDir.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroAntebracoDir.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroAntebracoDir.Name = "nudPerimetroAntebracoDir";
-            nudPerimetroAntebracoDir.Size = new Size(66, 27);
+            nudPerimetroAntebracoDir.Size = new Size(58, 23);
             nudPerimetroAntebracoDir.TabIndex = 48;
             // 
             // nudPerimetroBracoDirContraido
             // 
             nudPerimetroBracoDirContraido.DecimalPlaces = 2;
-            nudPerimetroBracoDirContraido.Location = new Point(648, 367);
+            nudPerimetroBracoDirContraido.Location = new Point(565, 304);
+            nudPerimetroBracoDirContraido.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroBracoDirContraido.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroBracoDirContraido.Name = "nudPerimetroBracoDirContraido";
-            nudPerimetroBracoDirContraido.Size = new Size(66, 27);
+            nudPerimetroBracoDirContraido.Size = new Size(58, 23);
             nudPerimetroBracoDirContraido.TabIndex = 47;
             // 
             // nudPerimetroBracoEsqContraido
             // 
             nudPerimetroBracoEsqContraido.DecimalPlaces = 2;
-            nudPerimetroBracoEsqContraido.Location = new Point(648, 334);
+            nudPerimetroBracoEsqContraido.Location = new Point(565, 279);
+            nudPerimetroBracoEsqContraido.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroBracoEsqContraido.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroBracoEsqContraido.Name = "nudPerimetroBracoEsqContraido";
-            nudPerimetroBracoEsqContraido.Size = new Size(66, 27);
+            nudPerimetroBracoEsqContraido.Size = new Size(58, 23);
             nudPerimetroBracoEsqContraido.TabIndex = 46;
             // 
             // nudPerimetroBracoDirRelaxado
             // 
             nudPerimetroBracoDirRelaxado.DecimalPlaces = 2;
-            nudPerimetroBracoDirRelaxado.Location = new Point(648, 301);
+            nudPerimetroBracoDirRelaxado.Location = new Point(565, 255);
+            nudPerimetroBracoDirRelaxado.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroBracoDirRelaxado.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroBracoDirRelaxado.Name = "nudPerimetroBracoDirRelaxado";
-            nudPerimetroBracoDirRelaxado.Size = new Size(66, 27);
+            nudPerimetroBracoDirRelaxado.Size = new Size(58, 23);
             nudPerimetroBracoDirRelaxado.TabIndex = 45;
             // 
             // nudPerimetroBracoEsqRelaxado
             // 
             nudPerimetroBracoEsqRelaxado.DecimalPlaces = 2;
-            nudPerimetroBracoEsqRelaxado.Location = new Point(278, 565);
+            nudPerimetroBracoEsqRelaxado.Location = new Point(241, 453);
+            nudPerimetroBracoEsqRelaxado.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroBracoEsqRelaxado.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroBracoEsqRelaxado.Name = "nudPerimetroBracoEsqRelaxado";
-            nudPerimetroBracoEsqRelaxado.Size = new Size(66, 27);
+            nudPerimetroBracoEsqRelaxado.Size = new Size(58, 23);
             nudPerimetroBracoEsqRelaxado.TabIndex = 44;
             // 
             // nudPerimetroQuadril
             // 
             nudPerimetroQuadril.DecimalPlaces = 2;
-            nudPerimetroQuadril.Location = new Point(278, 532);
+            nudPerimetroQuadril.Location = new Point(241, 428);
+            nudPerimetroQuadril.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroQuadril.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroQuadril.Name = "nudPerimetroQuadril";
-            nudPerimetroQuadril.Size = new Size(66, 27);
+            nudPerimetroQuadril.Size = new Size(58, 23);
             nudPerimetroQuadril.TabIndex = 43;
             // 
             // nudPerimetroAbdome
             // 
             nudPerimetroAbdome.DecimalPlaces = 2;
-            nudPerimetroAbdome.Location = new Point(278, 499);
+            nudPerimetroAbdome.Location = new Point(241, 403);
+            nudPerimetroAbdome.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroAbdome.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroAbdome.Name = "nudPerimetroAbdome";
-            nudPerimetroAbdome.Size = new Size(66, 27);
+            nudPerimetroAbdome.Size = new Size(58, 23);
             nudPerimetroAbdome.TabIndex = 42;
             // 
             // nudPerimetroCintura
             // 
             nudPerimetroCintura.DecimalPlaces = 2;
-            nudPerimetroCintura.Location = new Point(278, 466);
+            nudPerimetroCintura.Location = new Point(241, 379);
+            nudPerimetroCintura.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroCintura.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroCintura.Name = "nudPerimetroCintura";
-            nudPerimetroCintura.Size = new Size(66, 27);
+            nudPerimetroCintura.Size = new Size(58, 23);
             nudPerimetroCintura.TabIndex = 41;
             // 
             // nudPerimetroToraxRelaxado
             // 
             nudPerimetroToraxRelaxado.DecimalPlaces = 2;
-            nudPerimetroToraxRelaxado.Location = new Point(278, 433);
+            nudPerimetroToraxRelaxado.Location = new Point(241, 354);
+            nudPerimetroToraxRelaxado.Margin = new Padding(3, 2, 3, 2);
             nudPerimetroToraxRelaxado.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             nudPerimetroToraxRelaxado.Name = "nudPerimetroToraxRelaxado";
-            nudPerimetroToraxRelaxado.Size = new Size(66, 27);
+            nudPerimetroToraxRelaxado.Size = new Size(58, 23);
             nudPerimetroToraxRelaxado.TabIndex = 40;
             // 
             // lblPerimetroPanturrilhaDir
             // 
             lblPerimetroPanturrilhaDir.AutoSize = true;
-            lblPerimetroPanturrilhaDir.Location = new Point(378, 572);
+            lblPerimetroPanturrilhaDir.Location = new Point(329, 458);
             lblPerimetroPanturrilhaDir.Name = "lblPerimetroPanturrilhaDir";
-            lblPerimetroPanturrilhaDir.Size = new Size(211, 20);
+            lblPerimetroPanturrilhaDir.Size = new Size(172, 15);
             lblPerimetroPanturrilhaDir.TabIndex = 39;
             lblPerimetroPanturrilhaDir.Text = "Perímetro Panturrilha Dir. (cm):";
             // 
             // lblPerimetroPanturrilhaEsq
             // 
             lblPerimetroPanturrilhaEsq.AutoSize = true;
-            lblPerimetroPanturrilhaEsq.Location = new Point(378, 544);
+            lblPerimetroPanturrilhaEsq.Location = new Point(329, 437);
             lblPerimetroPanturrilhaEsq.Name = "lblPerimetroPanturrilhaEsq";
-            lblPerimetroPanturrilhaEsq.Size = new Size(214, 20);
+            lblPerimetroPanturrilhaEsq.Size = new Size(175, 15);
             lblPerimetroPanturrilhaEsq.TabIndex = 38;
             lblPerimetroPanturrilhaEsq.Text = "Perímetro Panturrilha Esq. (cm):";
             // 
             // lblPerimetroCoxaDir
             // 
             lblPerimetroCoxaDir.AutoSize = true;
-            lblPerimetroCoxaDir.Location = new Point(378, 511);
+            lblPerimetroCoxaDir.Location = new Point(329, 412);
             lblPerimetroCoxaDir.Name = "lblPerimetroCoxaDir";
-            lblPerimetroCoxaDir.Size = new Size(174, 20);
+            lblPerimetroCoxaDir.Size = new Size(140, 15);
             lblPerimetroCoxaDir.TabIndex = 37;
             lblPerimetroCoxaDir.Text = "Perímetro Coxa Dir. (cm):";
             // 
             // lblPerimetroCoxaEsq
             // 
             lblPerimetroCoxaEsq.AutoSize = true;
-            lblPerimetroCoxaEsq.Location = new Point(378, 478);
+            lblPerimetroCoxaEsq.Location = new Point(329, 387);
             lblPerimetroCoxaEsq.Name = "lblPerimetroCoxaEsq";
-            lblPerimetroCoxaEsq.Size = new Size(177, 20);
+            lblPerimetroCoxaEsq.Size = new Size(143, 15);
             lblPerimetroCoxaEsq.TabIndex = 36;
             lblPerimetroCoxaEsq.Text = "Perímetro Coxa Esq. (cm):";
             // 
             // lblPerimetroAntebracoDir
             // 
             lblPerimetroAntebracoDir.AutoSize = true;
-            lblPerimetroAntebracoDir.Location = new Point(378, 445);
+            lblPerimetroAntebracoDir.Location = new Point(329, 363);
             lblPerimetroAntebracoDir.Name = "lblPerimetroAntebracoDir";
-            lblPerimetroAntebracoDir.Size = new Size(210, 20);
+            lblPerimetroAntebracoDir.Size = new Size(169, 15);
             lblPerimetroAntebracoDir.TabIndex = 35;
             lblPerimetroAntebracoDir.Text = "Perímetro Antebraço Dir. (cm):";
             // 
             // lblPerimetroAntebracoEsq
             // 
             lblPerimetroAntebracoEsq.AutoSize = true;
-            lblPerimetroAntebracoEsq.Location = new Point(378, 412);
+            lblPerimetroAntebracoEsq.Location = new Point(329, 338);
             lblPerimetroAntebracoEsq.Name = "lblPerimetroAntebracoEsq";
-            lblPerimetroAntebracoEsq.Size = new Size(213, 20);
+            lblPerimetroAntebracoEsq.Size = new Size(172, 15);
             lblPerimetroAntebracoEsq.TabIndex = 34;
             lblPerimetroAntebracoEsq.Text = "Perímetro Antebraço Esq. (cm):";
             // 
             // lblPerimetroBracoDirContraido
             // 
             lblPerimetroBracoDirContraido.AutoSize = true;
-            lblPerimetroBracoDirContraido.Location = new Point(378, 379);
+            lblPerimetroBracoDirContraido.Location = new Point(329, 313);
             lblPerimetroBracoDirContraido.Name = "lblPerimetroBracoDirContraido";
-            lblPerimetroBracoDirContraido.Size = new Size(249, 20);
+            lblPerimetroBracoDirContraido.Size = new Size(200, 15);
             lblPerimetroBracoDirContraido.TabIndex = 33;
             lblPerimetroBracoDirContraido.Text = "Perímetro Braço Dir. Contraído (cm):";
             // 
             // lblPerimetroBracoEsqContraido
             // 
             lblPerimetroBracoEsqContraido.AutoSize = true;
-            lblPerimetroBracoEsqContraido.Location = new Point(378, 346);
+            lblPerimetroBracoEsqContraido.Location = new Point(329, 289);
             lblPerimetroBracoEsqContraido.Name = "lblPerimetroBracoEsqContraido";
-            lblPerimetroBracoEsqContraido.Size = new Size(252, 20);
+            lblPerimetroBracoEsqContraido.Size = new Size(203, 15);
             lblPerimetroBracoEsqContraido.TabIndex = 32;
             lblPerimetroBracoEsqContraido.Text = "Perímetro Braço Esq. Contraído (cm):";
             // 
             // lblPerimetroBracoDirRelaxado
             // 
             lblPerimetroBracoDirRelaxado.AutoSize = true;
-            lblPerimetroBracoDirRelaxado.Location = new Point(378, 313);
+            lblPerimetroBracoDirRelaxado.Location = new Point(329, 264);
             lblPerimetroBracoDirRelaxado.Name = "lblPerimetroBracoDirRelaxado";
-            lblPerimetroBracoDirRelaxado.Size = new Size(245, 20);
+            lblPerimetroBracoDirRelaxado.Size = new Size(194, 15);
             lblPerimetroBracoDirRelaxado.TabIndex = 31;
             lblPerimetroBracoDirRelaxado.Text = "Perímetro Braço Dir. Relaxado (cm):";
             // 
             // lblPerimetroBracoEsqRelaxado
             // 
             lblPerimetroBracoEsqRelaxado.AutoSize = true;
-            lblPerimetroBracoEsqRelaxado.Location = new Point(23, 572);
+            lblPerimetroBracoEsqRelaxado.Location = new Point(18, 458);
             lblPerimetroBracoEsqRelaxado.Name = "lblPerimetroBracoEsqRelaxado";
-            lblPerimetroBracoEsqRelaxado.Size = new Size(248, 20);
+            lblPerimetroBracoEsqRelaxado.Size = new Size(197, 15);
             lblPerimetroBracoEsqRelaxado.TabIndex = 30;
             lblPerimetroBracoEsqRelaxado.Text = "Perímetro Braço Esq. Relaxado (cm):";
             // 
             // lblPerimetroQuadril
             // 
             lblPerimetroQuadril.AutoSize = true;
-            lblPerimetroQuadril.Location = new Point(23, 539);
+            lblPerimetroQuadril.Location = new Point(18, 433);
             lblPerimetroQuadril.Name = "lblPerimetroQuadril";
-            lblPerimetroQuadril.Size = new Size(163, 20);
+            lblPerimetroQuadril.Size = new Size(132, 15);
             lblPerimetroQuadril.TabIndex = 29;
             lblPerimetroQuadril.Text = "Perímetro Quadril (cm):";
             // 
             // lblPerimetroAbdome
             // 
             lblPerimetroAbdome.AutoSize = true;
-            lblPerimetroAbdome.Location = new Point(23, 506);
+            lblPerimetroAbdome.Location = new Point(18, 409);
             lblPerimetroAbdome.Name = "lblPerimetroAbdome";
-            lblPerimetroAbdome.Size = new Size(172, 20);
+            lblPerimetroAbdome.Size = new Size(139, 15);
             lblPerimetroAbdome.TabIndex = 28;
             lblPerimetroAbdome.Text = "Perímetro Abdome (cm):";
             // 
             // lblPerimetroCintura
             // 
             lblPerimetroCintura.AutoSize = true;
-            lblPerimetroCintura.Location = new Point(23, 473);
+            lblPerimetroCintura.Location = new Point(18, 384);
             lblPerimetroCintura.Name = "lblPerimetroCintura";
-            lblPerimetroCintura.Size = new Size(161, 20);
+            lblPerimetroCintura.Size = new Size(132, 15);
             lblPerimetroCintura.TabIndex = 27;
             lblPerimetroCintura.Text = "Perímetro Cintura (cm):";
             // 
             // lblPerimetroToraxRelaxado
             // 
             lblPerimetroToraxRelaxado.AutoSize = true;
-            lblPerimetroToraxRelaxado.Location = new Point(23, 440);
+            lblPerimetroToraxRelaxado.Location = new Point(18, 359);
             lblPerimetroToraxRelaxado.Name = "lblPerimetroToraxRelaxado";
-            lblPerimetroToraxRelaxado.Size = new Size(216, 20);
+            lblPerimetroToraxRelaxado.Size = new Size(171, 15);
             lblPerimetroToraxRelaxado.TabIndex = 26;
             lblPerimetroToraxRelaxado.Text = "Perímetro Tórax Relaxado (cm):";
             // 
             // FrmCadastroAvaliacao
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 863);
+            ClientSize = new Size(684, 647);
             Controls.Add(pnlCadAvaliacao);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmCadastroAvaliacao";
             Text = "CadastroAvaliacao";
             Load += CadastroAvaliacao_Load;
@@ -711,5 +759,6 @@
         private NumericUpDown nudPerimetroCoxaDir;
         private NumericUpDown nudPerimetroCoxaEsq;
         private NumericUpDown nudPerimetroPanturrilhaDir;
+        private Label lblObrigatorio;
     }
 }

@@ -70,8 +70,10 @@ namespace AndreysGym.Forms
                 var resultado = MessageBox.Show("Tem certeza que deseja desativar esse plano?", "Desativar plano?", MessageBoxButtons.YesNo);
                 if (resultado == DialogResult.Yes)
                 {
-                    Plano plano = _planos.First(p => p == (Plano)lstPlanos.SelectedItem);
+                    var plano = _planos.First(p => p == (Plano)lstPlanos.SelectedItem);
                     plano.Ativo = false;
+                    lstPlanos.DataSource = null;
+                    lstPlanos.DataSource = _planos;
                     PlanoRepository.Save(plano);
                 }
             }

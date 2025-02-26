@@ -24,23 +24,85 @@ namespace AndreysGym.Forms
             Usuario usuario = UsuarioRepository.Autenticar(txtEmail.Text, txtSenha.Text);
             if (usuario != null)
             {
-                Frequencia ultimaFrequencia = FrequenciaRepository.FindByUsuario(usuario).LastOrDefault();
+                if (usuario.Credencial.Admin)
+                {
+                    Frequencia ultimaFrequenciaAdmin = FrequenciaRepository.FindByUsuario(usuario)
+                        .OrderByDescending(f => f.Entrada)
+                        .FirstOrDefault();
+
+                    if (ultimaFrequenciaAdmin == null || ultimaFrequenciaAdmin.Saida != null)
+                    {
+                        Frequencia frequenciaAdmin = new Frequencia
+                        {
+                            Entrada = DateTime.Now,
+                            Usuario = usuario
+                        };
+                        usuario.Frequencias.Add(frequenciaAdmin);
+                        FrequenciaRepository.Save(frequenciaAdmin);
+
+                        lblSucesso.Text = "Entrada registrada (Admin).";
+                    }
+                    else
+                    {
+                        ultimaFrequenciaAdmin.Saida = DateTime.Now;
+                        FrequenciaRepository.Save(ultimaFrequenciaAdmin);
+
+                        lblSucesso.Text = "Saída registrada (Admin).";
+                    }
+
+                    MostrarMensagem();
+                    return;
+                }
+
+                if (usuario.Plano == null)
+                {
+                    lblSucesso.Text = "Usuário sem plano não pode registrar frequência.";
+                    MostrarMensagem();
+                    return;
+                }
+
+                var frequencias = FrequenciaRepository.FindByUsuario(usuario);
+                Frequencia ultimaFrequencia = frequencias.OrderByDescending(f => f.Entrada).FirstOrDefault();
+
+                DateTime hoje = DateTime.Today;
+                DateTime inicioSemana = hoje.AddDays(-(int)hoje.DayOfWeek);
+                DateTime fimSemana = inicioSemana.AddDays(6);
+
+                int frequenciasNaSemana = frequencias.Count(f => f.Entrada.Date >= inicioSemana &&
+                                                                 f.Entrada.Date <= fimSemana);
+
                 if (ultimaFrequencia == null || ultimaFrequencia.Saida != null)
                 {
-                    Frequencia frequencia = new Frequencia
+                    if (frequenciasNaSemana >= usuario.Plano.QuantidadeDias)
                     {
-                        Entrada = DateTime.Now,
-                        Usuario = usuario
-                    };
-                    usuario.Frequencias.Add(frequencia);
-                    FrequenciaRepository.Save(frequencia);
+                        lblSucesso.Text = "Limite de frequência semanal atingido.";
+                    }
+                    else if (ultimaFrequencia != null && ultimaFrequencia.Entrada.Date == hoje)
+                    {
+                        lblSucesso.Text = "Já existe um registro de entrada para hoje.";
+                    }
+                    else
+                    {
+                        Frequencia frequencia = new Frequencia
+                        {
+                            Entrada = DateTime.Now,
+                            Usuario = usuario
+                        };
+                        usuario.Frequencias.Add(frequencia);
+                        FrequenciaRepository.Save(frequencia);
+                        lblSucesso.Text = "Entrada permitida.";
+                    }
                 }
                 else
                 {
                     ultimaFrequencia.Saida = DateTime.Now;
                     FrequenciaRepository.Save(ultimaFrequencia);
+                    lblSucesso.Text = "Saída permitida.";
                 }
+
                 MostrarMensagem();
+
+
             }
             else
             {

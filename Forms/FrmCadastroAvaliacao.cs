@@ -26,7 +26,7 @@ namespace AndreysGym.Forms
             nudIdade.Value = _usuarioAvaliado.CalcularIdade();
         }
 
-        
+
         public static FrmCadastroAvaliacao GetInstance(Usuario usuarioAvaliado, Usuario personalResponsavel)
         {
             if (_instance == null || _instance.IsDisposed)
@@ -126,6 +126,54 @@ namespace AndreysGym.Forms
         private void label10_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtObjetivo_TextChanged(object sender, EventArgs e)
+        {
+            VerificarDados();
+        }
+
+        private void VerificarDados()
+        {
+            btnSalvar.Enabled = (txtObjetivo.Text != String.Empty &&
+                txtMedicamentos.Text != String.Empty &&
+                txtHistorico.Text != String.Empty &&
+                txtProblemasSaude.Text != String.Empty &&
+                nudMassaMagra.Value != 0 &&
+                nudMassaGorda.Value != 0 &&
+                nudAltura.Value != 0);
+        }
+
+        private void txtMedicamentos_TextChanged(object sender, EventArgs e)
+        {
+            VerificarDados();
+        }
+
+        private void txtProblemasSaude_TextChanged(object sender, EventArgs e)
+        {
+            VerificarDados();
+        }
+
+        private void txtHistorico_TextChanged(object sender, EventArgs e)
+        {
+            VerificarDados();
+        }
+
+        private void nudMassaMagra_ValueChanged(object sender, EventArgs e)
+        {
+            nudPeso.Value = nudMassaGorda.Value + nudMassaMagra.Value;
+            VerificarDados();
+        }
+
+        private void nudMassaGorda_ValueChanged(object sender, EventArgs e)
+        {
+            nudPeso.Value = nudMassaGorda.Value + nudMassaMagra.Value;
+            VerificarDados();
+        }
+
+        private void nudAltura_ValueChanged(object sender, EventArgs e)
+        {
+            VerificarDados();
         }
     }
 }
