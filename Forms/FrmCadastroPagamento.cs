@@ -44,7 +44,28 @@ namespace AndreysGym.Forms
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            
+            Pagamento pagamento = new Pagamento
+            {
+                pagamento.Usuario.Nome = txtNome.Text,
+                DataNascimento = datNascimento.Value,
+                Cpf = Convert.ToUInt64(mskCpf.Text),
+                Credencial = new Credencial
+                {
+                    Email = txtEmail.Text,
+                    Senha = txtSenha.Text,
+                    Admin = chkAdmin.Checked
+                }
+            };
+
+            try
+            {
+                PagamentoRepository.Save(pagamento);
+            }
+            catch (Microsoft.EntityFrameworkCore.DbUpdateException)
+            {
+                throw;
+            }
+
         }
     }
 }

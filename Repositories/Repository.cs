@@ -19,6 +19,7 @@ namespace AndreysGym.Repositories
         public DbSet<Programacao> Programacoes { get; set; }
         public DbSet<Frequencia> Frequencias { get; set; }
         public DbSet<Treino> Treinos { get; set; }
+        public DbSet<Pagamento> Pagamentos { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
