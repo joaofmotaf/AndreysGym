@@ -34,7 +34,23 @@ namespace AndreysGym.Repositories
                 throw;
             }
         }
-
+        public static List<Pagamento> FindByUsuario(Usuario usuario)
+        {
+            try
+            {
+                using (Repository dbContext = new Repository())
+                {
+                    return dbContext.Pagamentos
+                        .Include(p => p.Usuario)
+                        .Include(p => p.Plano)
+                        .ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
     }
 }
