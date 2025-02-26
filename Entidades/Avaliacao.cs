@@ -24,10 +24,10 @@ namespace AndreysGym.Entidades
 
         [Category("1 - Informações Gerais")]
         [DisplayName("Personal Responsável")]
-        public Usuario PersonalResponsavel { get; set; }
+        public Usuario? PersonalResponsavel { get; set; }
 
         [Browsable(false)]
-        public UInt64 PersonalResponsavelId { get; set; }
+        public UInt64? PersonalResponsavelId { get; set; }
 
         [Category("1 - Informações Gerais")]
         [DisplayName("Data da Avaliação")]

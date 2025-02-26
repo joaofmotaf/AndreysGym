@@ -45,7 +45,11 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Usuarios.ToList();
+                    return dbContext.Usuarios
+                        .Include(u => u.Credencial)
+                        .Include(u => u.TreinoAtual)
+                        .Include(u => u.Plano)
+                        .ToList();
                 }
             }
             catch (Exception)
@@ -54,13 +58,18 @@ namespace AndreysGym.Repositories
             }
         }
 
-        public static Usuario FindById(Int64 id)
+        public static Usuario FindById(UInt64 id)
         {
             try
             {
                 using (Repository dbContext = new Repository())
                 {
-                    return dbContext.Usuarios.Find(id);
+                    return dbContext.Usuarios
+                        .Include(u => u.Credencial)
+                        .Include(u => u.TreinoAtual)
+                        .Include(u => u.Plano)
+                        .Where(u => u.Id == id)
+                        .FirstOrDefault();
                 }
             }
             catch (Exception)
@@ -76,7 +85,9 @@ namespace AndreysGym.Repositories
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Usuarios
-                        .Include("Credencial")
+                        .Include(u => u.Credencial)
+                        .Include(u => u.TreinoAtual)
+                        .Include(u => u.Plano)
                         .Where(u => u.Id == id)
                         .FirstOrDefault<Usuario>();
                 }
@@ -94,6 +105,9 @@ namespace AndreysGym.Repositories
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Usuarios
+                        .Include(u => u.Credencial)
+                        .Include(u => u.TreinoAtual)
+                        .Include(u => u.Plano)
                         .Where(u => u.Nome.Contains(partialName))
                         .ToList<Usuario>();
                 }
@@ -116,8 +130,9 @@ namespace AndreysGym.Repositories
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Usuarios
-                        .Include("Credencial")
-                        .Include("TreinoAtual")
+                        .Include(u => u.Credencial)
+                        .Include(u => u.TreinoAtual)
+                        .Include(u => u.Plano)
                         .Where(u => u.Credencial.Email == credencial.Email
                             && u.Credencial.Senha == credencial.Senha)
                         .FirstOrDefault<Usuario>();
@@ -135,6 +150,9 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
+                    usuario = FindByIdWCredencial(usuario.Id);
+                    usuario.TreinoAtual = null;
+                    dbContext.SaveChanges();
                     dbContext.Usuarios.Attach(usuario);
                     dbContext.Usuarios.Remove(usuario);
 

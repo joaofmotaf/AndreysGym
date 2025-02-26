@@ -30,15 +30,27 @@ namespace AndreysGym.Repositories
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Avaliacao>()
         .HasOne(a => a.Usuario)
-        .WithMany() // Sem navegação reversa (se não houver necessidade)
+        .WithMany()
         .HasForeignKey(a => a.UsuarioId)
-        .OnDelete(DeleteBehavior.Cascade); // Para evitar cascata indesejada
+        .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Avaliacao>()
-                .HasOne(a => a.PersonalResponsavel)
-                .WithMany()
-                .HasForeignKey(a => a.PersonalResponsavelId)
-                .OnDelete(DeleteBehavior.Cascade);
+                   .HasOne(a => a.PersonalResponsavel)
+                   .WithMany()
+                   .HasForeignKey(a => a.PersonalResponsavelId)
+                   .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<Usuario>()
+        .HasOne(u => u.TreinoAtual)
+        .WithMany()
+        .HasForeignKey(u => u.TreinoAtualId)
+        .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<Usuario>()
+        .HasOne(u => u.Plano)
+        .WithMany()
+        .HasForeignKey(u => u.PlanoId)
+        .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }
