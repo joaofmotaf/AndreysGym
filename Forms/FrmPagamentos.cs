@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AndreysGym.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace AndreysGym.Forms
         private FrmPagamentos()
         {
             InitializeComponent();
-            lstPagamentos.DataSource = new BindingList<Pagamento>
+            lstPagamentos.DataSource = new BindingList<Pagamento>();
         }
         public static FrmPagamentos GetInstance()
         {
