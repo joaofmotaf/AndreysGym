@@ -25,6 +25,16 @@ namespace AndreysGym.Forms
             _usuarios = new BindingList<Usuario>(UsuarioRepository.FindAll());
             usuarioBindingSource.DataSource = _usuarios;
         }
+
+        public static FrmGerenciamentoUsuario GetInstance()
+        {
+            if (_instance == null || _instance.IsDisposed)
+            {
+                _instance = new FrmGerenciamentoUsuario();
+            }
+            return _instance;
+
+        }
         public static FrmGerenciamentoUsuario GetInstance(Usuario usuarioAtivo)
         {
             if (_instance == null || _instance.IsDisposed)
@@ -127,6 +137,13 @@ namespace AndreysGym.Forms
             FrmCadastroPagamento.GetInstance(_usuarioSelecionado).WindowState = FormWindowState.Maximized;
             FrmCadastroPagamento.GetInstance(_usuarioSelecionado).Show();
             FrmCadastroPagamento.GetInstance(_usuarioSelecionado).BringToFront();
+        }
+
+        public void AtualizarUsuarios()
+        {
+            _usuarios = new BindingList<Usuario>(UsuarioRepository.FindAll());
+            usuarioBindingSource.DataSource = null;
+            usuarioBindingSource.DataSource = _usuarios;
         }
     }
 }

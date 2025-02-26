@@ -140,6 +140,7 @@ namespace AndreysGym.Forms
             _usuario.Credencial.Email = txtEmail.Text;
             _usuario.Credencial.Senha = txtSenha.Text;
             UsuarioRepository.Save(_usuario);
+            FrmGerenciamentoUsuario.GetInstance().AtualizarUsuarios();
             Close();
         }
     }
