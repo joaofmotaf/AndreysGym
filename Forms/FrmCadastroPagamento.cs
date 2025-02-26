@@ -16,7 +16,6 @@ namespace AndreysGym.Forms
     {
         private static FrmCadastroPagamento _instance;
         private static Usuario _usuario;
-        private static Usuario _usuario2;
 
         private FrmCadastroPagamento()
         {

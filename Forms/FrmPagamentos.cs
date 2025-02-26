@@ -13,7 +13,7 @@ using ZstdSharp.Unsafe;
 
 namespace AndreysGym.Forms
 {
-    public partial class FrmPagamentos: Form
+    public partial class FrmPagamentos : Form
     {
         private static Usuario _usuario;
         private static BindingList<Pagamento> _pagamentos;
@@ -47,6 +47,14 @@ namespace AndreysGym.Forms
         {
             lstPagamentos.DataSource = null;
             lstPagamentos.DataSource = _pagamentos;
+        }
+
+        private void btnNovoPagamento_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPagamento.GetInstance(_usuario).MdiParent = FrmPrincipal.GetInstance();
+            FrmCadastroPagamento.GetInstance(_usuario).WindowState = FormWindowState.Maximized;
+            FrmCadastroPagamento.GetInstance(_usuario).Show();
+            FrmCadastroPagamento.GetInstance(_usuario).BringToFront();
         }
     }
 }

@@ -132,11 +132,12 @@ namespace AndreysGym.Forms
 
         private void btnPagamentos_Click(object sender, EventArgs e)
         {
-
-            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).MdiParent = FrmPrincipal.GetInstance();
-            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).WindowState = FormWindowState.Maximized;
-            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).Show();
-            FrmCadastroPagamento.GetInstance(_usuarioSelecionado).BringToFront();
+            var usuario = UsuarioRepository.FindById(_usuarioSelecionado.Id);
+            FrmPagamentos.GetInstance(usuario).MdiParent = FrmPrincipal.GetInstance();
+            FrmPagamentos.GetInstance(usuario).WindowState = FormWindowState.Maximized;
+            FrmPagamentos.GetInstance(usuario).Show();
+            FrmPagamentos.GetInstance(usuario).BringToFront();
+            MessageBox.Show((usuario.Plano == null).ToString());
         }
 
         public void AtualizarUsuarios()

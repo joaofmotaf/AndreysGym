@@ -178,7 +178,7 @@ namespace AndreysGym.Repositories
                 using (Repository dbContext = new Repository())
                 {
                     return dbContext.Usuarios
-                        .Include("Plano")
+                        .Include(u => u.Plano)
                         .Where(u => u.Id == id)
                         .FirstOrDefault<Usuario>();
                 }

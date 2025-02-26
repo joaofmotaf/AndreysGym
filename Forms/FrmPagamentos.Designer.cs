@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             pnlPagamentos = new Panel();
-            lstPagamentos = new ListBox();
             btnNovoPagamento = new Button();
+            lstPagamentos = new ListBox();
             pnlPagamentos.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,15 +44,6 @@
             pnlPagamentos.Size = new Size(776, 426);
             pnlPagamentos.TabIndex = 0;
             // 
-            // lstPagamentos
-            // 
-            lstPagamentos.FormattingEnabled = true;
-            lstPagamentos.ItemHeight = 15;
-            lstPagamentos.Location = new Point(149, 15);
-            lstPagamentos.Name = "lstPagamentos";
-            lstPagamentos.Size = new Size(443, 274);
-            lstPagamentos.TabIndex = 0;
-            // 
             // btnNovoPagamento
             // 
             btnNovoPagamento.Location = new Point(479, 295);
@@ -61,6 +52,16 @@
             btnNovoPagamento.TabIndex = 1;
             btnNovoPagamento.Text = "Novo Pagamento";
             btnNovoPagamento.UseVisualStyleBackColor = true;
+            btnNovoPagamento.Click += btnNovoPagamento_Click;
+            // 
+            // lstPagamentos
+            // 
+            lstPagamentos.FormattingEnabled = true;
+            lstPagamentos.ItemHeight = 15;
+            lstPagamentos.Location = new Point(149, 15);
+            lstPagamentos.Name = "lstPagamentos";
+            lstPagamentos.Size = new Size(443, 274);
+            lstPagamentos.TabIndex = 0;
             // 
             // FrmPagamentos
             // 
