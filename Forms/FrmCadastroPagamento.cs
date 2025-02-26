@@ -25,11 +25,13 @@ namespace AndreysGym.Forms
             txtNome.Text = _usuario.Nome;
             txtEmail.Text = _usuario.Credencial.Email;
             txtCpf.Text = Convert.ToString(_usuario.Cpf);
-            txtPlano.Text = _usuario.Plano.Nome;
-            txtPeriodicidade.Text = Convert.ToString(_usuario.Plano.Periodicidade);
+            cmbPeriodicidade.DataSource = Enum.GetValues(typeof(Periodicidade));
+
             txtPreco.Text = Convert.ToString(_usuario.Plano.Preco);
 
             mtbPagamento.Text = Convert.ToString(DateTime.Now);
+
+            cmbPlano.DataSource = PlanoRepository.FindAll();
         }
 
         public static FrmCadastroPagamento GetInstance(Usuario usuario)
@@ -46,15 +48,8 @@ namespace AndreysGym.Forms
         {
             Pagamento pagamento = new Pagamento
             {
-                pagamento.Usuario.Nome = txtNome.Text,
-                DataNascimento = datNascimento.Value,
-                Cpf = Convert.ToUInt64(mskCpf.Text),
-                Credencial = new Credencial
-                {
-                    Email = txtEmail.Text,
-                    Senha = txtSenha.Text,
-                    Admin = chkAdmin.Checked
-                }
+                DataPagamento = DateTime.Now
+
             };
 
             try
@@ -65,6 +60,11 @@ namespace AndreysGym.Forms
             {
                 throw;
             }
+
+        }
+
+        private void mtbPagamento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
         }
     }

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            cmbPeriodicidade = new ComboBox();
+            cmbPlano = new ComboBox();
             txtPreco = new TextBox();
             lblPreco = new Label();
             lblPeriodicidade = new Label();
-            txtPeriodicidade = new TextBox();
-            txtPlano = new TextBox();
             lblPlano = new Label();
             btnCadastrar = new Button();
             txtCpf = new TextBox();
@@ -49,11 +49,11 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(cmbPeriodicidade);
+            panel1.Controls.Add(cmbPlano);
             panel1.Controls.Add(txtPreco);
             panel1.Controls.Add(lblPreco);
             panel1.Controls.Add(lblPeriodicidade);
-            panel1.Controls.Add(txtPeriodicidade);
-            panel1.Controls.Add(txtPlano);
             panel1.Controls.Add(lblPlano);
             panel1.Controls.Add(btnCadastrar);
             panel1.Controls.Add(txtCpf);
@@ -64,16 +64,36 @@
             panel1.Controls.Add(lblNome);
             panel1.Controls.Add(lblData);
             panel1.Controls.Add(mtbPagamento);
+            panel1.Enabled = false;
             panel1.Location = new Point(14, 16);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(887, 568);
             panel1.TabIndex = 0;
             // 
+            // cmbPeriodicidade
+            // 
+            cmbPeriodicidade.Enabled = false;
+            cmbPeriodicidade.FormattingEnabled = true;
+            cmbPeriodicidade.Location = new Point(152, 188);
+            cmbPeriodicidade.Name = "cmbPeriodicidade";
+            cmbPeriodicidade.Size = new Size(291, 28);
+            cmbPeriodicidade.TabIndex = 17;
+            // 
+            // cmbPlano
+            // 
+            cmbPlano.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cmbPlano.Enabled = false;
+            cmbPlano.FormattingEnabled = true;
+            cmbPlano.Location = new Point(152, 156);
+            cmbPlano.Name = "cmbPlano";
+            cmbPlano.Size = new Size(291, 28);
+            cmbPlano.TabIndex = 16;
+            // 
             // txtPreco
             // 
             txtPreco.Enabled = false;
-            txtPreco.Location = new Point(152, 226);
+            txtPreco.Location = new Point(152, 222);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(291, 27);
             txtPreco.TabIndex = 14;
@@ -81,7 +101,7 @@
             // lblPreco
             // 
             lblPreco.AutoSize = true;
-            lblPreco.Location = new Point(93, 226);
+            lblPreco.Location = new Point(93, 222);
             lblPreco.Name = "lblPreco";
             lblPreco.Size = new Size(49, 20);
             lblPreco.TabIndex = 13;
@@ -90,32 +110,16 @@
             // lblPeriodicidade
             // 
             lblPeriodicidade.AutoSize = true;
-            lblPeriodicidade.Location = new Point(46, 196);
+            lblPeriodicidade.Location = new Point(46, 191);
             lblPeriodicidade.Name = "lblPeriodicidade";
             lblPeriodicidade.Size = new Size(100, 20);
             lblPeriodicidade.TabIndex = 12;
             lblPeriodicidade.Text = "Periodicidade";
             // 
-            // txtPeriodicidade
-            // 
-            txtPeriodicidade.Enabled = false;
-            txtPeriodicidade.Location = new Point(152, 193);
-            txtPeriodicidade.Name = "txtPeriodicidade";
-            txtPeriodicidade.Size = new Size(291, 27);
-            txtPeriodicidade.TabIndex = 11;
-            // 
-            // txtPlano
-            // 
-            txtPlano.Enabled = false;
-            txtPlano.Location = new Point(152, 160);
-            txtPlano.Name = "txtPlano";
-            txtPlano.Size = new Size(291, 27);
-            txtPlano.TabIndex = 10;
-            // 
             // lblPlano
             // 
             lblPlano.AutoSize = true;
-            lblPlano.Location = new Point(93, 167);
+            lblPlano.Location = new Point(93, 159);
             lblPlano.Name = "lblPlano";
             lblPlano.Size = new Size(49, 20);
             lblPlano.TabIndex = 9;
@@ -123,7 +127,7 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(357, 260);
+            btnCadastrar.Location = new Point(357, 256);
             btnCadastrar.Margin = new Padding(3, 4, 3, 4);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(86, 31);
@@ -189,7 +193,7 @@
             // lblData
             // 
             lblData.AutoSize = true;
-            lblData.Location = new Point(93, 263);
+            lblData.Location = new Point(93, 259);
             lblData.Name = "lblData";
             lblData.Size = new Size(44, 20);
             lblData.TabIndex = 1;
@@ -198,13 +202,14 @@
             // mtbPagamento
             // 
             mtbPagamento.Enabled = false;
-            mtbPagamento.Location = new Point(152, 260);
+            mtbPagamento.Location = new Point(152, 256);
             mtbPagamento.Margin = new Padding(3, 4, 3, 4);
             mtbPagamento.Mask = "00/00/0000 90:00:00";
             mtbPagamento.Name = "mtbPagamento";
             mtbPagamento.Size = new Size(132, 27);
             mtbPagamento.TabIndex = 0;
             mtbPagamento.ValidatingType = typeof(DateTime);
+            mtbPagamento.MaskInputRejected += mtbPagamento_MaskInputRejected;
             // 
             // FrmCadastroPagamento
             // 
@@ -234,10 +239,10 @@
         private Label lblCpf;
         private Label lblEmail;
         private Label lblPlano;
-        private TextBox txtPlano;
         private Label lblPreco;
         private Label lblPeriodicidade;
-        private TextBox txtPeriodicidade;
         private TextBox txtPreco;
+        private ComboBox cmbPlano;
+        private ComboBox cmbPeriodicidade;
     }
 }
