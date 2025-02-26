@@ -19,5 +19,9 @@ namespace AndreysGym.Entidades
         [Required]
         public Plano Plano { get; set; }
         public UInt64 PlanoId { get; set; }
+        public override string ToString()
+        {
+            return $"Pagamento de {DataPagamento:d} - {Plano.Nome} - {Plano.Preco}";
+        }
     }
 }
