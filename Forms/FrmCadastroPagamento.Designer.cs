@@ -64,7 +64,6 @@
             panel1.Controls.Add(lblNome);
             panel1.Controls.Add(lblData);
             panel1.Controls.Add(mtbPagamento);
-            panel1.Enabled = false;
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 426);

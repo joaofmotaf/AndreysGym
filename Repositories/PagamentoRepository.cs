@@ -16,6 +16,8 @@ namespace AndreysGym.Repositories
             {
                 using (Repository dbContext = new Repository())
                 {
+                    dbContext.Entry(pagamento.Usuario).State = EntityState.Unchanged;
+                    dbContext.Entry(pagamento.Plano).State = EntityState.Unchanged;
                     if (pagamento.Id == 0)
                     {
                         dbContext.Pagamentos.Add(pagamento);

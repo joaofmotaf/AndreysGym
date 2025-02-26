@@ -45,6 +45,7 @@ namespace AndreysGym.Forms
 
         public void AtualizarPagamentos()
         {
+            _pagamentos = new BindingList<Pagamento>(PagamentoRepository.FindByUsuario(_usuario));
             lstPagamentos.DataSource = null;
             lstPagamentos.DataSource = _pagamentos;
         }

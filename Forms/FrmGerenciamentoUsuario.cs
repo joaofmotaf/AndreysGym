@@ -96,17 +96,24 @@ namespace AndreysGym.Forms
         {
             if (_usuarioSelecionado != null)
             {
-                var resultado = MessageBox.Show("Tem certeza que deseja excluir este usuário?", "Excluir Usuário", MessageBoxButtons.YesNo);
-                if (resultado == DialogResult.Yes)
+                if (_usuarioAtivo.Id != _usuarioSelecionado.Id)
                 {
-                    _usuarios.Remove(_usuarioSelecionado);
-                    UsuarioRepository.Remove(_usuarioSelecionado);
-                    btnPagamentos.Enabled = false;
-                    btnProgramacoes.Enabled = false;
-                    btnAvaliacoes.Enabled = false;
-                    btnFrequencias.Enabled = false;
-                    btnEditar.Enabled = false;
-                    btnExcluir.Enabled = false;
+                    var resultado = MessageBox.Show("Tem certeza que deseja excluir este usuário?", "Excluir Usuário", MessageBoxButtons.YesNo);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        _usuarios.Remove(_usuarioSelecionado);
+                        UsuarioRepository.Remove(_usuarioSelecionado);
+                        btnPagamentos.Enabled = false;
+                        btnProgramacoes.Enabled = false;
+                        btnAvaliacoes.Enabled = false;
+                        btnFrequencias.Enabled = false;
+                        btnEditar.Enabled = false;
+                        btnExcluir.Enabled = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não é possível apagar o usuário logado");
                 }
             }
         }
@@ -132,12 +139,18 @@ namespace AndreysGym.Forms
 
         private void btnPagamentos_Click(object sender, EventArgs e)
         {
-            var usuario = UsuarioRepository.FindById(_usuarioSelecionado.Id);
-            FrmPagamentos.GetInstance(usuario).MdiParent = FrmPrincipal.GetInstance();
-            FrmPagamentos.GetInstance(usuario).WindowState = FormWindowState.Maximized;
-            FrmPagamentos.GetInstance(usuario).Show();
-            FrmPagamentos.GetInstance(usuario).BringToFront();
-            MessageBox.Show((usuario.Plano == null).ToString());
+            if (_usuarioSelecionado.Plano != null)
+            {
+                var usuario = UsuarioRepository.FindById(_usuarioSelecionado.Id);
+                FrmPagamentos.GetInstance(usuario).MdiParent = FrmPrincipal.GetInstance();
+                FrmPagamentos.GetInstance(usuario).WindowState = FormWindowState.Maximized;
+                FrmPagamentos.GetInstance(usuario).Show();
+                FrmPagamentos.GetInstance(usuario).BringToFront();
+            }
+            else
+            {
+                MessageBox.Show("O usuário selecionado não tem um plano ativo");
+            }
         }
 
         public void AtualizarUsuarios()

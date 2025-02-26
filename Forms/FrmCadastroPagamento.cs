@@ -47,7 +47,9 @@ namespace AndreysGym.Forms
         {
             Pagamento pagamento = new Pagamento
             {
-                DataPagamento = DateTime.Now
+                DataPagamento = DateTime.Now,
+                Usuario = _usuario,
+                Plano = _usuario.Plano
 
             };
 
@@ -59,7 +61,8 @@ namespace AndreysGym.Forms
             {
                 throw;
             }
-
+            FrmPagamentos.GetInstance().AtualizarPagamentos();
+            Close();
         }
 
         private void mtbPagamento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
